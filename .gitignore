@@ -1,0 +1,4 @@
+logs/
+data/*
+!data/cifar10.py
+!data/__init__.py
