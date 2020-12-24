@@ -1,0 +1,137 @@
+2020-12-18 19:21:46.632836: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2020-12-18 19:22:07.424245: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+2020-12-18 19:22:07.475946: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+2020-12-18 19:22:07.477259: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+2020-12-18 19:22:07.477284: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2020-12-18 19:22:07.764947: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+2020-12-18 19:22:07.875926: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2020-12-18 19:22:07.969859: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2020-12-18 19:22:08.189703: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+2020-12-18 19:22:08.292366: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+2020-12-18 19:22:08.835391: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2020-12-18 19:22:08.843961: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+2020-12-18 19:22:08.844521: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2020-12-18 19:22:08.854756: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2600045000 Hz
+2020-12-18 19:22:08.857783: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x62cc000 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-12-18 19:22:08.857802: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-12-18 19:22:09.051717: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x6338160 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-12-18 19:22:09.051766: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla K40m, Compute Capability 3.5
+2020-12-18 19:22:09.051780: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla K40m, Compute Capability 3.5
+2020-12-18 19:22:09.054728: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+2020-12-18 19:22:09.056991: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+2020-12-18 19:22:09.057046: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2020-12-18 19:22:09.057084: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+2020-12-18 19:22:09.057110: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2020-12-18 19:22:09.057135: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2020-12-18 19:22:09.057159: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+2020-12-18 19:22:09.057183: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+2020-12-18 19:22:09.057208: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2020-12-18 19:22:09.066225: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+2020-12-18 19:22:09.066298: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2020-12-18 19:22:10.024387: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-12-18 19:22:10.024427: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 1 
+2020-12-18 19:22:10.024439: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N N 
+2020-12-18 19:22:10.024446: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 1:   N N 
+2020-12-18 19:22:10.028354: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10622 MB memory) -> physical GPU (device: 0, name: Tesla K40m, pci bus id: 0000:04:00.0, compute capability: 3.5)
+2020-12-18 19:22:10.030110: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10622 MB memory) -> physical GPU (device: 1, name: Tesla K40m, pci bus id: 0000:82:00.0, compute capability: 3.5)
+2020-12-18 19:22:15.616258: I tensorflow/core/profiler/lib/profiler_session.cc:164] Profiler session started.
+2020-12-18 19:22:15.616425: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1391] Profiler found 2 GPUs
+2020-12-18 19:22:15.673504: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcupti.so.10.1
+2020-12-18 19:22:15.914310: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1513] CUPTI activity buffer flushed
+2020-12-18 19:22:39.165838: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+2020-12-18 19:22:49.763721: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 45453 of 50000
+2020-12-18 19:22:50.729408: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:22:50.733247: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2020-12-18 19:22:56.681986: I tensorflow/core/profiler/lib/profiler_session.cc:164] Profiler session started.
+WARNING:tensorflow:From /apps/applications/tensorflow/2.3.0/gpu/lib/python3.8/site-packages/tensorflow/python/ops/summary_ops_v2.py:1277: stop (from tensorflow.python.eager.profiler) is deprecated and will be removed after 2020-07-01.
+Instructions for updating:
+use `tf.profiler.experimental.stop` instead.
+2020-12-18 19:22:57.045263: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1513] CUPTI activity buffer flushed
+2020-12-18 19:22:57.112395: I tensorflow/core/profiler/internal/gpu/device_tracer.cc:223]  GpuTracer has collected 7490 callback api events and 7490 activity events. 
+2020-12-18 19:22:57.489942: I tensorflow/core/profiler/rpc/client/save_profile.cc:176] Creating directory: logs/fit/20201218-192215/train/plugins/profile/2020_12_18_19_22_57
+2020-12-18 19:22:57.628219: I tensorflow/core/profiler/rpc/client/save_profile.cc:182] Dumped gzipped tool data for trace.json.gz to logs/fit/20201218-192215/train/plugins/profile/2020_12_18_19_22_57/gpu03.trace.json.gz
+2020-12-18 19:22:57.886627: I tensorflow/core/profiler/rpc/client/save_profile.cc:176] Creating directory: logs/fit/20201218-192215/train/plugins/profile/2020_12_18_19_22_57
+2020-12-18 19:22:57.902156: I tensorflow/core/profiler/rpc/client/save_profile.cc:182] Dumped gzipped tool data for memory_profile.json.gz to logs/fit/20201218-192215/train/plugins/profile/2020_12_18_19_22_57/gpu03.memory_profile.json.gz
+2020-12-18 19:22:57.921896: I tensorflow/python/profiler/internal/profiler_wrapper.cc:111] Creating directory: logs/fit/20201218-192215/train/plugins/profile/2020_12_18_19_22_57Dumped tool data for xplane.pb to logs/fit/20201218-192215/train/plugins/profile/2020_12_18_19_22_57/gpu03.xplane.pb
+Dumped tool data for overview_page.pb to logs/fit/20201218-192215/train/plugins/profile/2020_12_18_19_22_57/gpu03.overview_page.pb
+Dumped tool data for input_pipeline.pb to logs/fit/20201218-192215/train/plugins/profile/2020_12_18_19_22_57/gpu03.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to logs/fit/20201218-192215/train/plugins/profile/2020_12_18_19_22_57/gpu03.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to logs/fit/20201218-192215/train/plugins/profile/2020_12_18_19_22_57/gpu03.kernel_stats.pb
+
+WARNING:tensorflow:Callbacks method `on_train_batch_end` is slow compared to the batch time (batch time: 0.2989s vs `on_train_batch_end` time: 0.9627s). Check your callbacks.
+2020-12-18 19:23:52.006550: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 46277 of 50000
+2020-12-18 19:23:52.806803: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:24:41.990140: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 47325 of 50000
+2020-12-18 19:24:42.574466: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:25:31.843552: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 47169 of 50000
+2020-12-18 19:25:32.459039: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:26:21.764821: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 47460 of 50000
+2020-12-18 19:26:22.287314: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:27:11.491597: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 48685 of 50000
+2020-12-18 19:27:11.776879: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:28:00.899925: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 49308 of 50000
+2020-12-18 19:28:01.036358: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:28:50.301762: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 49025 of 50000
+2020-12-18 19:28:50.519636: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:30:28.120908: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 48992 of 50000
+2020-12-18 19:30:28.340867: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:32:54.886696: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 48334 of 50000
+2020-12-18 19:32:55.221845: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:33:44.167232: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 48424 of 50000
+2020-12-18 19:33:44.507168: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:34:33.764540: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 49008 of 50000
+2020-12-18 19:34:33.974922: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:35:22.992314: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 47923 of 50000
+2020-12-18 19:35:23.416960: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:37:01.547889: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 47973 of 50000
+2020-12-18 19:37:01.960496: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:37:51.012198: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 46846 of 50000
+2020-12-18 19:37:51.698891: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:38:40.740356: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 48290 of 50000
+2020-12-18 19:38:41.105763: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:39:30.041735: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 48674 of 50000
+2020-12-18 19:39:30.303047: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:40:19.339309: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 49594 of 50000
+2020-12-18 19:40:19.419885: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:41:08.354786: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 48586 of 50000
+2020-12-18 19:41:08.654125: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:41:57.669090: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 47741 of 50000
+2020-12-18 19:41:58.155155: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:42:47.281698: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 48205 of 50000
+2020-12-18 19:42:47.671370: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:43:36.573040: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 49269 of 50000
+2020-12-18 19:43:36.726544: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:44:25.913771: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 49851 of 50000
+2020-12-18 19:44:25.942610: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:45:15.097272: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 47554 of 50000
+2020-12-18 19:45:15.589619: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:46:04.718596: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 47703 of 50000
+2020-12-18 19:46:05.184770: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:46:54.227728: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 49202 of 50000
+2020-12-18 19:46:54.396649: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:47:43.562287: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 48970 of 50000
+2020-12-18 19:47:43.784660: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:48:32.721137: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 49510 of 50000
+2020-12-18 19:48:32.824199: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:49:21.926491: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 49098 of 50000
+2020-12-18 19:49:22.111714: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:50:11.219103: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 48749 of 50000
+2020-12-18 19:50:11.473612: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+2020-12-18 19:51:00.303402: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:172] Filling up shuffle buffer (this may take a while): 49637 of 50000
+2020-12-18 19:51:00.378251: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:221] Shuffle buffer filled.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 1063372.0 ON gpu03 CANCELLED AT 2020-12-18T19:51:51 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 1063372 ON gpu03 CANCELLED AT 2020-12-18T19:51:51 DUE TO TIME LIMIT ***
+srun: got SIGCONT
+srun: forcing job termination
+srun: error: gpu03: task 0: Terminated
+srun: Terminating job step 1063372.0

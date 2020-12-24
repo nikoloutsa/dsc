@@ -1,0 +1,4 @@
+NUM_OF_NODES: 2
+WORKERS: "gpu03-ib:5555","gpu04-ib-ib:5555"
+srun gpu03 {"cluster": {"worker": ["gpu03-ib:5555","gpu04-ib-ib:5555"]}, "task": {"type": "worker", "index": 0} }
+srun gpu04-ib {"cluster": {"worker": ["gpu03-ib:5555","gpu04-ib-ib:5555"]}, "task": {"type": "worker", "index": 1} }
