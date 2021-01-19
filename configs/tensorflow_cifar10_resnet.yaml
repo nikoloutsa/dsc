@@ -9,13 +9,13 @@ model:
     n_classes: 10
 
 optimizer:
-    name: Adam
-    lr: 0.001
+    name: SGD
+    lr: 0.01
     lr_scaling: linear
 
 training:
     batch_size: 64
-    n_epochs: 20 
+    n_epochs: 60
     lr_warmup_epochs: 5
     loss: categorical_crossentropy 
     metrics: [accuracy]

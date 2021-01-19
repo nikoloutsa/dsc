@@ -1,4 +1,6 @@
 logs/
 data/*
+__pycache__/*
+utils/__pycache__/*
 !data/cifar10.py
 !data/__init__.py

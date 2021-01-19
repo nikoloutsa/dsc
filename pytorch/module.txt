@@ -1,0 +1,2 @@
+module purge
+module load gnu/8 intelmpi/2018 cuda/10.1.168 pytorch/1.7.0

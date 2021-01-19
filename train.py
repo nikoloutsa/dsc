@@ -63,6 +63,7 @@ def main():
     if rank == 0:
         logging.debug('Configuration: %s',config)
 
+    gpu_rank = 0
     # configure devices
     if args.distributed:
         gpu_rank = hvd.local_rank()
