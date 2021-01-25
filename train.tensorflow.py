@@ -12,14 +12,11 @@ from utils.optimizers import get_optimizer
 from utils.callbacks import TimingCallback
 from utils.helpers import *
 
-EPOCHS = 60
 BASE_LEARNING_RATE = 0.01
 BS_PER_GPU = 64
 LR_SCHEDULE = [(0.1, 30), (0.01, 45)]
 
 def schedule(epoch):
-    #return lr * (0.1 ** (epoch // 30 ))
-
     initial_learning_rate = BASE_LEARNING_RATE * BS_PER_GPU / 128
     learning_rate = initial_learning_rate
     for mult, start_epoch in LR_SCHEDULE:
@@ -31,9 +28,8 @@ def schedule(epoch):
     return learning_rate
 
 def main():
-    # init
+    # initialization
     args = parse_args()
-    ##rank, n_ranks = init_workers(args.distributed)
 
     # load configuration
     config = load_config(args.config)
@@ -56,14 +52,17 @@ def main():
     # Configure Optimizer
     opt = get_optimizer(distributed=args.distributed, **config['optimizer'])
 
+    # Compile Model
     model.compile(
               loss=train_config['loss'],
               optimizer=opt,
               metrics=train_config['metrics']
               )
 
+    # Print Model Summary
     #model.summary()
 
+    # Prepare the training callbacks
     callbacks = []
 
     os.makedirs(os.path.dirname(checkpoint_format), exist_ok=True)
@@ -77,9 +76,9 @@ def main():
     lr = config['optimizer']['lr']
     lr_schedule_callback = LearningRateScheduler(schedule)
     #callbacks.append(lr_schedule_callback)
-    
+   
+    # Train the model
     steps_per_epoch = len(train_dataset) 
-    
     hist = model.fit(train_dataset,
                     epochs=train_config['n_epochs'],
                     steps_per_epoch=steps_per_epoch,
@@ -87,18 +86,17 @@ def main():
                     validation_steps=len(test_dataset),
                     callbacks=callbacks
                     )
-
     # Print some best-found metrics
-    if 'val_acc' in hist.history.keys():
-        print('Best validation accuracy: %.3f',
-                    max(hist.history['val_acc']))
+    print('Steps per epoch: {}'.format(steps_per_epoch))
+    if 'val_accuracy' in hist.history.keys():
+        print('Best validation accuracy: {:.3f}'.format(
+            max(hist.history['val_accuracy'])))
     if 'val_top_k_categorical_accuracy' in hist.history.keys():
-        print('Best top-5 validation accuracy: %.3f',
-                    max(hist.history['val_top_k_categorical_accuracy']))
-    print('Average time per epoch: %.3f s',
-                np.mean(timing_callback.times))
+        print('Best top-5 validation accuracy: {:.3f}'.format(
+            max(hist.history['val_top_k_categorical_accuracy'])))
+    print('Average time per epoch: {:.3f} s'.format(
+        np.mean(timing_callback.times)))
 
 if __name__ == '__main__':
     main()
-
 
