@@ -1,8 +1,8 @@
 #!/bin/bash -l
 
 #SBATCH --job-name=tensorflow_cifar10_resnet 
-#SBATCH --output=logs/tensorflow_cifar10_resnet.N1.G1.B128.%j.out 
-#SBATCH --error=logs/tensorflow_cifar10_resnet.N1.G1.B128.%j.err 
+#SBATCH --output=logs/tensorflow_cifar10_resnet.N1.G1.B256.%j.out 
+#SBATCH --error=logs/tensorflow_cifar10_resnet.N1.G1.B256.%j.err 
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
 #SBATCH --nodes=1 
@@ -32,7 +32,7 @@ echo "Running $SLURM_NTASKS_PER_NODE tasks per node"
 echo "Job id is $SLURM_JOBID"
 
 #tensorflow 1 GPU baseline
-srun -l python train.tensorflow.py --config=configs/tensorflow_cifar10_resnet.B128.yaml 
+srun -l python train.tensorflow.py --config=configs/tensorflow_cifar10_resnet.B256.yaml 
 
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"

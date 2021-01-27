@@ -1,8 +1,8 @@
 #!/bin/bash -l
 
-#SBATCH --job-name=tensorflow_cifar10_resnet 
-#SBATCH --output=logs/tensorflow_cifar10_resnet.N1.G1.B128.%j.out 
-#SBATCH --error=logs/tensorflow_cifar10_resnet.N1.G1.B128.%j.err 
+#SBATCH --job-name=pytorch_cifar10_resnet 
+#SBATCH --output=logs/pytorch_cifar10_resnet.N1.G1.B256.%j.out 
+#SBATCH --error=logs/pytorch_cifar10_resnet.N1.G1.B256.%j.err 
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
 #SBATCH --nodes=1 
@@ -15,12 +15,15 @@
 
 # Load any necessary modules
 module purge
-module load gnu/8 cuda/10.1.168 intel/18 java/12.0.2 intelmpi/2018 tensorflow/2.3.0
+module load gnu/8 intelmpi/2018 cuda/10.1.168 pytorch/1.7.0
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 NODES=($( scontrol show hostname $SLURM_NODELIST | uniq ))
 export NUM_NODES=${#NODES[@]}
+
+WORKERS=$(printf '"%s-ib:5555",' "${NODES[@]}" | sed 's/,$//')
+echo "WORKERS: $WORKERS"
 
 
 echo "Start at `date`"
@@ -31,8 +34,8 @@ echo "Running on $SLURM_NNODES nodes."
 echo "Running $SLURM_NTASKS_PER_NODE tasks per node"
 echo "Job id is $SLURM_JOBID"
 
-#tensorflow 1 GPU baseline
-srun -l python train.tensorflow.py --config=configs/tensorflow_cifar10_resnet.B128.yaml 
+#pytorch 1 GPU baseline
+srun -l python train.pytorch.py --config=configs/pytorch_cifar10_resnet.B256.yaml 
 
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"

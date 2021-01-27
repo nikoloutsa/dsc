@@ -12,7 +12,7 @@ def augmentation(x, y):
     x = tf.image.random_flip_left_right(x)
     return x, y 
 
-def get_datasets(batch_size):
+def get_datasets(batch_size, path):
 
     (x_train, y_train), (x_test, y_test) = keras.datasets.cifar10.load_data()
 
@@ -28,8 +28,8 @@ def get_datasets(batch_size):
     train_dataset = tf.data.Dataset.from_tensor_slices((x_train,y_train))
     test_dataset = tf.data.Dataset.from_tensor_slices((x_test, y_test))
 
-    train_dataset = train_dataset.map(augmentation).batch(batch_size, drop_remainder=True)
-    test_dataset = test_dataset.batch(batch_size, drop_remainder=True)
+    train_dataset = train_dataset.map(augmentation).batch(batch_size, drop_remainder=False)
+    test_dataset = test_dataset.batch(batch_size, drop_remainder=False)
 
     return train_dataset, test_dataset
 

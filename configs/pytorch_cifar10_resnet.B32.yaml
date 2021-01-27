@@ -1,5 +1,5 @@
 description: 'PyTorch ResNet CIFAR10'
-output_dir: logs/pytroch-resnet50-cifar10.${NUM_NODES}.${SLURM_JOB_ID}
+output_dir: logs/pytorch-resnet50-cifar10.${NUM_NODES}.${SLURM_JOB_ID}
 data:
     name: cifar10
     path: data
@@ -17,7 +17,7 @@ optimizer:
 
 training:
     batch_size: 32
-    n_epochs: 2
+    n_epochs: 10
     lr_warmup_epochs: 0
     loss: CrossEntropyLoss
     metrics: [accuracy]

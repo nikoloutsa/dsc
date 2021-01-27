@@ -16,8 +16,8 @@ optimizer:
     lr_scaling: linear
 
 training:
-    batch_size: 128
-    n_epochs: 90
+    batch_size: 128 
+    n_epochs: 10
     lr_warmup_epochs: 0
-    loss: CrossEntropyLoss 
+    loss: CrossEntropyLoss
     metrics: [accuracy]

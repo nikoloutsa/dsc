@@ -1,6 +1,0 @@
-0: slurmstepd: error: Step 1071369.0 exceeded memory limit (8856976 > 2867200), being killed
-slurmstepd: error: Exceeded job memory limit
-0: slurmstepd: error: *** STEP 1071369.0 ON gpu01 CANCELLED AT 2021-01-04T14:21:44 ***
-srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
-srun: error: gpu01: task 0: Killed
-srun: Terminating job step 1071369.0

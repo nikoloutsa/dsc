@@ -13,15 +13,15 @@ def parse_args():
     add_arg('-d', '--distributed', action='store_true')
     add_arg('-v','--verbose', action='store_true')
 
-    add_arg('-j', '--workers', default=1, type=int, metavar='N',
-            help='number of data loading workers (default: 1)')
+    add_arg('-j', '--workers', default=4, type=int, metavar='N',
+            help='number of data loading workers (default: 4)')
     add_arg('--start-epoch', default=0, type=int, metavar='N',
             help='manual epoch number (useful on restarts)')
     add_arg('--wd', '--weight-decay', default=1e-4, type=float,
             metavar='W', help='weight decay (default: 1e-4)',
             dest='weight_decay')
-    add_arg('-p', '--print-freq', default=10, type=int,
-            metavar='N', help='print frequency (default: 10)')
+    add_arg('-p', '--print-freq', default=1, type=int,
+            metavar='N', help='print frequency (default: 100)')
     add_arg('--resume', default='', type=str, metavar='PATH',
             help='path to latest checkpoint (default: none)')
     add_arg('--pretrained', dest='pretrained', action='store_true',

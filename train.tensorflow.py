@@ -79,15 +79,19 @@ def main():
    
     # Train the model
     steps_per_epoch = len(train_dataset) 
+    validation_steps = len(test_dataset) 
     hist = model.fit(train_dataset,
                     epochs=train_config['n_epochs'],
                     steps_per_epoch=steps_per_epoch,
                     validation_data=test_dataset,
-                    validation_steps=len(test_dataset),
+                    validation_steps=validation_steps,
+                    workers=4,
+                    verbose=2,
                     callbacks=callbacks
                     )
     # Print some best-found metrics
     print('Steps per epoch: {}'.format(steps_per_epoch))
+    print('Validation steps per epoch: {}'.format(len(test_dataset)))
     if 'val_accuracy' in hist.history.keys():
         print('Best validation accuracy: {:.3f}'.format(
             max(hist.history['val_accuracy'])))

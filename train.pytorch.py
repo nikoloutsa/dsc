@@ -19,18 +19,69 @@ import torchvision.datasets as datasets
 import torchvision.models as models
 
 import numpy as np
-from utils.helpers import *
+from utils.helpers import load_config
 
 model_names = sorted(name for name in models.__dict__
     if name.islower() and not name.startswith("__")
     and callable(models.__dict__[name]))
 
+parser = argparse.ArgumentParser(description='PyTorch ImageNet Training')
+#parser.add_argument('data', metavar='DIR',
+#                    help='path to dataset')
+parser.add_argument('-c','--config', default='', type=str, help='configuration file')
+parser.add_argument('-a', '--arch', metavar='ARCH', default='resnet18',
+                    choices=model_names,
+                    help='model architecture: ' +
+                        ' | '.join(model_names) +
+                        ' (default: resnet18)')
+parser.add_argument('-j', '--workers', default=4, type=int, metavar='N',
+                    help='number of data loading workers (default: 4)')
+parser.add_argument('--epochs', default=90, type=int, metavar='N',
+                    help='number of total epochs to run')
+parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
+                    help='manual epoch number (useful on restarts)')
+parser.add_argument('-b', '--batch-size', default=256, type=int,
+                    metavar='N',
+                    help='mini-batch size (default: 256), this is the total '
+                         'batch size of all GPUs on the current node when '
+                         'using Data Parallel or Distributed Data Parallel')
+parser.add_argument('--lr', '--learning-rate', default=0.1, type=float,
+                    metavar='LR', help='initial learning rate', dest='lr')
+parser.add_argument('--momentum', default=0.9, type=float, metavar='M',
+                    help='momentum')
+parser.add_argument('--wd', '--weight-decay', default=1e-4, type=float,
+                    metavar='W', help='weight decay (default: 1e-4)',
+                    dest='weight_decay')
+parser.add_argument('-p', '--print-freq', default=10, type=int,
+                    metavar='N', help='print frequency (default: 10)')
+parser.add_argument('--resume', default='', type=str, metavar='PATH',
+                    help='path to latest checkpoint (default: none)')
+parser.add_argument('-e', '--evaluate', dest='evaluate', action='store_true',
+                    help='evaluate model on validation set')
+parser.add_argument('--pretrained', dest='pretrained', action='store_true',
+                    help='use pre-trained model')
+parser.add_argument('--world-size', default=-1, type=int,
+                    help='number of nodes for distributed training')
+parser.add_argument('--rank', default=-1, type=int,
+                    help='node rank for distributed training')
+parser.add_argument('--dist-url', default='tcp://224.66.41.62:23456', type=str,
+                    help='url used to set up distributed training')
+parser.add_argument('--dist-backend', default='nccl', type=str,
+                    help='distributed backend')
+parser.add_argument('--seed', default=None, type=int,
+                    help='seed for initializing training. ')
+parser.add_argument('--gpu', default=None, type=int,
+                    help='GPU id to use.')
+parser.add_argument('--multiprocessing-distributed', action='store_true',
+                    help='Use multi-processing distributed training to launch '
+                         'N processes per node, which has N GPUs. This is the '
+                         'fastest way to use PyTorch for either single node or '
+                         'multi node data parallel training')
 
 best_acc1 = 0
 
 def main():
-    # initialization
-    args = parse_args()
+    args = parser.parse_args()
 
     # load configuration
     config = load_config(args.config)
@@ -40,6 +91,7 @@ def main():
     os.makedirs(os.path.dirname(args.checkpoint_filename), exist_ok=True)
     os.makedirs(output_dir, exist_ok=True)
 
+    # set args from config file
     args.data = config['data']['path']
     #'mini-batch size (default: 256), this is the total batch size of all GPUs on the current node when using Data Parallel or Distributed Data Parallel'
     args.epochs = config['training']['n_epochs']
@@ -51,6 +103,16 @@ def main():
     args.arch = config['model']['name']
     args.evaluate = False
 
+    if args.seed is not None:
+         random.seed(args.seed)
+         torch.manual_seed(args.seed)
+         cudnn.deterministic = True
+         warnings.warn('You have chosen to seed training. '
+                       'This will turn on the CUDNN deterministic setting, '
+                       'which can slow down your training considerably! '
+                       'You may see unexpected behavior when restarting '
+                       'from checkpoints.')
+
     if args.gpu is not None:
         warnings.warn('You have chosen a specific GPU. This will completely '
                       'disable data parallelism.')
@@ -61,9 +123,6 @@ def main():
     args.distributed = args.world_size > 1 or args.multiprocessing_distributed
 
     ngpus_per_node = torch.cuda.device_count()
-
-
-
     if args.multiprocessing_distributed:
         # Since we have ngpus_per_node processes per node, the total world_size
         # needs to be adjusted accordingly
@@ -178,16 +237,9 @@ def main_worker(gpu, ngpus_per_node, args):
     ###        transforms.ToTensor(),
     ###        normalize,
     ###    ]))
-    transform = transforms.Compose([
-        transforms.RandomResizedCrop(224),
-        transforms.RandomHorizontalFlip(),
-        transforms.ToTensor(),
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-    ])
-
-    ###transform = transforms.Compose([
-    ###         transforms.ToTensor(),
-    ###         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+    transform = transforms.Compose(
+            [transforms.ToTensor(),
+             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
     train_dataset = datasets.CIFAR10(root=args.data, train=True, transform=transform)   
 
@@ -201,7 +253,7 @@ def main_worker(gpu, ngpus_per_node, args):
         num_workers=args.workers, pin_memory=True, sampler=train_sampler)
 
     
-    val_dataset = datasets.CIFAR10(root='./data', train=False, transform=transform)
+    val_dataset = datasets.CIFAR10(root=args.data, train=False, transform=transform)
 
     val_loader = torch.utils.data.DataLoader(
         val_dataset, batch_size=args.batch_size, shuffle=False,
@@ -223,16 +275,13 @@ def main_worker(gpu, ngpus_per_node, args):
 
     times = []
     for epoch in range(args.start_epoch, args.epochs):
+        starttime = time.time()
         if args.distributed:
             train_sampler.set_epoch(epoch)
-        #adjust_learning_rate(optimizer, epoch, args)
+        adjust_learning_rate(optimizer, epoch, args)
 
         # train for one epoch
-        starttime = time.time()
         train(train_loader, model, criterion, optimizer, epoch, args)
-        epoch_time = time.time() - starttime
-        print('epoch time {:.3f} s'.format(epoch_time))
-        times.append(epoch_time)
 
         # evaluate on validation set
         acc1 = validate(val_loader, model, criterion, args)
@@ -240,8 +289,6 @@ def main_worker(gpu, ngpus_per_node, args):
         # remember best acc@1 and save checkpoint
         is_best = acc1 > best_acc1
         best_acc1 = max(acc1, best_acc1)
-    
-        print('Checkpoint Filename: {}'.format(args.checkpoint_filename))
 
         if not args.multiprocessing_distributed or (args.multiprocessing_distributed
                 and args.rank % ngpus_per_node == 0):
@@ -253,7 +300,12 @@ def main_worker(gpu, ngpus_per_node, args):
                 'optimizer' : optimizer.state_dict(),
             }, is_best, args.checkpoint_filename)
 
+        epoch_time = time.time() - starttime
+        print('Epoch {}/{} - {:.3f}s'.format(epoch,args.epochs,epoch_time))
+        times.append(epoch_time)
+
     print('Steps per epoch: {}'.format(len(train_loader)))
+    print('Validation steps per epoch: {}'.format(len(val_loader)))
     print('Average time per epoch: {:.3f} s'.format(
         np.mean(times)))
 
@@ -301,7 +353,8 @@ def train(train_loader, model, criterion, optimizer, epoch, args):
         batch_time.update(time.time() - end)
         end = time.time()
 
-        if i % args.print_freq == 0:
+        #if i % args.print_freq == 0:
+        if i == len(train_loader):
             progress.display(i)
 
 
@@ -340,11 +393,12 @@ def validate(val_loader, model, criterion, args):
             batch_time.update(time.time() - end)
             end = time.time()
 
-            if i % args.print_freq == 0:
+            #if i % args.print_freq == 0:
+            if i == len(val_loader):
                 progress.display(i)
 
         # TODO: this should also be done with the ProgressMeter
-        print('* Acc@1 {top1.avg:.3f} Acc@5 {top5.avg:.3f}'
+        print(' * Acc@1 {top1.avg:.3f} Acc@5 {top5.avg:.3f}'
               .format(top1=top1, top5=top5))
 
     return top1.avg
@@ -353,7 +407,7 @@ def validate(val_loader, model, criterion, args):
 def save_checkpoint(state, is_best, filename='checkpoint.pth.tar'):
     torch.save(state, filename)
     if is_best:
-        shutil.copyfile(filename, 'model_best.pth.tar')
+        shutil.copyfile(filename, os.path.join(os.path.dirname(filename),'model_best.pth.tar'))
 
 
 class AverageMeter(object):
@@ -399,7 +453,8 @@ class ProgressMeter(object):
 
 def adjust_learning_rate(optimizer, epoch, args):
     """Sets the learning rate to the initial LR decayed by 10 every 30 epochs"""
-    lr = args.lr * (0.1 ** (epoch // 30))
+    #lr = args.lr * (0.1 ** (epoch // 30))
+    lr = args.lr 
     for param_group in optimizer.param_groups:
         param_group['lr'] = lr
 
