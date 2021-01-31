@@ -13,6 +13,8 @@ from utils.optimizers import get_optimizer
 from utils.callbacks import TimingCallback
 from utils.helpers import *
 
+strategy = tf.distribute.experimental.MultiWorkerMirroredStrategy()
+
 LR_SCHEDULE = [(0.1, 30), (0.01, 45)]
 
 def schedule(epoch,lr):
@@ -49,26 +51,15 @@ def main():
     # Configure Optimizer
     lr = config['optimizer']['lr']
 
-    if args.distributed:
-        lr = lr * 2
+    lr = lr * strategy.num_replicas_in_sync
     # Construct the optimizer
     OptType = getattr(keras.optimizers, config['optimizer']['name'])
     opt = OptType(learning_rate=lr, momentum=config['optimizer']['momentum'])
     #opt = keras.optimizers.SGD(learning_rate=0.1, momentum=0.9)
 
     # Compile Model
-    if args.mirrored:
-        print("MirroredStratgy")
-        strategy = tf.distribute.MirroredStrategy()
-        print("Number of devices: {}".format(strategy.num_replicas_in_sync))
-        with strategy.scope():
-            model = get_model(**config['model'])
-            model.compile(
-                      loss=train_config['loss'],
-                      optimizer=opt,
-                      metrics=train_config['metrics']
-                      )
-    else: #single gpu
+    print("Number of devices: {}".format(strategy.num_replicas_in_sync))
+    with strategy.scope():
         model = get_model(**config['model'])
         model.compile(
                   loss=train_config['loss'],

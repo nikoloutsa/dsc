@@ -3,7 +3,7 @@ import time
 
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras.callbacks import LearningRateScheduler
+import horovod.tensorflow.keras as hvd
 
 
 from data import get_datasets
@@ -12,19 +12,6 @@ from utils.device import configure_device
 from utils.optimizers import get_optimizer
 from utils.callbacks import TimingCallback
 from utils.helpers import *
-
-LR_SCHEDULE = [(0.1, 30), (0.01, 45)]
-
-def schedule(epoch,lr):
-    initial_learning_rate = lr 
-    learning_rate = initial_learning_rate
-    for mult, start_epoch in LR_SCHEDULE:
-      if epoch >= start_epoch:
-        learning_rate = initial_learning_rate * mult
-      else:
-        break
-    tf.summary.scalar('learning rate', data=learning_rate, step=epoch)
-    return learning_rate
 
 def main():
     # initialization
@@ -42,6 +29,18 @@ def main():
     config_logging(verbose=args.verbose, output_dir=output_dir)
     logging.debug('Configuration: %s',config)
 
+    hvd.init()
+
+    # Horovod: initialize Horovod.
+    hvd.init()
+    
+    # Horovod: pin GPU to be used to process local rank (one GPU per process)
+    gpus = tf.config.experimental.list_physical_devices('GPU')
+    for gpu in gpus:
+        tf.config.experimental.set_memory_growth(gpu, True)
+    if gpus:
+        tf.config.experimental.set_visible_devices(gpus[hvd.local_rank()], 'GPU')
+
     # Load Data
     train_dataset, test_dataset = get_datasets(batch_size=train_config['batch_size'],
                                         **config['data'])
@@ -49,50 +48,47 @@ def main():
     # Configure Optimizer
     lr = config['optimizer']['lr']
 
-    if args.distributed:
-        lr = lr * 2
+    initial_lr = lr * hvd.size()
     # Construct the optimizer
     OptType = getattr(keras.optimizers, config['optimizer']['name'])
-    opt = OptType(learning_rate=lr, momentum=config['optimizer']['momentum'])
+    opt = OptType(learning_rate=initial_lr, momentum=config['optimizer']['momentum'])
     #opt = keras.optimizers.SGD(learning_rate=0.1, momentum=0.9)
+    opt = hvd.DistributedOptimizer(opt)
 
-    # Compile Model
-    if args.mirrored:
-        print("MirroredStratgy")
-        strategy = tf.distribute.MirroredStrategy()
-        print("Number of devices: {}".format(strategy.num_replicas_in_sync))
-        with strategy.scope():
-            model = get_model(**config['model'])
-            model.compile(
-                      loss=train_config['loss'],
-                      optimizer=opt,
-                      metrics=train_config['metrics']
-                      )
-    else: #single gpu
-        model = get_model(**config['model'])
-        model.compile(
-                  loss=train_config['loss'],
-                  optimizer=opt,
-                  metrics=train_config['metrics']
-                  )
+    model = get_model(**config['model'])
+    model.compile(
+              loss=train_config['loss'],
+              optimizer=opt,
+              metrics=train_config['metrics']
+              )
 
     # Print Model Summary
     #model.summary()
 
     # Prepare the training callbacks
-    callbacks = []
+    callbacks = [
+        hvd.callbacks.BroadcastGlobalVariablesCallback(0),
+        hvd.callbacks.MetricAverageCallback(),
+        hvd.callbacks.LearningRateWarmupCallback(initial_lr=initial_lr, warmup_epochs=3, verbose=1),
+        hvd.callbacks.LearningRateScheduleCallback(initial_lr=initial_lr,
+                                               multiplier=1.,
+                                               start_epoch=3,
+                                               end_epoch=30),
+        hvd.callbacks.LearningRateScheduleCallback(initial_lr=initial_lr, multiplier=1e-1, start_epoch=30, end_epoch=60),
+        hvd.callbacks.LearningRateScheduleCallback(initial_lr=initial_lr, multiplier=1e-2, start_epoch=60, end_epoch=80),
+        hvd.callbacks.LearningRateScheduleCallback(initial_lr=initial_lr, multiplier=1e-3, start_epoch=80),
+    ]
 
-    os.makedirs(os.path.dirname(checkpoint_format), exist_ok=True)
-    callbacks.append(tf.keras.callbacks.ModelCheckpoint(checkpoint_format))
+    if hvd.rank() == 0:
+        os.makedirs(os.path.dirname(checkpoint_format), exist_ok=True)
+        callbacks.append(tf.keras.callbacks.ModelCheckpoint(checkpoint_format))
 
     # Timing
     timing_callback = TimingCallback()
     callbacks.append(timing_callback)
 
-    # Adjust Learning Rate
-    lr_schedule_callback = LearningRateScheduler(schedule)
-    callbacks.append(lr_schedule_callback)
-   
+    verbose = 1 if hvd.rank() == 0 else 0
+
     # Train the model
     steps_per_epoch = len(train_dataset) 
     validation_steps = len(test_dataset) 
@@ -103,7 +99,7 @@ def main():
                     validation_data=test_dataset,
                     validation_steps=validation_steps,
                     workers=4,
-                    verbose=2,
+                    verbose=verbose,
                     callbacks=callbacks
                     )
     # Print some best-found metrics

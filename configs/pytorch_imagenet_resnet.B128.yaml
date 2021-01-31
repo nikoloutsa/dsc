@@ -1,8 +1,8 @@
-description: 'PyTorch ResNet CIFAR10'
-output_dir: logs/pytorch-resnet50-cifar10.${NUM_NODES}.${SLURM_JOB_ID}
+description: 'PyTorch ResNet IMAGENET'
+output_dir: logs/pytorch-resnet50-imagenet.${NUM_NODES}.${SLURM_JOB_ID}
 data:
-    name: cifar10
-    path: data
+    name: imagenet
+    path: /work/staff/nikoloutsa/data
 
 model:
     name: resnet50
@@ -16,8 +16,8 @@ optimizer:
     lr_scaling: linear
 
 training:
-    batch_size: 64 
-    n_epochs: 3
+    batch_size: 128 
+    n_epochs: 1
     lr_warmup_epochs: 0
     loss: CrossEntropyLoss
     metrics: [accuracy]

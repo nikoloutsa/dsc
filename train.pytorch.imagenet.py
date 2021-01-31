@@ -43,8 +43,11 @@ parser.add_argument('--multiprocessing-distributed', action='store_true',
                          'N processes per node, which has N GPUs. This is the '
                          'fastest way to use PyTorch for either single node or '
                          'multi node data parallel training')
+parser.add_argument('-p', '--print-freq', default=10, type=int,
+                            metavar='N', help='print frequency (default: 10)')
 
 best_acc1 = 0
+
 
 def main():
     args = parser.parse_args()
@@ -143,6 +146,7 @@ def main_worker(gpu, ngpus_per_node, args):
             model.cuda()
         else:
             model = torch.nn.DataParallel(model).cuda()
+
     # define loss function (criterion) and optimizer
     criType = getattr(nn, args.loss)
     criterion = criType().cuda(args.gpu)
@@ -154,11 +158,20 @@ def main_worker(gpu, ngpus_per_node, args):
 
     cudnn.benchmark = True
 
-    transform = transforms.Compose(
-            [transforms.ToTensor(),
-             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+    # Data loading code
+    traindir = os.path.join(args.data, 'train')
+    valdir = os.path.join(args.data, 'val')
+    normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                                     std=[0.229, 0.224, 0.225])
 
-    train_dataset = datasets.CIFAR10(root=args.data, train=True, transform=transform)   
+    train_dataset = datasets.ImageFolder(
+        traindir,
+        transforms.Compose([
+            transforms.RandomResizedCrop(224),
+            transforms.RandomHorizontalFlip(),
+            transforms.ToTensor(),
+            normalize,
+        ]))
 
     if args.distributed:
         train_sampler = torch.utils.data.distributed.DistributedSampler(train_dataset)
@@ -169,22 +182,15 @@ def main_worker(gpu, ngpus_per_node, args):
         train_dataset, batch_size=args.batch_size, shuffle=(train_sampler is None),
         num_workers=args.workers, pin_memory=True, sampler=train_sampler)
 
-    
-    val_dataset = datasets.CIFAR10(root=args.data, train=False, transform=transform)
-
     val_loader = torch.utils.data.DataLoader(
-        val_dataset, batch_size=args.batch_size, shuffle=False,
+        datasets.ImageFolder(valdir, transforms.Compose([
+            transforms.Resize(256),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            normalize,
+        ])),
+        batch_size=args.batch_size, shuffle=False,
         num_workers=args.workers, pin_memory=True)
-
-    ###val_loader = torch.utils.data.DataLoader(
-    ###    datasets.ImageFolder(valdir, transforms.Compose([
-    ###        transforms.Resize(256),
-    ###        transforms.CenterCrop(224),
-    ###        transforms.ToTensor(),
-    ###        normalize,
-    ###    ])),
-    ###    batch_size=args.batch_size, shuffle=False,
-    ###    num_workers=args.workers, pin_memory=True)
 
     times = []
     for epoch in range(args.epochs):
@@ -266,8 +272,8 @@ def train(train_loader, model, criterion, optimizer, epoch, args):
         batch_time.update(time.time() - end)
         end = time.time()
 
-        #if i % args.print_freq == 0:
-        if i == len(train_loader):
+        if i % args.print_freq == 0:
+        #if i == len(train_loader):
             progress.display(i)
 
 
@@ -306,8 +312,8 @@ def validate(val_loader, model, criterion, args):
             batch_time.update(time.time() - end)
             end = time.time()
 
-            #if i % args.print_freq == 0:
-            if i == len(val_loader):
+            if i % args.print_freq == 0:
+            #if i == len(val_loader):
                 progress.display(i)
 
         # TODO: this should also be done with the ProgressMeter
