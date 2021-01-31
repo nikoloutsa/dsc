@@ -4,7 +4,7 @@
 #SBATCH --output=pytorch_cifar10_resnet.%j.out 
 #SBATCH --error=pytorch_cifar10_resnet.%j.err 
 #SBATCH --ntasks=1
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:2
 #SBATCH --nodes=1 
 #SBATCH --ntasks-per-node=1 
 #SBATCH --cpus-per-task=4
@@ -19,6 +19,9 @@ module load gnu/8 intelmpi/2018 cuda/10.1.168 pytorch/1.7.0
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
+echo "Start at `date`"
+START_TIME=$(date +%s)
+
 NODES=($( scontrol show hostname $SLURM_NODELIST | uniq ))
 NUM_NODES=${#NODES[@]}
 
@@ -27,18 +30,22 @@ echo "NUM_NODES: $NUM_NODES"
 WORKERS=$(printf '"%s-ib:5555",' "${NODES[@]}" | sed 's/,$//')
 echo "WORKERS: $WORKERS"
 
-srun -l python train.pytorch.py -a resnet50 -b 32 --epochs=1 data 
+#srun -l python train.pytorch.py -a resnet50 -b 32 --epochs=1 data 
+srun -l -n 1 python train.pytorch.py -a resnet50 --dist-url 'tcp://$NODES[0]-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 2 --rank 0 --epochs 2 data 
 
-##INDEX=0
-##for node in ${NODES[@]}
-##do
-##    srun -l -w $node -n 1 python main.py -a resnet50 --dist-url 'tcp://$NODES[0]-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX data &
-##    INDEX=$(($INDEX+1))
-##    sleep 1
-##done
-##
-##wait
+#INDEX=0
+#for node in ${NODES[@]}
+#do
+#    srun -l -w $node -n 1 python train.pytorch.py -a resnet50 --dist-url 'tcp://$NODES[0]-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX data &
+#    INDEX=$(($INDEX+1))
+#done
+#
+#wait
 
 
 #srun -l python main.py -a resnet50 data
 
+END_TIME=$(date +%s)
+echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"
+ 
+echo "End at `date`"

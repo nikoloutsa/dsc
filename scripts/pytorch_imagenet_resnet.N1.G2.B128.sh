@@ -1,11 +1,11 @@
 #!/bin/bash -l
 
 #SBATCH --job-name=pytorch_imagenet_resnet 
-#SBATCH --output=logs/pytorch_imagenet_resnet.N2.G2.B128.%j.out 
-#SBATCH --error=logs/pytorch_imagenet_resnet.N2.G2.B128.%j.err 
-#SBATCH --ntasks=2
+#SBATCH --output=logs/pytorch_imagenet_resnet.N1.G2.B128.%j.out 
+#SBATCH --error=logs/pytorch_imagenet_resnet.N1.G2.B128.%j.err 
+#SBATCH --ntasks=1
 #SBATCH --gres=gpu:2
-#SBATCH --nodes=2
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4
 ##SBATCH --mem=56000 # Memory per job in MB

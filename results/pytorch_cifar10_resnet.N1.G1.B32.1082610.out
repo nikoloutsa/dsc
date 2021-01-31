@@ -1,0 +1,33 @@
+WORKERS: "gpu03-ib:5555"
+Start at Wed Jan 27 01:07:37 EET 2021
+CUDA_VISIBLE_DEVICES: 0
+Running on hosts: gpu03
+Running on 1 nodes.
+Running 1 tasks per node
+Job id is 1082610
+0: => creating model 'resnet50'
+0:  * Acc@1 41.190 Acc@5 89.300
+0: Epoch 0/10 - 131.922s
+0:  * Acc@1 47.510 Acc@5 92.290
+0: Epoch 1/10 - 128.509s
+0:  * Acc@1 49.400 Acc@5 93.040
+0: Epoch 2/10 - 128.255s
+0:  * Acc@1 53.500 Acc@5 94.110
+0: Epoch 3/10 - 128.136s
+0:  * Acc@1 56.560 Acc@5 94.210
+0: Epoch 4/10 - 128.361s
+0:  * Acc@1 57.610 Acc@5 94.700
+0: Epoch 5/10 - 128.884s
+0:  * Acc@1 58.380 Acc@5 94.780
+0: Epoch 6/10 - 128.724s
+0:  * Acc@1 58.460 Acc@5 94.300
+0: Epoch 7/10 - 128.570s
+0:  * Acc@1 59.930 Acc@5 95.480
+0: Epoch 8/10 - 127.953s
+0:  * Acc@1 60.760 Acc@5 95.330
+0: Epoch 9/10 - 128.268s
+0: Steps per epoch: 1563
+0: Validation steps per epoch: 313
+0: Average time per epoch: 128.758 s
+ELAPSED: 1295 seconds
+End at Wed Jan 27 01:29:12 EET 2021

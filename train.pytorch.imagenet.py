@@ -58,7 +58,7 @@ def main():
     args.checkpoint_filename = os.path.join(output_dir, 'checkpoints','checkpoint.pth.tar')
 
     os.makedirs(os.path.dirname(args.checkpoint_filename), exist_ok=True)
-    os.makedirs(output_dir, exist_ok=True)
+    #os.makedirs(output_dir, exist_ok=True)
 
     # set args from config file
     args.data = config['data']['path']
@@ -211,13 +211,14 @@ def main_worker(gpu, ngpus_per_node, args):
 
         if not args.multiprocessing_distributed or (args.multiprocessing_distributed
                 and args.rank % ngpus_per_node == 0):
-            save_checkpoint({
-                'epoch': epoch + 1,
-                'arch': args.arch,
-                'state_dict': model.state_dict(),
-                'best_acc1': best_acc1,
-                'optimizer' : optimizer.state_dict(),
-            }, is_best, args.checkpoint_filename)
+            pass
+            #save_checkpoint({
+            #    'epoch': epoch + 1,
+            #    'arch': args.arch,
+            #    'state_dict': model.state_dict(),
+            #    'best_acc1': best_acc1,
+            #    'optimizer' : optimizer.state_dict(),
+            #}, is_best, args.checkpoint_filename)
 
         epoch_time = time.time() - starttime
         print('Epoch {}/{} - {:.3f}s'.format(epoch,args.epochs,epoch_time))
@@ -395,5 +396,7 @@ def accuracy(output, target, topk=(1,)):
 
 
 if __name__ == '__main__':
+    start_time = time.time()
     main()
+    print("--- %s seconds ---" % (time.time() - start_time))
 

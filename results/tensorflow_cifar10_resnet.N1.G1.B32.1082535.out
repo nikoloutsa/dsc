@@ -1,0 +1,32 @@
+Start at Tue Jan 26 23:07:32 EET 2021
+CUDA_VISIBLE_DEVICES: 0
+Running on hosts: gpu03
+Running on 1 nodes.
+Running 1 tasks per node
+Job id is 1082535
+0: Epoch 1/10
+0: 1563/1563 - 142s - loss: 2.4758 - accuracy: 0.2843 - val_loss: 2.1297 - val_accuracy: 0.3790
+0: Epoch 2/10
+0: 1563/1563 - 139s - loss: 2.1323 - accuracy: 0.3611 - val_loss: 10.4386 - val_accuracy: 0.3703
+0: Epoch 3/10
+0: 1563/1563 - 140s - loss: 2.0654 - accuracy: 0.3704 - val_loss: 1.5916 - val_accuracy: 0.4344
+0: Epoch 4/10
+0: 1563/1563 - 140s - loss: 2.0006 - accuracy: 0.3841 - val_loss: 1.4463 - val_accuracy: 0.4745
+0: Epoch 5/10
+0: 1563/1563 - 140s - loss: 1.8865 - accuracy: 0.4222 - val_loss: 4.3973 - val_accuracy: 0.4673
+0: Epoch 6/10
+0: 1563/1563 - 139s - loss: 1.8114 - accuracy: 0.4449 - val_loss: 7.5688 - val_accuracy: 0.4916
+0: Epoch 7/10
+0: 1563/1563 - 139s - loss: 1.7702 - accuracy: 0.4527 - val_loss: 3.4594 - val_accuracy: 0.4574
+0: Epoch 8/10
+0: 1563/1563 - 140s - loss: 1.7255 - accuracy: 0.4620 - val_loss: 2.3657 - val_accuracy: 0.4708
+0: Epoch 9/10
+0: 1563/1563 - 140s - loss: 1.6629 - accuracy: 0.4746 - val_loss: 4.2209 - val_accuracy: 0.5061
+0: Epoch 10/10
+0: 1563/1563 - 139s - loss: 1.6277 - accuracy: 0.4891 - val_loss: 49.5470 - val_accuracy: 0.4771
+0: Steps per epoch: 1563
+0: Validation steps per epoch: 313
+0: Best validation accuracy: 0.506
+0: Average time per epoch: 140.644 s
+ELAPSED: 1451 seconds
+End at Tue Jan 26 23:31:43 EET 2021

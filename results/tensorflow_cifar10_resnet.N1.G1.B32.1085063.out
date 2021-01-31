@@ -1,0 +1,19 @@
+Start at Sat Jan 30 21:21:10 EET 2021
+CUDA_VISIBLE_DEVICES: 0
+Running on hosts: gpu09
+Running on 1 nodes.
+Running 1 tasks per node
+Job id is 1085063
+0: Epoch 1/3
+0: 1563/1563 - 134s - loss: 2.4491 - accuracy: 0.2737 - val_loss: 2.8865 - val_accuracy: 0.3848
+0: Epoch 2/3
+0: 1563/1563 - 133s - loss: 2.1499 - accuracy: 0.3434 - val_loss: 5.6385 - val_accuracy: 0.4034
+0: Epoch 3/3
+0: 1563/1563 - 132s - loss: 2.0427 - accuracy: 0.3761 - val_loss: 9.7062 - val_accuracy: 0.3578
+0: Steps per epoch: 1563
+0: Validation steps per epoch: 313
+0: Best validation accuracy: 0.403
+0: Average time per epoch: 136.116 s
+0: --- 416.08094692230225 seconds ---
+ELAPSED: 440 seconds
+End at Sat Jan 30 21:28:31 EET 2021

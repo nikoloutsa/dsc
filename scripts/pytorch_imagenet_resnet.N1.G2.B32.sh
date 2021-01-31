@@ -1,11 +1,11 @@
 #!/bin/bash -l
 
 #SBATCH --job-name=pytorch_imagenet_resnet 
-#SBATCH --output=logs/pytorch_imagenet_resnet.N2.G2.B128.%j.out 
-#SBATCH --error=logs/pytorch_imagenet_resnet.N2.G2.B128.%j.err 
-#SBATCH --ntasks=2
+#SBATCH --output=logs/pytorch_imagenet_resnet.N1.G2.B32.%j.out 
+#SBATCH --error=logs/pytorch_imagenet_resnet.N1.G2.B32.%j.err 
+#SBATCH --ntasks=1
 #SBATCH --gres=gpu:2
-#SBATCH --nodes=2
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4
 ##SBATCH --mem=56000 # Memory per job in MB
@@ -35,8 +35,8 @@ echo "NUM_NODES: $NUM_NODES"
 INDEX=0
 for node in ${NODES[@]}
 do
-    echo "srun -w $node -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B128.yaml --dist-url 'tcp://${NODES[0]}-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX & "
-    srun -w $node -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B128.yaml --dist-url "tcp://${NODES[0]}-ib:5555" --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX &
+    echo "srun -w $node -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://${NODES[0]}-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX & "
+    srun -w $node -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url "tcp://${NODES[0]}-ib:5555" --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX &
     INDEX=$(($INDEX+1))
 done
 

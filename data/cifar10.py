@@ -32,23 +32,3 @@ def get_datasets(batch_size, path):
     test_dataset = test_dataset.batch(batch_size, drop_remainder=False)
 
     return train_dataset, test_dataset
-
-    #https://www.tensorflow.org/tutorials/images/data_augmentation
-    ###train_gen = keras.preprocessing.image.ImageDataGenerator(width_shift_range=0.1,
-    ###                                height_shift_range=0.1,
-    ###                                horizontal_flip=True)
-    ###test_gen = keras.preprocessing.image.ImageDataGenerator()
-
-    ###train_iter = train_gen.flow(x_train, y_train, batch_size=batch_size)
-    ###test_iter = test_gen.flow(x_test, y_test, batch_size=batch_size)
-
-    ###return train_iter, test_iter
-
-
-"""
-#pytorch transforms:
-transforms.RandomCrop(32, padding=4),
-transforms.RandomHorizontalFlip(),
-
-#randomAffine(0,translate=(0.1,0.1))
-"""    
