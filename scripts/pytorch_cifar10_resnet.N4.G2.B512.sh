@@ -1,11 +1,11 @@
 #!/bin/bash -l
 
 #SBATCH --job-name=pytorch_cifar10_resnet 
-#SBATCH --output=logs/pytorch_cifar10_resnet.N1.G2.B64.%j.out 
-#SBATCH --error=logs/pytorch_cifar10_resnet.N1.G2.B64.%j.err 
-#SBATCH --ntasks=1
+#SBATCH --output=logs/pytorch_cifar10_resnet.N4.G2.B512.%j.out 
+#SBATCH --error=logs/pytorch_cifar10_resnet.N4.G2.B512.%j.err 
+#SBATCH --ntasks=4
 #SBATCH --gres=gpu:2
-#SBATCH --nodes=1 
+#SBATCH --nodes=4
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4
 ##SBATCH --mem=56000 # Memory per job in MB
@@ -38,8 +38,8 @@ echo "Job id is $SLURM_JOBID"
 INDEX=0
 for node in ${NODES[@]}
 do
-    echo "srun -w $node -N 1 -n 1 -l python -u train.pytorch.cifar10.py --config=configs/pytorch_cifar10_resnet.B64.yaml --dist-url 'tcp://${NODES[0]}-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX & "
-    srun -w $node -N 1 -n 1 -l python -u train.pytorch.cifar10.py --config=configs/pytorch_cifar10_resnet.B64.yaml --dist-url "tcp://${NODES[0]}-ib:5555" --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX &
+    echo "srun -w $node -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B512.yaml --dist-url 'tcp://${NODES[0]}-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX & "
+    srun -w $node -N 1 -n 1 -l python -u train.pytorch.cifar10.py --config=configs/pytorch_cifar10_resnet.B512.yaml --dist-url "tcp://${NODES[0]}-ib:5555" --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX &
     INDEX=$(($INDEX+1))
 done
 

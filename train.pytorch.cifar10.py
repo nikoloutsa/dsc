@@ -43,8 +43,11 @@ parser.add_argument('--multiprocessing-distributed', action='store_true',
                          'N processes per node, which has N GPUs. This is the '
                          'fastest way to use PyTorch for either single node or '
                          'multi node data parallel training')
+parser.add_argument('-p', '--print-freq', default=10, type=int,
+                            metavar='N', help='print frequency (default: 10)')
 
 best_acc1 = 0
+
 
 def main():
     args = parser.parse_args()
@@ -55,7 +58,7 @@ def main():
     args.checkpoint_filename = os.path.join(output_dir, 'checkpoints','checkpoint.pth.tar')
 
     os.makedirs(os.path.dirname(args.checkpoint_filename), exist_ok=True)
-    os.makedirs(output_dir, exist_ok=True)
+    #os.makedirs(output_dir, exist_ok=True)
 
     # set args from config file
     args.data = config['data']['path']
@@ -143,6 +146,7 @@ def main_worker(gpu, ngpus_per_node, args):
             model.cuda()
         else:
             model = torch.nn.DataParallel(model).cuda()
+
     # define loss function (criterion) and optimizer
     criType = getattr(nn, args.loss)
     criterion = criType().cuda(args.gpu)
@@ -173,7 +177,8 @@ def main_worker(gpu, ngpus_per_node, args):
     val_dataset = datasets.CIFAR10(root=args.data, train=False, transform=transform)
 
     val_loader = torch.utils.data.DataLoader(
-        val_dataset, batch_size=args.batch_size, shuffle=False,
+        val_dataset, 
+        batch_size=args.batch_size, shuffle=False,
         num_workers=args.workers, pin_memory=True)
 
     ###val_loader = torch.utils.data.DataLoader(
@@ -205,13 +210,14 @@ def main_worker(gpu, ngpus_per_node, args):
 
         if not args.multiprocessing_distributed or (args.multiprocessing_distributed
                 and args.rank % ngpus_per_node == 0):
-            save_checkpoint({
-                'epoch': epoch + 1,
-                'arch': args.arch,
-                'state_dict': model.state_dict(),
-                'best_acc1': best_acc1,
-                'optimizer' : optimizer.state_dict(),
-            }, is_best, args.checkpoint_filename)
+            pass
+            #save_checkpoint({
+            #    'epoch': epoch + 1,
+            #    'arch': args.arch,
+            #    'state_dict': model.state_dict(),
+            #    'best_acc1': best_acc1,
+            #    'optimizer' : optimizer.state_dict(),
+            #}, is_best, args.checkpoint_filename)
 
         epoch_time = time.time() - starttime
         print('Epoch {}/{} - {:.3f}s'.format(epoch,args.epochs,epoch_time))
@@ -266,8 +272,8 @@ def train(train_loader, model, criterion, optimizer, epoch, args):
         batch_time.update(time.time() - end)
         end = time.time()
 
-        #if i % args.print_freq == 0:
-        if i == len(train_loader):
+        if i % args.print_freq == 0:
+        #if i == len(train_loader):
             progress.display(i)
 
 
@@ -306,8 +312,8 @@ def validate(val_loader, model, criterion, args):
             batch_time.update(time.time() - end)
             end = time.time()
 
-            #if i % args.print_freq == 0:
-            if i == len(val_loader):
+            if i % args.print_freq == 0:
+            #if i == len(val_loader):
                 progress.display(i)
 
         # TODO: this should also be done with the ProgressMeter
@@ -389,5 +395,7 @@ def accuracy(output, target, topk=(1,)):
 
 
 if __name__ == '__main__':
+    start_time = time.time()
     main()
+    print("--- %s seconds ---" % (time.time() - start_time))
 

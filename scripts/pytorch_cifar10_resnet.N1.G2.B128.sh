@@ -34,8 +34,16 @@ echo "Running on $SLURM_NNODES nodes."
 echo "Running $SLURM_NTASKS_PER_NODE tasks per node"
 echo "Job id is $SLURM_JOBID"
 
-srun -l python train.pytorch.py --config=configs/pytorch_cifar10_resnet.B128.yaml --dist-url 'tcp://$NODES[0]-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank 0
 
+INDEX=0
+for node in ${NODES[@]}
+do
+    echo "srun -w $node -N 1 -n 1 -l python -u train.pytorch.cifar10.py --config=configs/pytorch_cifar10_resnet.B128.yaml --dist-url 'tcp://${NODES[0]}-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX & "
+    srun -w $node -N 1 -n 1 -l python -u train.pytorch.cifar10.py --config=configs/pytorch_cifar10_resnet.B128.yaml --dist-url "tcp://${NODES[0]}-ib:5555" --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX &
+    INDEX=$(($INDEX+1))
+done
+
+wait
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"
  
