@@ -1,0 +1,39 @@
+Start at Mon Feb  1 10:37:03 EET 2021
+CUDA_VISIBLE_DEVICES: 0,1
+Running on hosts: gpu[22-37]
+Running on 16 nodes.
+Running 1 tasks per node
+Job id is 1085743
+NUM_NODES: 16
+srun -w gpu22 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 0 & 
+srun -w gpu23 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 1 & 
+srun -w gpu24 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 2 & 
+srun -w gpu25 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 3 & 
+srun -w gpu26 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 4 & 
+srun -w gpu27 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 5 & 
+srun -w gpu28 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 6 & 
+srun -w gpu29 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 7 & 
+srun -w gpu30 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 8 & 
+srun -w gpu31 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 9 & 
+srun -w gpu32 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 10 & 
+srun -w gpu33 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 11 & 
+srun -w gpu34 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 12 & 
+srun -w gpu35 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 13 & 
+srun -w gpu36 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 14 & 
+srun -w gpu37 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://gpu22-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 16 --rank 15 & 
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2

@@ -1,0 +1,24 @@
+WORKERS: "gpu27-ib:5555","gpu28-ib:5555","gpu29-ib:5555","gpu30-ib:5555","gpu31-ib:5555","gpu32-ib:5555","gpu33-ib:5555","gpu34-ib:5555"
+Start at Mon Feb  1 00:45:30 EET 2021
+CUDA_VISIBLE_DEVICES: 0,1
+Running on hosts: gpu[27-34]
+Running on 8 nodes.
+Running 1 tasks per node
+Job id is 1085643
+srun -w gpu27 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B64.yaml --dist-url 'tcp://gpu27-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 8 --rank 0 & 
+srun -w gpu28 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B64.yaml --dist-url 'tcp://gpu27-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 8 --rank 1 & 
+srun -w gpu29 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B64.yaml --dist-url 'tcp://gpu27-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 8 --rank 2 & 
+srun -w gpu30 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B64.yaml --dist-url 'tcp://gpu27-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 8 --rank 3 & 
+srun -w gpu31 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B64.yaml --dist-url 'tcp://gpu27-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 8 --rank 4 & 
+srun -w gpu32 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B64.yaml --dist-url 'tcp://gpu27-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 8 --rank 5 & 
+srun -w gpu33 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B64.yaml --dist-url 'tcp://gpu27-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 8 --rank 6 & 
+srun -w gpu34 -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B64.yaml --dist-url 'tcp://gpu27-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 8 --rank 7 & 
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Number of devices per node: 2
+0: Use GPU: 1 for training
