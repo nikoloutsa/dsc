@@ -21,8 +21,6 @@ parser.add_argument('--val-dir', default=os.path.expanduser('~/imagenet/validati
                     help='path to validation data')
 parser.add_argument('--log-dir', default='./logs',
                     help='tensorboard log directory')
-parser.add_argument('--checkpoint-format', default='./checkpoint-{epoch}.pth.tar',
-                    help='checkpoint file format')
 parser.add_argument('--fp16-allreduce', action='store_true', default=False,
                     help='use fp16 compression during allreduce')
 parser.add_argument('--batches-per-allreduce', type=int, default=1,
@@ -179,24 +177,14 @@ if __name__ == '__main__':
     hvd.init()
     torch.manual_seed(args.seed)
 
+    print("rank",hvd.rank())
+
     if args.cuda:
         # Horovod: pin GPU to local rank.
         torch.cuda.set_device(hvd.local_rank())
         torch.cuda.manual_seed(args.seed)
 
     cudnn.benchmark = True
-
-    # If set > 0, will resume training from a given checkpoint.
-    resume_from_epoch = 0
-    for try_epoch in range(args.epochs, 0, -1):
-        if os.path.exists(args.checkpoint_format.format(epoch=try_epoch)):
-            resume_from_epoch = try_epoch
-            break
-
-    # Horovod: broadcast resume_from_epoch from rank 0 (which will have
-    # checkpoints) to other ranks.
-    resume_from_epoch = hvd.broadcast(torch.tensor(resume_from_epoch), root_rank=0,
-                                      name='resume_from_epoch').item()
 
     # Horovod: print logs on the first worker.
     verbose = 1 if hvd.rank() == 0 else 0
@@ -213,6 +201,8 @@ if __name__ == '__main__':
     if (kwargs.get('num_workers', 0) > 0 and hasattr(mp, '_supports_context') and
             mp._supports_context and 'forkserver' in mp.get_all_start_methods()):
         kwargs['multiprocessing_context'] = 'forkserver'
+
+    print(kwargs)
 
     train_dataset = \
         datasets.ImageFolder(args.train_dir,
@@ -277,19 +267,15 @@ if __name__ == '__main__':
         op=hvd.Adasum if args.use_adasum else hvd.Average,
         gradient_predivide_factor=args.gradient_predivide_factor)
 
-    # Restore from a previous checkpoint, if initial_epoch is specified.
-    # Horovod: restore on the first worker which will broadcast weights to other workers.
-    if resume_from_epoch > 0 and hvd.rank() == 0:
-        filepath = args.checkpoint_format.format(epoch=resume_from_epoch)
-        checkpoint = torch.load(filepath)
-        model.load_state_dict(checkpoint['model'])
-        optimizer.load_state_dict(checkpoint['optimizer'])
-
     # Horovod: broadcast parameters & optimizer state.
     hvd.broadcast_parameters(model.state_dict(), root_rank=0)
     hvd.broadcast_optimizer_state(optimizer, root_rank=0)
 
-    for epoch in range(resume_from_epoch, args.epochs):
+    print("Training for: ",args.epochs)
+    for epoch in range(0, args.epochs):
+        print("E: ",epoch,flush=True)
+
+    for epoch in range(0, args.epochs):
         print("Epoch: ",epoch)
         train(epoch)
         validate(epoch)
