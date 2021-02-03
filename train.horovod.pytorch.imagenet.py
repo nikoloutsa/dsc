@@ -149,9 +149,9 @@ def main():
     for epoch in range(0, args.epochs):
         starttime = time.time()
 
-        train(train_loader, train_sampler, model,optimizer, epoch, verbose, args)
-        validate(val_loader, model, epoch, verbose, args)
-        save_checkpoint(epoch)
+        train(train_loader, train_sampler, model, criterion, optimizer, epoch, verbose, args)
+        validate(val_loader, model, criterion, epoch, verbose, args)
+        #save_checkpoint(epoch)
 
         epoch_time = time.time() - starttime
         print('Epoch {}/{} - {:.3f}s'.format(epoch,args.epochs,epoch_time))
@@ -162,75 +162,84 @@ def main():
     print('Average time per epoch: {:.3f} s'.format(
         np.mean(times)))
 
-def train(train_loader, train_sampler, model, optimizer, epoch, verbose, args):
+def train(train_loader, train_sampler, model, criterion, optimizer, epoch, verbose, args):
+    batch_time = Metric('Time')
+    data_time = Metric('Data')
+    losses = Metric('Loss')
+    top1 = Metric('Acc@1')
+
+    # switch to train mode
     model.train()
     train_sampler.set_epoch(epoch)
-    train_loss = Metric('train_loss')
-    train_accuracy = Metric('train_accuracy')
-    batch_time = Metric('batch_time')
-    data_time = Metric('data_time')
 
     with tqdm(total=len(train_loader),
               desc='Train Epoch     #{}'.format(epoch + 1),
               disable=not verbose) as t:
         end = time.time()
-        for batch_idx, (data, target) in enumerate(train_loader):
-            if batch_idx == 11:
-                break
+        for batch_idx, (images, target) in enumerate(train_loader):
             # measure data loading time
             data_time.update_time(time.time() - end)
+
             adjust_learning_rate(train_loader, optimizer, epoch, batch_idx, args)
 
-            data, target = data.cuda(), target.cuda()
+            images = images.cuda(non_blocking=True)
+            target = target.cuda(non_blocking=True)
+
+            # compute output
+            output = model(images)
+            loss = criterion(output, target)
+
+            # measure accuracy and record loss
+            top1.update(accuracy(output, target))
+            losses.update(loss)
+
+            # compute gradient and do SGD step
             optimizer.zero_grad()
+            loss.backward()
+            """
             # Split data into sub-batches of size batch_size
-            for i in range(0, len(data), args.batch_size):
+            for i in range(0, len(images), args.batch_size):
                 data_batch = data[i:i + args.batch_size]
                 target_batch = target[i:i + args.batch_size]
                 output = model(data_batch)
-                train_accuracy.update(accuracy(output, target_batch))
+                top1.update(accuracy(output, target_batch))
                 loss = F.cross_entropy(output, target_batch)
-                train_loss.update(loss)
+                losses.update(loss)
                 # Average gradients among sub-batches
-                loss.div_(math.ceil(float(len(data)) / args.batch_size))
+                loss.div_(math.ceil(float(len(images)) / args.batch_size))
                 loss.backward()
+            """
             # Gradient is applied across all ranks
             optimizer.step()
 
             batch_time.update_time(time.time() - end)
             end = time.time()
-            t.set_postfix({'loss': train_loss.avg.item(),
-                           'accuracy': 100. * train_accuracy.avg.item(),
-                           'data_time': data_time.avg.item(),
-                           'batch_time': batch_time.avg.item()})
+            t.set_postfix({'Loss': losses.avg.item(),
+                           'Acc@1': 100. * top1.avg.item(),
+                           'Data': data_time.avg.item(),
+                           'Time': batch_time.avg.item()})
             t.update(1)
 
-            progress = ProgressMeter(
-                len(train_loader),
-                [batch_time.avg.item(), data_time.avg.item(), train_loss.avg.item(), 100. * train_accuracy.avg.item()],
-                prefix="Epoch: [{}]".format(epoch))
-
-            if batch_idx % args.print_freq == 0:
-                progress.display(i)
-
-
-def validate(val_loader, model, epoch, verbose, args):
+def validate(val_loader, model, criterion, epoch, verbose, args):
     model.eval()
-    val_loss = Metric('val_loss')
-    val_accuracy = Metric('val_accuracy')
+    losses = Metric('Loss')
+    top1 = Metric('Acc@1')
 
     with tqdm(total=len(val_loader),
               desc='Validate Epoch  #{}'.format(epoch + 1),
               disable=not verbose) as t:
         with torch.no_grad():
-            for data, target in val_loader:
-                data, target = data.cuda(), target.cuda()
-                output = model(data)
+            for batch_idx, (images, target) in enumerate(val_loader):
+                images = images.cuda(non_blocking=True)
+                target = target.cuda(non_blocking=True)
 
-                val_loss.update(F.cross_entropy(output, target))
-                val_accuracy.update(accuracy(output, target))
-                t.set_postfix({'loss': val_loss.avg.item(),
-                               'accuracy': 100. * val_accuracy.avg.item()})
+                output = model(images)
+
+                loss = criterion(output, target)
+                losses.update(loss)
+                top1.update(accuracy(output, target))
+                t.set_postfix({'Loss': losses.avg.item(),
+                               'Acc@1': 100. * top1.avg.item()})
                 t.update(1)
 
 
@@ -260,7 +269,7 @@ def accuracy(output, target):
     return pred.eq(target.view_as(pred)).cpu().float().mean()
 
 
-def save_checkpoint(epoch):
+def save_checkpoint(epoch, args):
     if hvd.rank() == 0:
         filepath = args.checkpoint_format.format(epoch=epoch + 1)
         state = {
@@ -288,22 +297,6 @@ class Metric(object):
     @property
     def avg(self):
         return self.sum / self.n
-
-class ProgressMeter(object):
-    def __init__(self, num_batches, meters, prefix=""):
-        self.batch_fmtstr = self._get_batch_fmtstr(num_batches)
-        self.meters = meters
-        self.prefix = prefix
-
-    def display(self, batch):
-        entries = [self.prefix + self.batch_fmtstr.format(batch)]
-        entries += [str(meter) for meter in self.meters]
-        print('\t'.join(entries))
-
-    def _get_batch_fmtstr(self, num_batches):
-        num_digits = len(str(num_batches // 1))
-        fmt = '{:' + str(num_digits) + 'd}'
-        return '[' + fmt + '/' + fmt.format(num_batches) + ']'
 
 
 if __name__ == '__main__':

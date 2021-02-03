@@ -1,11 +1,11 @@
 #!/bin/bash -l
 
-#SBATCH --job-name=pytorch_horovod
-#SBATCH --output=pytorch_horovod.%j.out 
-#SBATCH --error=pytorch_horovod.%j.err 
-#SBATCH --ntasks=16
+#SBATCH --job-name=horovod_pytorch_imagenet_resnet 
+#SBATCH --output=logs/horovod_pytorch_imagenet_resnet.N1.G2.B64.%j.out 
+#SBATCH --error=logs/horovod_pytorch_imagenet_resnet.N1.G2.B64.%j.err 
+#SBATCH --ntasks=2
 #SBATCH --gres=gpu:2
-#SBATCH --nodes=8
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=4
 ##SBATCH --mem=56000 # Memory per job in MB
@@ -21,13 +21,18 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 echo "Start at `date`"
 START_TIME=$(date +%s)
+echo "CUDA_VISIBLE_DEVICES: $CUDA_VISIBLE_DEVICES"
+echo "Running on hosts: $SLURM_NODELIST"
+echo "Running on $SLURM_NNODES nodes."
+echo "Running $SLURM_NTASKS_PER_NODE tasks per node"
+echo "Job id is $SLURM_JOBID"
 
 NODES=($( scontrol show hostname $SLURM_NODELIST | uniq ))
-NUM_NODES=${#NODES[@]}
+export NUM_NODES=${#NODES[@]}
 
 echo "NUM_NODES: $NUM_NODES"
 
-srun -l python pytorch_imagenet_resnet50.py --epochs 1 --batch-size 128 --val-batch-size 128 --train-dir $WORKDIR/data/train --val-dir $WORKDIR/data/val
+srun -l python train.horovod.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B64.yaml
 
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"
