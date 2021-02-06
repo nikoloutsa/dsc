@@ -1,15 +1,15 @@
 #!/bin/bash -l
 
-#SBATCH --job-name=pytorch_imagenet_resnet 
-#SBATCH --output=logs/pytorch_imagenet_resnet.N2.G2.B32.%j.out 
-#SBATCH --error=logs/pytorch_imagenet_resnet.N2.G2.B32.%j.err 
-#SBATCH --ntasks=2
+#SBATCH --job-name=horovod_pytorch_imagenet_resnet 
+#SBATCH --output=logs/horovod_pytorch_imagenet_resnet.N2.G2.B64.%j.out 
+#SBATCH --error=logs/horovod_pytorch_imagenet_resnet.N2.G2.B64.%j.err 
+#SBATCH --ntasks=4
 #SBATCH --gres=gpu:2
 #SBATCH --nodes=2
-#SBATCH --ntasks-per-node=1
+#SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=1
 ##SBATCH --mem=56000 # Memory per job in MB
-#SBATCH -t 24:00:00 # Run time (hh:mm:ss) - (max 48h)
+#SBATCH -t 04:00:00 # Run time (hh:mm:ss) - (max 48h)
 #SBATCH --partition=gpu # Run on the GPU nodes queue
 #SBATCH -A pa201202 # Accounting project
 
@@ -32,15 +32,7 @@ export NUM_NODES=${#NODES[@]}
 
 echo "NUM_NODES: $NUM_NODES"
 
-INDEX=0
-for node in ${NODES[@]}
-do
-    echo "srun -w $node -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url 'tcp://${NODES[0]}-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX & "
-    srun -w $node -N 1 -n 1 -l python -u train.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B32.yaml --dist-url "tcp://${NODES[0]}-ib:5555" --dist-backend 'nccl' --multiprocessing-distributed --world-size $NUM_NODES --rank $INDEX &
-    INDEX=$(($INDEX+1))
-done
-
-wait
+srun -l python -u train.horovod.pytorch.imagenet.py --config=configs/pytorch_imagenet_resnet.B64.yaml
 
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"
