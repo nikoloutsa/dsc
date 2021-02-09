@@ -1,0 +1,16 @@
+Start at Sat Feb  6 21:25:30 EET 2021
+CUDA_VISIBLE_DEVICES: 1
+Running on hosts: gpu06
+Running on 1 nodes.
+Running 1 tasks per node
+Job id is 1090000
+0: batch_size= 1024
+0: 2021-02-06 21:26:10,945 WARNING Callbacks method `on_train_batch_end` is slow compared to the batch time (batch time: 0.1798s vs `on_train_batch_end` time: 0.4136s). Check your callbacks.
+0: 49/49 - 39s - loss: 2.7783 - accuracy: 0.1378 - val_loss: 2.3230 - val_accuracy: 0.1293
+0: Steps per epoch: 49
+0: Validation steps per epoch: 10
+0: Best validation accuracy: 0.129
+0: Average time per epoch: 52.751 s
+0: --- 59.22395467758179 seconds ---
+ELAPSED: 81 seconds
+End at Sat Feb  6 21:26:51 EET 2021

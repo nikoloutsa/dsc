@@ -1,0 +1,23 @@
+description: 'PyTorch ResNet IMAGENET'
+output_dir: logs/pytorch-resnet50-imagenet.${NUM_NODES}.${SLURM_JOB_ID}
+data:
+    name: imagenet
+    path: /work/staff/nikoloutsa/data
+
+model:
+    name: resnet50
+    input_shape: [32, 32, 3]
+    n_classes: 10
+
+optimizer:
+    name: SGD
+    lr: 0.001
+    momentum: 0.9
+    lr_scaling: linear
+
+training:
+    batch_size: 112
+    n_epochs: 1
+    lr_warmup_epochs: 0
+    loss: CrossEntropyLoss
+    metrics: [accuracy]

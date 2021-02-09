@@ -1,0 +1,56 @@
+WORKERS: "gpu13-ib:5555"
+Start at Sat Feb  6 20:55:14 EET 2021
+CUDA_VISIBLE_DEVICES: 0,1
+Running on hosts: gpu13
+Running on 1 nodes.
+Running 1 tasks per node
+Job id is 1089986
+srun -w gpu13 -N 1 -n 1 -l python -u train.pytorch.cifar10.py --config=configs/pytorch_cifar10_resnet.B512.yaml --dist-url 'tcp://gpu13-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 1 --rank 0 & 
+0: Number of devices per node: 2
+0: Use GPU: 1 for training
+0: => creating model 'resnet50'
+0: Epoch: [0][ 0/98]	Time  6.588 ( 6.588)	Data  0.106 ( 0.106)	Loss 7.4885e+00 (7.4885e+00)	Acc@1   0.00 (  0.00)	Acc@5   0.00 (  0.00)
+0: Epoch: [0][10/98]	Time  0.261 ( 0.838)	Data  0.082 ( 0.086)	Loss 2.7450e+00 (5.0240e+00)	Acc@1   8.20 (  5.75)	Acc@5  48.44 ( 29.23)
+0: Epoch: [0][20/98]	Time  0.261 ( 0.565)	Data  0.082 ( 0.086)	Loss 2.4204e+00 (3.8173e+00)	Acc@1  11.72 (  8.72)	Acc@5  55.08 ( 40.59)
+0: Epoch: [0][30/98]	Time  0.261 ( 0.468)	Data  0.082 ( 0.086)	Loss 2.3892e+00 (3.3771e+00)	Acc@1  13.28 (  9.60)	Acc@5  55.47 ( 45.26)
+0: Epoch: [0][40/98]	Time  0.260 ( 0.419)	Data  0.081 ( 0.086)	Loss 2.3001e+00 (3.1359e+00)	Acc@1  12.89 ( 10.36)	Acc@5  60.94 ( 48.18)
+0: Epoch: [0][50/98]	Time  0.260 ( 0.389)	Data  0.082 ( 0.086)	Loss 2.3625e+00 (2.9873e+00)	Acc@1  12.50 ( 11.00)	Acc@5  61.33 ( 49.95)
+0: Epoch: [0][60/98]	Time  0.259 ( 0.368)	Data  0.081 ( 0.086)	Loss 2.2667e+00 (2.8780e+00)	Acc@1  23.05 ( 11.75)	Acc@5  64.45 ( 51.83)
+0: Epoch: [0][70/98]	Time  0.260 ( 0.354)	D
+0: ata  0.082 ( 0.086)	Loss 2.2580e+00 (2.7958e+00)	Acc@1  14.45 ( 12.28)	Acc@5  69.14 ( 53.43)
+0: Epoch: [0][80/98]	Time  0.260 ( 0.343)	Data  0.082 ( 0.086)	Loss 2.1566e+00 (2.7289e+00)	Acc@1  22.27 ( 12.91)	Acc@5  73.44 ( 54.82)
+0: Epoch: [0][90/98]	Time  0.260 ( 0.334)	Data  0.081 ( 0.086)	Loss 2.2855e+00 (2.6746e+00)	Acc@1  15.62 ( 13.39)	Acc@5  64.84 ( 56.09)
+0: Test: [ 0/40]	Time  0.139 ( 0.139)	Loss 2.3076e+00 (2.3076e+00)	Acc@1  16.41 ( 16.41)	Acc@5  68.75 ( 68.75)
+0: Test: [10/40]	Time  0.136 ( 0.136)	Loss 2.2135e+00 (2.2549e+00)	Acc@1  16.80 ( 18.47)	Acc@5  69.14 ( 68.04)
+0: Test: [20/40]	Time  0.135 ( 0.136)	Loss 2.2313e+00 (2.2204e+00)	Acc@1  20.31 ( 19.38)	Acc@5  71.88 ( 69.53)
+0: Test: [30/40]	Time  0.135 ( 0.136)	Loss 2.1689e+00 (2.2139e+00)	Acc@1  20.70 ( 19.61)	Acc@5  70.31 ( 69.49)
+0:  * Acc@1 19.140 Acc@5 69.220
+0: Epoch 0/1 - 42.216s
+0: Steps per epoch: 98
+0: Validation steps per epoch: 40
+0: Average time per epoch: 42.216 s
+0: Use GPU: 0 for training
+0: => creating model 'resnet50'
+0: Epoch: [0][ 0/98]	Time  6.603 ( 6.603)	Data  0.113 ( 0.113)	Loss 7.3826e+00 (7.3826e+00)	Acc@1   0.00 (  0.00)	Acc@5   0.39 (  0.39)
+0: Epoch: [0][10/98]	Time  0.261 ( 0.835)	Data  0.069 ( 0.074)	Loss 2.7614e+00 (4.9667e+00)	Acc@1   7.42 (  6.71)	Acc@5  47.27 ( 30.04)
+0: Epoch: [0][20/98]	Time  0.260 ( 0.564)	Data  0.070 ( 0.076)	Loss 2.5355e+00 (3.7825e+00)	Acc@1  12.11 (  9.49)	Acc@5  52.73 ( 41.87)
+0: Epoch: [0][30/98]	Time  0.262 ( 0.467)	Data  0.069 ( 0.076)	Loss 2.3437e+00 (3.3399e+00)	Acc@1  13.67 ( 10.45)	Acc@5  59.77 ( 46.62)
+0: Epoch: [0][40/98]	Time  0.261 ( 0.418)	Data  0.069 ( 0.076)	Loss 2.3523e+00 (3.1044e+00)	Acc@1  10.55 ( 10.72)	Acc@5  59.38 ( 49.16)
+0: Epoch: [0][50/98]	Time  0.261 ( 0.388)	Data  0.069 ( 0.077)	Loss 2.3887e+00 (2.9536e+00)	Acc@1  12.50 ( 11.07)	Acc@5  59.38 ( 51.43)
+0: Epoch: [0][60/98]	Time  0.249 ( 0.368)	Data  0.070 ( 0.077)	Loss 2.2563e+00 (2.8444e+00)	Acc@1  16.02 ( 11.69)	Acc@5  67.58 ( 53.55)
+0: Epoch: [0][70/98]	Time  0.279 ( 0.354)	D
+0: ata  0.070 ( 0.077)	Loss 2.2685e+00 (2.7671e+00)	Acc@1  17.97 ( 12.58)	Acc@5  67.19 ( 54.89)
+0: Epoch: [0][80/98]	Time  0.265 ( 0.342)	Data  0.070 ( 0.077)	Loss 2.2868e+00 (2.7052e+00)	Acc@1  18.36 ( 12.97)	Acc@5  68.36 ( 56.24)
+0: Epoch: [0][90/98]	Time  0.260 ( 0.334)	Data  0.070 ( 0.077)	Loss 2.1891e+00 (2.6526e+00)	Acc@1  19.53 ( 13.66)	Acc@5  68.36 ( 57.43)
+0: Test: [ 0/40]	Time  0.154 ( 0.154)	Loss 2.3076e+00 (2.3076e+00)	Acc@1  16.41 ( 16.41)	Acc@5  68.75 ( 68.75)
+0: Test: [10/40]	Time  0.150 ( 0.150)	Loss 2.2135e+00 (2.2549e+00)	Acc@1  16.80 ( 18.47)	Acc@5  69.14 ( 68.04)
+0: Test: [20/40]	Time  0.136 ( 0.143)	Loss 2.2313e+00 (2.2204e+00)	Acc@1  20.31 ( 19.38)	Acc@5  71.88 ( 69.53)
+0: Test: [30/40]	Time  0.136 ( 0.141)	Loss 2.1689e+00 (2.2139e+00)	Acc@1  20.70 ( 19.61)	Acc@5  70.31 ( 69.49)
+0:  * Acc@1 19.140 Acc@5 69.220
+0: Epoch 0/1 - 42.355s
+0: Steps per epoch: 98
+0: Validation steps per epoch: 40
+0: Average time per epoch: 42.355 s
+0: --- 48.80390214920044 seconds ---
+ELAPSED: 52 seconds
+End at Sat Feb  6 20:56:06 EET 2021

@@ -37,7 +37,7 @@ echo "Job id is $SLURM_JOBID"
 sed -e "s/#EPOCHS#/${EPOCHS}/" -e "s/#BATCH_SIZE#/${BATCH_SIZE}/" < scripts/pytorch_cifar10_resnet.yaml > scripts/pytorch_cifar10_resnet.E${EPOCHS}.B${BATCH_SIZE}.yaml
 
 
-#srun -l python train.pytorch.py --config=configs/pytorch_cifar10_resnet.B32.yaml 
+#srun -l python train.pytorch.cifar10.py --config=configs/pytorch_cifar10_resnet.B32.yaml 
 
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"

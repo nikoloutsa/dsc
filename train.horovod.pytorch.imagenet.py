@@ -52,7 +52,7 @@ def main():
     args.momentum = config['optimizer']['momentum']
     args.optimizer = config['optimizer']['name']
     args.arch = config['model']['name']
-    args.workers = 4
+    args.workers = 0
     args.gpu = None
 
 

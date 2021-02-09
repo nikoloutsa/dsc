@@ -1,0 +1,31 @@
+WORKERS: "gpu19-ib:5555"
+Start at Sun Feb  7 12:29:49 EET 2021
+CUDA_VISIBLE_DEVICES: 0,1
+Running on hosts: gpu19
+Running on 1 nodes.
+Running 2 tasks per node
+Job id is 1090300
+1: Number of devices per node: 2
+0: Number of devices per node: 2
+0: rank 0
+1: rank 1
+1: => creating model 'resnet50'
+0: => creating model 'resnet50'
+1: Epoch: [0][ 0/25]	22.378707885742188	0.3025825023651123	7.1773457527160645	0.146484375
+0: Epoch: [0][ 0/25]	22.387102127075195	0.30353593826293945	7.1773457527160645	0.146484375
+0: Epoch: [0][ 0/25]	2.99928879737854	0.29033708572387695	3.550551652908325	10.804332047700882
+1: Epoch: [0][ 0/25]	2.9997975826263428	0.27523335814476013	3.550551652908325	10.804332047700882
+0: Epoch: [0][ 0/25]	2.075218677520752	0.2883264720439911	4.493213653564453	11.34905144572258
+1: Epoch: [0][ 0/25]	2.0755538940429688	0.27276742458343506	4.493213653564453	11.34905144572258
+1: Epoch 0/1 - 65.775s
+1: Steps per epoch: 25
+1: Validation steps per epoch: 10
+1: Average time per epoch: 65.775 s
+0: Epoch 0/1 - 65.776s
+0: Steps per epoch: 25
+0: Validation steps per epoch: 10
+0: Average time per epoch: 65.776 s
+1: --- 69.22985935211182 seconds ---
+0: --- 69.230220079422 seconds ---
+ELAPSED: 74 seconds
+End at Sun Feb  7 12:31:03 EET 2021

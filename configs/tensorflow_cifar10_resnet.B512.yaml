@@ -16,8 +16,8 @@ optimizer:
     lr_scaling: linear
 
 training:
-    batch_size: 32
-    n_epochs: 3
+    batch_size: 512
+    n_epochs: 1
     lr_warmup_epochs: 0
     loss: categorical_crossentropy 
     metrics: [accuracy]

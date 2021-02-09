@@ -1,0 +1,33 @@
+Start at Sat Feb  6 21:37:38 EET 2021
+CUDA_VISIBLE_DEVICES: 0,1
+Running on hosts: gpu05
+Running on 1 nodes.
+Running 1 tasks per node
+Job id is 1090003
+0: mirrored batch_size= 32
+0: MirroredStratgy
+0: 2021-02-06 21:38:04,687 INFO Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1')
+0: Number of devices: 2
+0: 2021-02-06 21:38:04,951 INFO Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+0: 2021-02-06 21:38:04,955 INFO Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+0: 2021-02-06 21:38:04,961 INFO Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+0: 2021-02-06 21:38:04,965 INFO Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+0: 2021-02-06 21:38:04,980 INFO Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+0: 2021-02-06 21:38:04,985 INFO Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+0: 2021-02-06 21:38:05,028 INFO Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+0: 2021-02-06 21:38:05,032 INFO Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+0: 2021-02-06 21:38:05,037 INFO Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+0: 2021-02-06 21:38:05,041 INFO Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+0: 2021-02-06 21:38:10,825 WARNING From /apps/applications/tensorflow/2.3.0/gpu/lib/python3.8/site-packages/tensorflow/python/data/ops/multi_device_iterator_ops.py:601: get_next_as_optional (from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+0: Instructions for updating:
+0: Use `tf.data.Iterator.get_next_as_optional()` instead.
+0: 2021-02-06 21:38:19,579 INFO batch_all_reduce: 214 all-reduces with algorithm = nccl, num_packs = 1
+0: 2021-02-06 21:38:32,639 INFO batch_all_reduce: 214 all-reduces with algorithm = nccl, num_packs = 1
+0: 1563/1563 - 176s - loss: 2.4858 - accuracy: 0.2587 - val_loss: 7.3680 - val_accuracy: 0.3313
+0: Steps per epoch: 1563
+0: Validation steps per epoch: 313
+0: Best validation accuracy: 0.331
+0: Average time per epoch: 215.275 s
+0: --- 225.99514770507812 seconds ---
+ELAPSED: 251 seconds
+End at Sat Feb  6 21:41:49 EET 2021

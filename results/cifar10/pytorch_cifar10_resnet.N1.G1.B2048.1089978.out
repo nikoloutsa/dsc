@@ -1,0 +1,21 @@
+WORKERS: "gpu03-ib:5555"
+Start at Sat Feb  6 20:49:15 EET 2021
+CUDA_VISIBLE_DEVICES: 0
+Running on hosts: gpu03
+Running on 1 nodes.
+Running 1 tasks per node
+Job id is 1089978
+0: Number of devices per node: 1
+0: => creating model 'resnet50'
+0: Epoch: [0][ 0/25]	Time 26.749 (26.749)	Data  0.699 ( 0.699)	Loss 7.0402e+00 (7.0402e+00)	Acc@1   0.05 (  0.05)	Acc@5   0.54 (  0.54)
+0: Epoch: [0][10/25]	Time  1.353 ( 3.666)	Data  0.566 ( 0.582)	Loss 2.7076e+00 (4.8068e+00)	Acc@1  10.94 (  7.39)	Acc@5  52.20 ( 32.71)
+0: Epoch: [0][20/25]	Time  1.354 ( 2.593)	Data  0.566 ( 0.602)	Loss 2.4593e+00 (3.7036e+00)	Acc@1  13.38 (  9.66)	Acc@5  56.84 ( 43.35)
+0: Test: [0/5]	Time  1.042 ( 1.042)	Loss 2.4272e+00 (2.4272e+00)	Acc@1  10.89 ( 10.89)	Acc@5  52.64 ( 52.64)
+0:  * Acc@1 10.970 Acc@5 52.090
+0: Epoch 0/1 - 84.582s
+0: Steps per epoch: 25
+0: Validation steps per epoch: 5
+0: Average time per epoch: 84.582 s
+0: --- 87.7159309387207 seconds ---
+ELAPSED: 91 seconds
+End at Sat Feb  6 20:50:46 EET 2021

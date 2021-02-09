@@ -43,7 +43,13 @@ def main():
     logging.debug('Configuration: %s',config)
 
     # Load Data
-    train_dataset, test_dataset = get_datasets(batch_size=train_config['batch_size'],
+    if args.mirrored:
+        args.batch_size = int(train_config['batch_size'] / 2 ) # 2 gpus per node
+        print("mirrored batch_size=",args.batch_size)
+    else:
+        args.batch_size = train_config['batch_size']
+        print("batch_size=",args.batch_size)
+    train_dataset, test_dataset = get_datasets(batch_size=args.batch_size,
                                         **config['data'])
 
     # Configure Optimizer
@@ -99,10 +105,10 @@ def main():
 
     hist = model.fit(train_dataset,
                     epochs=train_config['n_epochs'],
-                    steps_per_epoch=steps_per_epoch,
+                    #steps_per_epoch=steps_per_epoch,
                     validation_data=test_dataset,
-                    validation_steps=validation_steps,
-                    workers=4,
+                    #validation_steps=validation_steps,
+                    workers=1,
                     verbose=2,
                     callbacks=callbacks
                     )

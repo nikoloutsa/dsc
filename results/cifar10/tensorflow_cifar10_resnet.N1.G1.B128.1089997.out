@@ -1,0 +1,15 @@
+Start at Sat Feb  6 21:23:52 EET 2021
+CUDA_VISIBLE_DEVICES: 0
+Running on hosts: gpu06
+Running on 1 nodes.
+Running 1 tasks per node
+Job id is 1089997
+0: batch_size= 128
+0: 391/391 - 59s - loss: 2.2437 - accuracy: 0.2571 - val_loss: 1.8707 - val_accuracy: 0.3346
+0: Steps per epoch: 391
+0: Validation steps per epoch: 79
+0: Best validation accuracy: 0.335
+0: Average time per epoch: 68.358 s
+0: --- 76.79178476333618 seconds ---
+ELAPSED: 102 seconds
+End at Sat Feb  6 21:25:34 EET 2021

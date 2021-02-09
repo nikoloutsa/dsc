@@ -1,0 +1,20 @@
+WORKERS: "gpu13-ib:5555"
+Start at Sun Feb  7 12:29:10 EET 2021
+CUDA_VISIBLE_DEVICES: 0
+Running on hosts: gpu13
+Running on 1 nodes.
+Running 1 tasks per node
+Job id is 1090294
+0: Number of devices per node: 1
+0: rank 0
+0: => creating model 'resnet50'
+0: Epoch: [0][ 0/25]	26.67534637451172	0.5823192596435547	7.4749555587768555	0.0
+0: Epoch: [0][ 0/25]	3.7236204147338867	0.641178548336029	4.587806701660156	9.428267180919647
+0: Epoch: [0][ 0/25]	2.638792037963867	0.6517577171325684	5.706959247589111	10.27250736951828
+0: Epoch 0/1 - 87.215s
+0: Steps per epoch: 25
+0: Validation steps per epoch: 5
+0: Average time per epoch: 87.215 s
+0: --- 90.45316433906555 seconds ---
+ELAPSED: 95 seconds
+End at Sun Feb  7 12:30:45 EET 2021

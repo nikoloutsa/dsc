@@ -3,12 +3,12 @@
 #SBATCH --job-name=pytorch_imagenet_resnet 
 #SBATCH --output=logs/pytorch_imagenet_resnet.N16.G2.B64.%j.out 
 #SBATCH --error=logs/pytorch_imagenet_resnet.N16.G2.B64.%j.err 
-#SBATCH --ntasks=16
+#SBATCH --ntasks=32
 #SBATCH --gres=gpu:2
 #SBATCH --nodes=16
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=1
-##SBATCH --mem=56000 # Memory per job in MB
+#SBATCH --ntasks-per-node=2
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=56000 # Memory per job in MB
 #SBATCH -t 04:00:00 # Run time (hh:mm:ss) - (max 48h)
 #SBATCH --partition=gpu # Run on the GPU nodes queue
 #SBATCH -A pa201202 # Accounting project

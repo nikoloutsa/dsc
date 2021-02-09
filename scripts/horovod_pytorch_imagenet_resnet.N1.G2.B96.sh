@@ -1,14 +1,14 @@
 #!/bin/bash -l
 
 #SBATCH --job-name=horovod_pytorch_imagenet_resnet 
-#SBATCH --output=logs/horovod_pytorch_imagenet_resnet.N1.G2.B96%j.out 
-#SBATCH --error=logs/horovod_pytorch_imagenet_resnet.N1.G2.B96%j.err 
+#SBATCH --output=logs/horovod_pytorch_imagenet_resnet.N1.G2.B96.%j.out 
+#SBATCH --error=logs/horovod_pytorch_imagenet_resnet.N1.G2.B96.%j.err 
 #SBATCH --ntasks=2
 #SBATCH --gres=gpu:2
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=1
-##SBATCH --mem=56000 # Memory per job in MB
+#SBATCH --mem=56000 # Memory per job in MB
 #SBATCH -t 04:00:00 # Run time (hh:mm:ss) - (max 48h)
 #SBATCH --partition=gpu # Run on the GPU nodes queue
 #SBATCH -A pa201202 # Accounting project

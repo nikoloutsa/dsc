@@ -1,0 +1,30 @@
+WORKERS: "gpu07-ib:5555"
+Start at Sat Feb  6 20:49:04 EET 2021
+CUDA_VISIBLE_DEVICES: 0
+Running on hosts: gpu07
+Running on 1 nodes.
+Running 1 tasks per node
+Job id is 1089976
+0: Number of devices per node: 1
+0: => creating model 'resnet50'
+0: Epoch: [0][ 0/98]	Time 11.481 (11.481)	Data  0.149 ( 0.149)	Loss 7.3231e+00 (7.3231e+00)	Acc@1   0.00 (  0.00)	Acc@5   0.20 (  0.20)
+0: Epoch: [0][10/98]	Time  0.411 ( 1.411)	Data  0.136 ( 0.138)	Loss 2.6207e+00 (4.9212e+00)	Acc@1  13.67 (  7.21)	Acc@5  54.30 ( 31.82)
+0: Epoch: [0][20/98]	Time  0.412 ( 0.941)	Data  0.135 ( 0.146)	Loss 2.4231e+00 (3.7536e+00)	Acc@1  11.72 (  9.77)	Acc@5  55.66 ( 42.68)
+0: Epoch: [0][30/98]	Time  0.412 ( 0.774)	Data  0.135 ( 0.149)	Loss 2.3625e+00 (3.3167e+00)	Acc@1  13.67 ( 10.96)	Acc@5  57.23 ( 47.01)
+0: Epoch: [0][40/98]	Time  0.411 ( 0.689)	Data  0.135 ( 0.151)	Loss 2.3173e+00 (3.0851e+00)	Acc@1  16.21 ( 11.64)	Acc@5  61.52 ( 49.72)
+0: Epoch: [0][50/98]	Time  0.412 ( 0.637)	Data  0.135 ( 0.152)	Loss 2.3488e+00 (2.9411e+00)	Acc@1  12.89 ( 11.95)	Acc@5  58.79 ( 51.63)
+0: Epoch: [0][60/98]	Time  0.411 ( 0.602)	Data  0.135 ( 0.152)	Loss 2.3427e+00 (2.8426e+00)	Acc@1  14.65 ( 12.37)	Acc@5  61.52 ( 53.06)
+0: Epoch: [0][70/98]	Time  0.411 ( 0.
+0: 577)	Data  0.135 ( 0.153)	Loss 2.2691e+00 (2.7662e+00)	Acc@1  16.60 ( 12.75)	Acc@5  62.50 ( 54.35)
+0: Epoch: [0][80/98]	Time  0.411 ( 0.558)	Data  0.135 ( 0.153)	Loss 2.2951e+00 (2.7088e+00)	Acc@1  15.04 ( 13.14)	Acc@5  64.65 ( 55.33)
+0: Epoch: [0][90/98]	Time  0.410 ( 0.543)	Data  0.136 ( 0.154)	Loss 2.2190e+00 (2.6603e+00)	Acc@1  21.48 ( 13.53)	Acc@5  69.92 ( 56.37)
+0: Test: [ 0/20]	Time  0.266 ( 0.266)	Loss 2.3265e+00 (2.3265e+00)	Acc@1  17.38 ( 17.38)	Acc@5  63.48 ( 63.48)
+0: Test: [10/20]	Time  0.265 ( 0.265)	Loss 2.3022e+00 (2.2950e+00)	Acc@1  19.53 ( 17.58)	Acc@5  63.67 ( 64.86)
+0:  * Acc@1 17.590 Acc@5 64.870
+0: Epoch 0/1 - 67.671s
+0: Steps per epoch: 98
+0: Validation steps per epoch: 20
+0: Average time per epoch: 67.671 s
+0: --- 70.68603539466858 seconds ---
+ELAPSED: 73 seconds
+End at Sat Feb  6 20:50:17 EET 2021

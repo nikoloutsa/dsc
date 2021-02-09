@@ -98,7 +98,7 @@ def main():
                     steps_per_epoch=steps_per_epoch,
                     validation_data=test_dataset,
                     validation_steps=validation_steps,
-                    workers=4,
+                    workers=1,
                     verbose=verbose,
                     callbacks=callbacks
                     )

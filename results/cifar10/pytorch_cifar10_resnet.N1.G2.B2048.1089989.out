@@ -1,0 +1,34 @@
+WORKERS: "gpu01-ib:5555"
+Start at Sat Feb  6 20:56:47 EET 2021
+CUDA_VISIBLE_DEVICES: 0,1
+Running on hosts: gpu01
+Running on 1 nodes.
+Running 1 tasks per node
+Job id is 1089989
+srun -w gpu01 -N 1 -n 1 -l python -u train.pytorch.cifar10.py --config=configs/pytorch_cifar10_resnet.B2048.yaml --dist-url 'tcp://gpu01-ib:5555' --dist-backend 'nccl' --multiprocessing-distributed --world-size 1 --rank 0 & 
+0: Number of devices per node: 2
+0: Use GPU: 1 for training
+0: => creating model 'resnet50'
+0: Epoch: [0][ 0/25]	Time 25.864 (25.864)	Data  0.403 ( 0.403)	Loss 7.3608e+00 (7.3608e+00)	Acc@1   0.10 (  0.10)	Acc@5   0.20 (  0.20)
+0: Epoch: [0][10/25]	Time  0.877 ( 3.158)	Data  0.277 ( 0.300)	Loss 2.6990e+00 (5.0234e+00)	Acc@1  11.82 (  6.92)	Acc@5  55.66 ( 31.22)
+0: Epoch: [0][20/25]	Time  0.872 ( 2.076)	Data  0.278 ( 0.295)	Loss 2.4475e+00 (3.8137e+00)	Acc@1  13.38 (  9.33)	Acc@5  54.79 ( 42.38)
+0: Test: [ 0/10]	Time  0.536 ( 0.536)	Loss 2.4090e+00 (2.4090e+00)	Acc@1   9.28 (  9.28)	Acc@5  51.37 ( 51.37)
+0:  * Acc@1 10.490 Acc@5 52.930
+0: Epoch 0/1 - 66.313s
+0: Steps per epoch: 25
+0: Validation steps per epoch: 10
+0: Average time per epoch: 66.313 s
+0: Use GPU: 0 for training
+0: => creating model 'resnet50'
+0: Epoch: [0][ 0/25]	Time 25.969 (25.969)	Data  0.401 ( 0.401)	Loss 7.3249e+00 (7.3249e+00)	Acc@1   0.10 (  0.10)	Acc@5   0.10 (  0.10)
+0: Epoch: [0][10/25]	Time  0.876 ( 3.158)	Data  0.279 ( 0.292)	Loss 2.6871e+00 (5.0217e+00)	Acc@1  11.23 (  7.12)	Acc@5  54.20 ( 31.25)
+0: Epoch: [0][20/25]	Time  0.872 ( 2.076)	Data  0.278 ( 0.291)	Loss 2.4168e+00 (3.8056e+00)	Acc@1  14.06 (  9.57)	Acc@5  56.25 ( 42.54)
+0: Test: [ 0/10]	Time  0.528 ( 0.528)	Loss 2.4090e+00 (2.4090e+00)	Acc@1   9.28 (  9.28)	Acc@5  51.37 ( 51.37)
+0:  * Acc@1 10.490 Acc@5 52.930
+0: Epoch 0/1 - 66.320s
+0: Steps per epoch: 25
+0: Validation steps per epoch: 10
+0: Average time per epoch: 66.320 s
+0: --- 73.69065594673157 seconds ---
+ELAPSED: 83 seconds
+End at Sat Feb  6 20:58:10 EET 2021

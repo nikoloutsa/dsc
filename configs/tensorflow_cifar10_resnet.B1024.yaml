@@ -1,0 +1,23 @@
+description: 'TensorFlow ResNet CIFAR10'
+output_dir: logs/tensorflow-resnet50-cifar10.${NUM_NODES}.${SLURM_JOB_ID}
+data:
+    name: cifar10
+    path: data
+
+model:
+    name: resnet50
+    input_shape: [32, 32, 3]
+    n_classes: 10
+
+optimizer:
+    name: SGD
+    lr: 0.001
+    momentum: 0.9
+    lr_scaling: linear
+
+training:
+    batch_size: 1024
+    n_epochs: 1
+    lr_warmup_epochs: 0
+    loss: categorical_crossentropy 
+    metrics: [accuracy]

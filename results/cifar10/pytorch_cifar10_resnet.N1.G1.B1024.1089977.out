@@ -1,0 +1,23 @@
+WORKERS: "gpu07-ib:5555"
+Start at Sat Feb  6 20:49:07 EET 2021
+CUDA_VISIBLE_DEVICES: 1
+Running on hosts: gpu07
+Running on 1 nodes.
+Running 1 tasks per node
+Job id is 1089977
+0: Number of devices per node: 1
+0: => creating model 'resnet50'
+0: Epoch: [0][ 0/49]	Time 19.848 (19.848)	Data  0.338 ( 0.338)	Loss 7.2139e+00 (7.2139e+00)	Acc@1   0.10 (  0.10)	Acc@5   0.59 (  0.59)
+0: Epoch: [0][10/49]	Time  0.710 ( 2.447)	Data  0.277 ( 0.285)	Loss 2.7179e+00 (4.9864e+00)	Acc@1  10.06 (  6.93)	Acc@5  51.46 ( 30.59)
+0: Epoch: [0][20/49]	Time  0.708 ( 1.633)	Data  0.277 ( 0.296)	Loss 2.4571e+00 (3.7946e+00)	Acc@1  11.62 (  9.20)	Acc@5  52.54 ( 41.79)
+0: Epoch: [0][30/49]	Time  0.711 ( 1.344)	Data  0.278 ( 0.300)	Loss 2.3908e+00 (3.3408e+00)	Acc@1  13.09 ( 10.53)	Acc@5  58.59 ( 46.88)
+0: Epoch: [0][40/49]	Time  0.713 ( 1.196)	Data  0.278 ( 0.302)	Loss 2.3307e+00 (3.0962e+00)	Acc@1  14.55 ( 11.69)	Acc@5  60.35 ( 50.29)
+0: Test: [ 0/10]	Time  0.519 ( 0.519)	Loss 2.3946e+00 (2.3946e+00)	Acc@1  17.19 ( 17.19)	Acc@5  60.84 ( 60.84)
+0:  * Acc@1 15.920 Acc@5 62.360
+0: Epoch 0/1 - 80.427s
+0: Steps per epoch: 49
+0: Validation steps per epoch: 10
+0: Average time per epoch: 80.427 s
+0: --- 83.41772890090942 seconds ---
+ELAPSED: 86 seconds
+End at Sat Feb  6 20:50:33 EET 2021

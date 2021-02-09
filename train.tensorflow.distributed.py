@@ -1,5 +1,6 @@
 import numpy as np
 import time
+import json
 
 import tensorflow as tf
 from tensorflow import keras
@@ -40,12 +41,18 @@ def main():
 
     os.makedirs(output_dir, exist_ok=True)
 
+    tf_config = json.loads(os.environ['TF_CONFIG'])
+    num_workers = len(tf_config['cluster']['worker'])
+
+    args.batch_size = train_config['batch_size'] * num_workers
+    print("multiworker batch_size:",args.batch_size)
+
     # logging
     config_logging(verbose=args.verbose, output_dir=output_dir)
     logging.debug('Configuration: %s',config)
 
     # Load Data
-    train_dataset, test_dataset = get_datasets(batch_size=train_config['batch_size'],
+    train_dataset, test_dataset = get_datasets(batch_size=args.batch_size,
                                         **config['data'])
 
     # Configure Optimizer
@@ -93,8 +100,8 @@ def main():
                     steps_per_epoch=steps_per_epoch,
                     validation_data=test_dataset,
                     validation_steps=validation_steps,
-                    workers=4,
-                    verbose=2,
+                    workers=1,
+                    verbose=1,
                     callbacks=callbacks
                     )
     # Print some best-found metrics

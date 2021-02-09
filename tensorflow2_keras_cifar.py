@@ -78,11 +78,11 @@ verbose = 1 if hvd.rank() == 0 else 0
 steps_per_epoch = len(train_dataset) 
 validation_steps = len(test_dataset) 
 hist = model.fit(train_dataset,
-                epochs=2,
-                steps_per_epoch=steps_per_epoch,
+                epochs=1,
+                steps_per_epoch=1,
                 validation_data=test_dataset,
-                validation_steps=validation_steps,
-                workers=4,
+                validation_steps=1,
+                workers=0,
                 verbose=1,
                 callbacks=callbacks
                 )

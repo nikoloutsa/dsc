@@ -35,7 +35,7 @@ echo "Running $SLURM_NTASKS_PER_NODE tasks per node"
 echo "Job id is $SLURM_JOBID"
 
 #pytorch 1 GPU baseline
-srun -l python train.pytorch.py --config=configs/pytorch_cifar10_resnet.B128.yaml 
+srun -l python train.pytorch.cifar10.py --config=configs/pytorch_cifar10_resnet.B128.yaml 
 
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"

@@ -8,7 +8,7 @@
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
-##SBATCH --mem=56000 # Memory per job in MB
+#SBATCH --mem=28000 # Memory per job in MB
 #SBATCH -t 01:00:00 # Run time (hh:mm:ss) - (max 48h)
 #SBATCH --partition=gpu # Run on the GPU nodes queue
 #SBATCH -A pa201202 # Accounting project
@@ -35,7 +35,7 @@ echo "Job id is $SLURM_JOBID"
 INDEX=0
 for node in ${NODES[@]}
 do
-    TF_CONFIG='{"cluster": {"worker": ['$WORKERS']}, "task": {"type": "worker", "index": '$INDEX'} }'
+    export TF_CONFIG='{"cluster": {"worker": ['$WORKERS']}, "task": {"type": "worker", "index": '$INDEX'} }'
     echo "srun $node $TF_CONFIG"
     srun -w $node -n 1 -l --export=ALL,TF_CONFIG python train.tensorflow.distributed.py --config=configs/tensorflow_cifar10_resnet.B32.yaml & 
     INDEX=$(($INDEX+1))
