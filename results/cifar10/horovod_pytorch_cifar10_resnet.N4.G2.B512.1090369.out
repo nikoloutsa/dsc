@@ -1,0 +1,942 @@
+WORKERS: "gpu21-ib:5555","gpu22-ib:5555","gpu23-ib:5555","gpu24-ib:5555"
+Start at Sun Feb  7 14:15:33 EET 2021
+CUDA_VISIBLE_DEVICES: 0,1
+Running on hosts: gpu[21-24]
+Running on 4 nodes.
+Running 2 tasks per node
+Job id is 1090369
+2: Number of devices per node: 2
+3: Number of devices per node: 2
+1: Number of devices per node: 2
+0: Number of devices per node: 2
+0: 
+6: Number of devices per node: 2
+7: Number of devices per node: 2
+5: Number of devices per node: 2
+4: Number of devices per node: 2
+6: rank 6
+2: rank 
+7: rank 
+4: rank 4
+2: 2
+7: 7
+5: rank 
+5: 5
+3: rank 3
+0: rank 0
+1: rank 1
+2: => creating model 'resnet50'
+3: => creating model 'resnet50'
+6: => creating model 'resnet50'
+7: => creating model 'resnet50'
+5: => creating model 'resnet50'
+4: => creating model 'resnet50'
+1: => creating model 'resnet50'
+0: => creating model 'resnet50'
+0: 
+1: Epoch 0/90 - 33.807s
+2: Epoch 0/90 - 33.807s
+6: Epoch 0/90 - 33.805s
+4: Epoch 0/90 - 33.805s
+1: 
+3: Epoch 0/90 - 33.806s
+7: Epoch 0/90 - 33.805s
+5: Epoch 0/90 - 33.805s
+0: Epoch 0/90 - 33.808s
+1: Epoch 1/90 - 18.119s
+2: Epoch 1/90 - 18.119s
+1: 
+4: Epoch 1/90 - 18.119s
+6: Epoch 1/90 - 18.119s
+3: Epoch 1/90 - 18.119s
+7: Epoch 1/90 - 18.119s
+5: Epoch 1/90 - 18.119s
+0: Epoch 1/90 - 18.119s
+1: Epoch 2/90 - 16.771s
+2: Epoch 2/90 - 16.771s
+6: Epoch 2/90 - 16.771s
+4: Epoch 2/90 - 16.771s
+3: Epoch 2/90 - 16.771s
+7: Epoch 2/90 - 16.771s
+1: 
+5: Epoch 2/90 - 16.771s
+0: Epoch 2/90 - 16.771s
+1: Epoch 3/90 - 16.592s
+1: 
+4: Epoch 3/90 - 16.592s
+2: Epoch 3/90 - 16.592s
+6: Epoch 3/90 - 16.592s
+3: Epoch 3/90 - 16.592s
+7: Epoch 3/90 - 16.592s
+5: Epoch 3/90 - 16.592s
+0: Epoch 3/90 - 16.592s
+0: 
+1: Epoch 4/90 - 16.301s
+4: Epoch 4/90 - 16.301s
+2: Epoch 4/90 - 16.301s
+6: Epoch 4/90 - 16.301s
+1: 
+5: Epoch 4/90 - 16.301s
+3: Epoch 4/90 - 16.301s
+7: Epoch 4/90 - 16.301s
+0: Epoch 4/90 - 16.301s
+0: 
+1: Epoch 5/90 - 16.277s
+6: Epoch 5/90 - 16.277s
+4: Epoch 5/90 - 16.277s
+2: Epoch 5/90 - 16.277s
+1: 
+5: Epoch 5/90 - 16.277s
+7: Epoch 5/90 - 16.277s
+3: Epoch 5/90 - 16.277s
+0: Epoch 5/90 - 16.277s
+0: 
+1: Epoch 6/90 - 17.053s
+2: Epoch 6/90 - 17.053s
+6: Epoch 6/90 - 17.053s
+4: Epoch 6/90 - 17.053s
+1: 
+5: Epoch 6/90 - 17.053s
+3: Epoch 6/90 - 17.053s
+7: Epoch 6/90 - 17.053s
+0: Epoch 6/90 - 17.053s
+0: 
+1: Epoch 7/90 - 16.517s
+1: 
+4: Epoch 7/90 - 16.517s
+2: Epoch 7/90 - 16.517s
+6: Epoch 7/90 - 16.517s
+7: Epoch 7/90 - 16.517s
+5: Epoch 7/90 - 16.517s
+3: Epoch 7/90 - 16.517s
+0: Epoch 7/90 - 16.517s
+1: Epoch 8/90 - 16.522s
+4: Epoch 8/90 - 16.522s
+2: Epoch 8/90 - 16.522s
+6: Epoch 8/90 - 16.522s
+3: Epoch 8/90 - 16.522s
+7: Epoch 8/90 - 16.522s
+5: Epoch 8/90 - 16.522s
+0: Epoch 8/90 - 16.522s
+0: 
+1: Epoch 9/90 - 16.810s
+1: 
+2: Epoch 9/90 - 16.810s
+6: Epoch 9/90 - 16.810s
+4: Epoch 9/90 - 16.810s
+5: Epoch 9/90 - 16.810s
+3: Epoch 9/90 - 16.810s
+0: Epoch 9/90 - 16.809s
+7: Epoch 9/90 - 16.810s
+1: Epoch 10/90 - 16.383s
+1: 
+2: Epoch 10/90 - 16.383s
+6: Epoch 10/90 - 16.383s
+4: Epoch 10/90 - 16.383s
+3: Epoch 10/90 - 16.383s
+7: Epoch 10/90 - 16.382s
+5: Epoch 10/90 - 16.383s
+0: Epoch 10/90 - 16.383s
+0: 
+1: Epoch 11/90 - 16.306s
+2: Epoch 11/90 - 16.306s
+6: Epoch 11/90 - 16.306s
+4: Epoch 11/90 - 16.306s
+3: Epoch 11/90 - 16.306s
+7: Epoch 11/90 - 16.306s
+5: Epoch 11/90 - 16.306s
+0: Epoch 11/90 - 16.306s
+0: 
+1: Epoch 12/90 - 17.061s
+2: Epoch 12/90 - 17.061s
+6: Epoch 12/90 - 17.061s
+1: 
+4: Epoch 12/90 - 17.061s
+3: Epoch 12/90 - 17.061s
+7: Epoch 12/90 - 17.061s
+5: Epoch 12/90 - 17.061s
+0: Epoch 12/90 - 17.061s
+0: 
+1: Epoch 13/90 - 16.035s
+2: Epoch 13/90 - 16.035s
+1: 
+4: Epoch 13/90 - 16.035s
+6: Epoch 13/90 - 16.035s
+3: Epoch 13/90 - 16.035s
+5: Epoch 13/90 - 16.035s
+7: Epoch 13/90 - 16.035s
+0: Epoch 13/90 - 16.035s
+0: 
+1: Epoch 14/90 - 16.900s
+2: Epoch 14/90 - 16.900s
+6: Epoch 14/90 - 16.900s
+4: Epoch 14/90 - 16.900s
+3: Epoch 14/90 - 16.900s
+7: Epoch 14/90 - 16.900s
+5: Epoch 14/90 - 16.900s
+0: Epoch 14/90 - 16.900s
+0: 
+2: Epoch 15/90 - 16.934s
+6: Epoch 15/90 - 16.934s
+4: Epoch 15/90 - 16.934s
+3: Epoch 15/90 - 16.934s
+7: Epoch 15/90 - 16.934s
+1: Epoch 15/90 - 16.934s
+5: Epoch 15/90 - 16.934s
+1: 
+0: Epoch 15/90 - 16.934s
+1: Epoch 16/90 - 16.931s
+1: 
+2: Epoch 16/90 - 16.931s
+4: Epoch 16/90 - 16.931s
+6: Epoch 16/90 - 16.931s
+3: Epoch 16/90 - 16.931s
+5: Epoch 16/90 - 16.931s
+7: Epoch 16/90 - 16.931s
+0: Epoch 16/90 - 16.931s
+0: 
+1: Epoch 17/90 - 17.378s
+1: 
+4: Epoch 17/90 - 17.378s
+2: Epoch 17/90 - 17.378s
+6: Epoch 17/90 - 17.378s
+7: Epoch 17/90 - 17.378s
+5: Epoch 17/90 - 17.378s
+3: Epoch 17/90 - 17.378s
+0: Epoch 17/90 - 17.378s
+0: 
+1: Epoch 18/90 - 16.628s
+1: 
+2: Epoch 18/90 - 16.628s
+6: Epoch 18/90 - 16.628s
+4: Epoch 18/90 - 16.628s
+3: Epoch 18/90 - 16.628s
+7: Epoch 18/90 - 16.628s
+5: Epoch 18/90 - 16.628s
+0: Epoch 18/90 - 16.628s
+0: 
+1: Epoch 19/90 - 17.430s
+1: 
+2: Epoch 19/90 - 17.430s
+6: Epoch 19/90 - 17.430s
+4: Epoch 19/90 - 17.430s
+3: Epoch 19/90 - 17.430s
+7: Epoch 19/90 - 17.430s
+5: Epoch 19/90 - 17.430s
+0: Epoch 19/90 - 17.430s
+0: 
+1: Epoch 20/90 - 16.764s
+2: Epoch 20/90 - 16.764s
+6: Epoch 20/90 - 16.764s
+1: 
+4: Epoch 20/90 - 16.764s
+3: Epoch 20/90 - 16.764s
+7: Epoch 20/90 - 16.764s
+5: Epoch 20/90 - 16.764s
+0: Epoch 20/90 - 16.764s
+0: 
+1: Epoch 21/90 - 16.828s
+4: Epoch 21/90 - 16.828s
+1: 
+2: Epoch 21/90 - 16.828s
+6: Epoch 21/90 - 16.828s
+5: Epoch 21/90 - 16.828s
+3: Epoch 21/90 - 16.828s
+7: Epoch 21/90 - 16.828s
+0: Epoch 21/90 - 16.828s
+0: 
+1: Epoch 22/90 - 17.330s
+3: Epoch 22/90 - 17.330s
+4: Epoch 22/90 - 17.330s
+1: 
+6: Epoch 22/90 - 17.330s
+2: Epoch 22/90 - 17.330s
+7: Epoch 22/90 - 17.330s
+5: Epoch 22/90 - 17.330s
+0: Epoch 22/90 - 17.330s
+0: 
+1: Epoch 23/90 - 17.382s
+1: 
+2: Epoch 23/90 - 17.382s
+6: Epoch 23/90 - 17.382s
+5: Epoch 23/90 - 17.382s
+3: Epoch 23/90 - 17.382s
+7: Epoch 23/90 - 17.382s
+4: Epoch 23/90 - 17.382s
+0: Epoch 23/90 - 17.382s
+0: 
+1: Epoch 24/90 - 16.802s
+1: 
+2: Epoch 24/90 - 16.802s
+6: Epoch 24/90 - 16.802s
+4: Epoch 24/90 - 16.802s
+5: Epoch 24/90 - 16.802s
+3: Epoch 24/90 - 16.802s
+7: Epoch 24/90 - 16.802s
+0: Epoch 24/90 - 16.802s
+0: 
+1: Epoch 25/90 - 17.413s
+1: 
+2: Epoch 25/90 - 17.413s
+6: Epoch 25/90 - 17.413s
+4: Epoch 25/90 - 17.413s
+3: Epoch 25/90 - 17.413s
+7: Epoch 25/90 - 17.413s
+5: Epoch 25/90 - 17.413s
+0: Epoch 25/90 - 17.412s
+0: 
+1: Epoch 26/90 - 16.612s
+1: 
+2: Epoch 26/90 - 16.613s
+6: Epoch 26/90 - 16.613s
+4: Epoch 26/90 - 16.613s
+3: Epoch 26/90 - 16.613s
+7: Epoch 26/90 - 16.613s
+5: Epoch 26/90 - 16.613s
+0: Epoch 26/90 - 16.613s
+0: 
+1: Epoch 27/90 - 16.797s
+1: 
+2: Epoch 27/90 - 16.797s
+6: Epoch 27/90 - 16.797s
+4: Epoch 27/90 - 16.797s
+3: Epoch 27/90 - 16.797s
+7: Epoch 27/90 - 16.797s
+5: Epoch 27/90 - 16.797s
+0: Epoch 27/90 - 16.797s
+0: 
+1: Epoch 28/90 - 16.662s
+1: 
+2: Epoch 28/90 - 16.662s
+6: Epoch 28/90 - 16.662s
+4: Epoch 28/90 - 16.662s
+3: Epoch 28/90 - 16.662s
+7: Epoch 28/90 - 16.662s
+5: Epoch 28/90 - 16.662s
+0: Epoch 28/90 - 16.662s
+0: 
+1: Epoch 29/90 - 16.828s
+2: Epoch 29/90 - 16.828s
+1: 
+4: Epoch 29/90 - 16.828s
+6: Epoch 29/90 - 16.828s
+3: Epoch 29/90 - 16.828s
+7: Epoch 29/90 - 16.828s
+0: Epoch 29/90 - 16.828s
+0: 
+5: Epoch 29/90 - 16.829s
+1: Epoch 30/90 - 17.133s
+4: Epoch 30/90 - 17.133s
+2: Epoch 30/90 - 17.133s
+1: 
+6: Epoch 30/90 - 17.133s
+3: Epoch 30/90 - 17.133s
+5: Epoch 30/90 - 17.132s
+7: Epoch 30/90 - 17.133s
+0: Epoch 30/90 - 17.133s
+0: 
+1: Epoch 31/90 - 16.677s
+2: Epoch 31/90 - 16.677s
+6: Epoch 31/90 - 16.677s
+4: Epoch 31/90 - 16.677s
+3: Epoch 31/90 - 16.677s
+7: Epoch 31/90 - 16.677s
+1: 
+5: Epoch 31/90 - 16.677s
+0: Epoch 31/90 - 16.677s
+0: 
+1: Epoch 32/90 - 16.891s
+1: 
+2: Epoch 32/90 - 16.891s
+6: Epoch 32/90 - 16.891s
+4: Epoch 32/90 - 16.891s
+3: Epoch 32/90 - 16.891s
+7: Epoch 32/90 - 16.891s
+5: Epoch 32/90 - 16.891s
+0: Epoch 32/90 - 16.891s
+0: 
+1: Epoch 33/90 - 16.690s
+2: Epoch 33/90 - 16.690s
+6: Epoch 33/90 - 16.690s
+4: Epoch 33/90 - 16.690s
+3: Epoch 33/90 - 16.690s
+7: Epoch 33/90 - 16.690s
+5: Epoch 33/90 - 16.690s
+0: Epoch 33/90 - 16.690s
+0: 
+1: Epoch 34/90 - 16.612s
+1: 
+2: Epoch 34/90 - 16.612s
+6: Epoch 34/90 - 16.612s
+4: Epoch 34/90 - 16.612s
+3: Epoch 34/90 - 16.612s
+7: Epoch 34/90 - 16.612s
+5: Epoch 34/90 - 16.612s
+0: Epoch 34/90 - 16.612s
+0: 
+1: Epoch 35/90 - 15.604s
+1: 
+2: Epoch 35/90 - 15.604s
+6: Epoch 35/90 - 15.604s
+4: Epoch 35/90 - 15.604s
+3: Epoch 35/90 - 15.604s
+7: Epoch 35/90 - 15.604s
+5: Epoch 35/90 - 15.604s
+0: Epoch 35/90 - 15.604s
+0: 
+1: Epoch 36/90 - 16.187s
+1: 
+2: Epoch 36/90 - 16.187s
+6: Epoch 36/90 - 16.187s
+4: Epoch 36/90 - 16.187s
+3: Epoch 36/90 - 16.187s
+7: Epoch 36/90 - 16.187s
+5: Epoch 36/90 - 16.187s
+0: Epoch 36/90 - 16.187s
+1: Epoch 37/90 - 17.074s
+6: Epoch 37/90 - 17.074s
+1: 
+4: Epoch 37/90 - 17.074s
+2: Epoch 37/90 - 17.074s
+7: Epoch 37/90 - 17.074s
+5: Epoch 37/90 - 17.074s
+3: Epoch 37/90 - 17.074s
+0: Epoch 37/90 - 17.074s
+0: 
+1: Epoch 38/90 - 16.788s
+1: 
+4: Epoch 38/90 - 16.788s
+2: Epoch 38/90 - 16.788s
+6: Epoch 38/90 - 16.788s
+5: Epoch 38/90 - 16.788s
+7: Epoch 38/90 - 16.788s
+3: Epoch 38/90 - 16.788s
+0: Epoch 38/90 - 16.788s
+0: 
+1: Epoch 39/90 - 17.657s
+2: Epoch 39/90 - 17.657s
+4: Epoch 39/90 - 17.657s
+6: Epoch 39/90 - 17.657s
+3: Epoch 39/90 - 17.657s
+7: Epoch 39/90 - 17.657s
+0: Epoch 39/90 - 17.657s
+0: 
+5: Epoch 39/90 - 17.660s
+1: Epoch 40/90 - 16.605s
+1: 
+2: Epoch 40/90 - 16.605s
+6: Epoch 40/90 - 16.605s
+4: Epoch 40/90 - 16.605s
+3: Epoch 40/90 - 16.605s
+7: Epoch 40/90 - 16.605s
+5: Epoch 40/90 - 16.602s
+0: Epoch 40/90 - 16.605s
+0: 
+4: Epoch 41/90 - 17.373s
+2: Epoch 41/90 - 17.373s
+6: Epoch 41/90 - 17.373s
+3: Epoch 41/90 - 17.373s
+7: Epoch 41/90 - 17.373s
+5: Epoch 41/90 - 17.373s
+0: Epoch 41/90 - 17.373s
+0: 
+1: Epoch 41/90 - 17.383s
+2: Epoch 42/90 - 16.892s
+6: Epoch 42/90 - 16.892s
+4: Epoch 42/90 - 16.892s
+0: Epoch 42/90 - 16.892s
+0: 
+1: Epoch 42/90 - 16.892s
+3: Epoch 42/90 - 16.902s
+7: Epoch 42/90 - 16.902s
+5: Epoch 42/90 - 16.902s
+1: Epoch 43/90 - 16.800s
+1: 
+2: Epoch 43/90 - 16.810s
+6: Epoch 43/90 - 16.810s
+4: Epoch 43/90 - 16.810s
+3: Epoch 43/90 - 16.800s
+7: Epoch 43/90 - 16.800s
+5: Epoch 43/90 - 16.800s
+0: Epoch 43/90 - 16.810s
+0: 
+1: Epoch 44/90 - 17.122s
+1: 
+2: Epoch 44/90 - 17.122s
+7: Epoch 44/90 - 17.122s
+5: Epoch 44/90 - 17.122s
+3: Epoch 44/90 - 17.122s
+4: Epoch 44/90 - 17.122s
+0: Epoch 44/90 - 17.122s
+0: 
+6: Epoch 44/90 - 17.124s
+2: Epoch 45/90 - 17.331s
+6: Epoch 45/90 - 17.329s
+4: Epoch 45/90 - 17.330s
+3: Epoch 45/90 - 17.331s
+7: Epoch 45/90 - 17.331s
+5: Epoch 45/90 - 17.331s
+0: Epoch 45/90 - 17.331s
+0: 
+1: Epoch 45/90 - 17.338s
+1: Epoch 46/90 - 16.624s
+2: Epoch 46/90 - 16.631s
+1: 
+4: Epoch 46/90 - 16.631s
+6: Epoch 46/90 - 16.631s
+3: Epoch 46/90 - 16.631s
+7: Epoch 46/90 - 16.631s
+5: Epoch 46/90 - 16.631s
+0: Epoch 46/90 - 16.631s
+0: 
+1: Epoch 47/90 - 16.463s
+6: Epoch 47/90 - 16.463s
+1: 
+2: Epoch 47/90 - 16.463s
+4: Epoch 47/90 - 16.463s
+7: Epoch 47/90 - 16.463s
+3: Epoch 47/90 - 16.463s
+5: Epoch 47/90 - 16.463s
+0: Epoch 47/90 - 16.463s
+0: 
+1: Epoch 48/90 - 16.668s
+1: 
+2: Epoch 48/90 - 16.668s
+4: Epoch 48/90 - 16.668s
+6: Epoch 48/90 - 16.668s
+3: Epoch 48/90 - 16.668s
+7: Epoch 48/90 - 16.668s
+5: Epoch 48/90 - 16.668s
+0: Epoch 48/90 - 16.668s
+0: 
+1: Epoch 49/90 - 17.125s
+2: Epoch 49/90 - 17.125s
+4: Epoch 49/90 - 17.125s
+6: Epoch 49/90 - 17.125s
+1: 
+3: Epoch 49/90 - 17.125s
+7: Epoch 49/90 - 17.125s
+5: Epoch 49/90 - 17.125s
+0: Epoch 49/90 - 17.125s
+1: Epoch 50/90 - 16.520s
+1: 
+2: Epoch 50/90 - 16.520s
+6: Epoch 50/90 - 16.520s
+4: Epoch 50/90 - 16.520s
+3: Epoch 50/90 - 16.520s
+7: Epoch 50/90 - 16.520s
+5: Epoch 50/90 - 16.520s
+0: Epoch 50/90 - 16.530s
+0: 
+1: Epoch 51/90 - 16.285s
+1: 
+2: Epoch 51/90 - 16.285s
+6: Epoch 51/90 - 16.285s
+4: Epoch 51/90 - 16.285s
+3: Epoch 51/90 - 16.285s
+7: Epoch 51/90 - 16.285s
+5: Epoch 51/90 - 16.285s
+0: Epoch 51/90 - 16.275s
+0: 
+2: Epoch 52/90 - 16.620s
+6: Epoch 52/90 - 16.620s
+4: Epoch 52/90 - 16.620s
+3: Epoch 52/90 - 16.620s
+7: Epoch 52/90 - 16.620s
+5: Epoch 52/90 - 16.620s
+1: Epoch 52/90 - 16.620s
+1: 
+0: Epoch 52/90 - 16.624s
+1: Epoch 53/90 - 16.831s
+1: 
+2: Epoch 53/90 - 16.832s
+4: Epoch 53/90 - 16.832s
+6: Epoch 53/90 - 16.832s
+3: Epoch 53/90 - 16.832s
+7: Epoch 53/90 - 16.832s
+5: Epoch 53/90 - 16.832s
+0: Epoch 53/90 - 16.827s
+0: 
+1: Epoch 54/90 - 16.269s
+1: 
+2: Epoch 54/90 - 16.269s
+6: Epoch 54/90 - 16.269s
+4: Epoch 54/90 - 16.269s
+3: Epoch 54/90 - 16.269s
+7: Epoch 54/90 - 16.269s
+5: Epoch 54/90 - 16.269s
+0: Epoch 54/90 - 16.269s
+0: 
+1: Epoch 55/90 - 17.053s
+2: Epoch 55/90 - 17.053s
+6: Epoch 55/90 - 17.053s
+4: Epoch 55/90 - 17.053s
+3: Epoch 55/90 - 17.053s
+7: Epoch 55/90 - 17.053s
+5: Epoch 55/90 - 17.053s
+1: 
+0: Epoch 55/90 - 17.053s
+0: 
+1: Epoch 56/90 - 16.861s
+1: 
+2: Epoch 56/90 - 16.861s
+6: Epoch 56/90 - 16.861s
+4: Epoch 56/90 - 16.861s
+3: Epoch 56/90 - 16.861s
+7: Epoch 56/90 - 16.861s
+5: Epoch 56/90 - 16.861s
+0: Epoch 56/90 - 16.861s
+0: 
+1: Epoch 57/90 - 16.863s
+1: 
+6: Epoch 57/90 - 16.863s
+2: Epoch 57/90 - 16.863s
+4: Epoch 57/90 - 16.863s
+3: Epoch 57/90 - 16.863s
+7: Epoch 57/90 - 16.863s
+5: Epoch 57/90 - 16.863s
+0: Epoch 57/90 - 16.863s
+0: 
+2: Epoch 58/90 - 16.081s
+6: Epoch 58/90 - 16.081s
+4: Epoch 58/90 - 16.081s
+3: Epoch 58/90 - 16.081s
+7: Epoch 58/90 - 16.081s
+5: Epoch 58/90 - 16.081s
+0: Epoch 58/90 - 16.081s
+0: 
+1: Epoch 58/90 - 16.086s
+1: Epoch 59/90 - 16.884s
+1: 
+4: Epoch 59/90 - 16.889s
+2: Epoch 59/90 - 16.889s
+6: Epoch 59/90 - 16.889s
+3: Epoch 59/90 - 16.889s
+7: Epoch 59/90 - 16.889s
+5: Epoch 59/90 - 16.889s
+0: Epoch 59/90 - 16.889s
+0: 
+1: Epoch 60/90 - 16.676s
+1: 
+4: Epoch 60/90 - 16.677s
+2: Epoch 60/90 - 16.677s
+6: Epoch 60/90 - 16.677s
+3: Epoch 60/90 - 16.677s
+7: Epoch 60/90 - 16.677s
+0: Epoch 60/90 - 16.676s
+0: 
+5: Epoch 60/90 - 16.680s
+1: Epoch 61/90 - 16.080s
+1: 
+2: Epoch 61/90 - 16.080s
+6: Epoch 61/90 - 16.080s
+4: Epoch 61/90 - 16.080s
+3: Epoch 61/90 - 16.080s
+7: Epoch 61/90 - 16.080s
+5: Epoch 61/90 - 16.076s
+0: Epoch 61/90 - 16.080s
+0: 
+1: Epoch 62/90 - 16.512s
+6: Epoch 62/90 - 16.512s
+2: Epoch 62/90 - 16.512s
+4: Epoch 62/90 - 16.512s
+7: Epoch 62/90 - 16.512s
+5: Epoch 62/90 - 16.512s
+3: Epoch 62/90 - 16.512s
+0: Epoch 62/90 - 16.512s
+0: 
+1: Epoch 63/90 - 16.941s
+6: Epoch 63/90 - 16.941s
+1: 
+4: Epoch 63/90 - 16.941s
+2: Epoch 63/90 - 16.941s
+7: Epoch 63/90 - 16.941s
+5: Epoch 63/90 - 16.941s
+3: Epoch 63/90 - 16.941s
+0: Epoch 63/90 - 16.941s
+1: Epoch 64/90 - 16.267s
+1: 
+2: Epoch 64/90 - 16.268s
+6: Epoch 64/90 - 16.268s
+4: Epoch 64/90 - 16.268s
+3: Epoch 64/90 - 16.268s
+7: Epoch 64/90 - 16.268s
+5: Epoch 64/90 - 16.268s
+0: Epoch 64/90 - 16.276s
+1: Epoch 65/90 - 16.331s
+1: 
+2: Epoch 65/90 - 16.332s
+6: Epoch 65/90 - 16.332s
+4: Epoch 65/90 - 16.332s
+3: Epoch 65/90 - 16.332s
+7: Epoch 65/90 - 16.332s
+5: Epoch 65/90 - 16.332s
+0: Epoch 65/90 - 16.323s
+0: 
+1: Epoch 66/90 - 16.991s
+2: Epoch 66/90 - 16.991s
+6: Epoch 66/90 - 16.991s
+4: Epoch 66/90 - 16.991s
+7: Epoch 66/90 - 16.991s
+5: Epoch 66/90 - 16.991s
+3: Epoch 66/90 - 16.991s
+0: Epoch 66/90 - 16.991s
+0: 
+1: Epoch 67/90 - 16.555s
+1: 
+6: Epoch 67/90 - 16.555s
+2: Epoch 67/90 - 16.555s
+4: Epoch 67/90 - 16.555s
+7: Epoch 67/90 - 16.555s
+3: Epoch 67/90 - 16.555s
+5: Epoch 67/90 - 16.555s
+0: Epoch 67/90 - 16.555s
+0: 
+1: Epoch 68/90 - 16.554s
+6: Epoch 68/90 - 16.554s
+1: 
+2: Epoch 68/90 - 16.554s
+4: Epoch 68/90 - 16.554s
+7: Epoch 68/90 - 16.554s
+3: Epoch 68/90 - 16.554s
+5: Epoch 68/90 - 16.554s
+0: Epoch 68/90 - 16.554s
+0: 
+1: Epoch 69/90 - 16.609s
+1: 
+2: Epoch 69/90 - 16.610s
+6: Epoch 69/90 - 16.610s
+4: Epoch 69/90 - 16.610s
+3: Epoch 69/90 - 16.610s
+7: Epoch 69/90 - 16.610s
+5: Epoch 69/90 - 16.610s
+0: Epoch 69/90 - 16.609s
+1: Epoch 70/90 - 17.090s
+2: Epoch 70/90 - 17.090s
+6: Epoch 70/90 - 17.090s
+4: Epoch 70/90 - 17.090s
+3: Epoch 70/90 - 17.090s
+7: Epoch 70/90 - 17.090s
+5: Epoch 70/90 - 17.090s
+0: Epoch 70/90 - 17.098s
+0: 
+1: Epoch 71/90 - 16.848s
+1: 
+2: Epoch 71/90 - 16.848s
+6: Epoch 71/90 - 16.848s
+4: Epoch 71/90 - 16.848s
+3: Epoch 71/90 - 16.848s
+7: Epoch 71/90 - 16.848s
+5: Epoch 71/90 - 16.848s
+0: Epoch 71/90 - 16.840s
+0: 
+1: Epoch 72/90 - 16.796s
+1: 
+6: Epoch 72/90 - 16.796s
+4: Epoch 72/90 - 16.796s
+2: Epoch 72/90 - 16.796s
+7: Epoch 72/90 - 16.796s
+5: Epoch 72/90 - 16.796s
+3: Epoch 72/90 - 16.796s
+0: Epoch 72/90 - 16.796s
+0: 
+1: Epoch 73/90 - 16.975s
+1: 
+2: Epoch 73/90 - 16.975s
+6: Epoch 73/90 - 16.975s
+4: Epoch 73/90 - 16.975s
+3: Epoch 73/90 - 16.975s
+7: Epoch 73/90 - 16.975s
+5: Epoch 73/90 - 16.975s
+0: Epoch 73/90 - 16.975s
+1: Epoch 74/90 - 16.393s
+1: 
+2: Epoch 74/90 - 16.394s
+6: Epoch 74/90 - 16.394s
+4: Epoch 74/90 - 16.394s
+7: Epoch 74/90 - 16.394s
+3: Epoch 74/90 - 16.393s
+5: Epoch 74/90 - 16.394s
+0: Epoch 74/90 - 16.394s
+2: Epoch 75/90 - 16.871s
+6: Epoch 75/90 - 16.871s
+4: Epoch 75/90 - 16.871s
+3: Epoch 75/90 - 16.871s
+7: Epoch 75/90 - 16.871s
+5: Epoch 75/90 - 16.871s
+0: Epoch 75/90 - 16.871s
+0: 
+1: Epoch 75/90 - 16.878s
+1: Epoch 76/90 - 16.423s
+1: 
+2: Epoch 76/90 - 16.430s
+6: Epoch 76/90 - 16.430s
+4: Epoch 76/90 - 16.430s
+7: Epoch 76/90 - 16.430s
+3: Epoch 76/90 - 16.430s
+5: Epoch 76/90 - 16.430s
+0: Epoch 76/90 - 16.430s
+0: 
+1: Epoch 77/90 - 16.969s
+1: 
+2: Epoch 77/90 - 16.969s
+6: Epoch 77/90 - 16.969s
+4: Epoch 77/90 - 16.969s
+3: Epoch 77/90 - 16.969s
+7: Epoch 77/90 - 16.969s
+5: Epoch 77/90 - 16.969s
+0: Epoch 77/90 - 16.969s
+0: 
+1: Epoch 78/90 - 16.758s
+6: Epoch 78/90 - 16.758s
+1: 
+2: Epoch 78/90 - 16.758s
+4: Epoch 78/90 - 16.758s
+7: Epoch 78/90 - 16.758s
+3: Epoch 78/90 - 16.758s
+5: Epoch 78/90 - 16.758s
+0: Epoch 78/90 - 16.758s
+0: 
+1: Epoch 79/90 - 16.994s
+1: 
+2: Epoch 79/90 - 16.994s
+6: Epoch 79/90 - 16.994s
+4: Epoch 79/90 - 16.994s
+3: Epoch 79/90 - 16.994s
+7: Epoch 79/90 - 16.994s
+5: Epoch 79/90 - 16.994s
+0: Epoch 79/90 - 16.994s
+0: 
+1: Epoch 80/90 - 17.264s
+1: 
+2: Epoch 80/90 - 17.264s
+6: Epoch 80/90 - 17.264s
+4: Epoch 80/90 - 17.264s
+7: Epoch 80/90 - 17.264s
+5: Epoch 80/90 - 17.264s
+3: Epoch 80/90 - 17.264s
+0: Epoch 80/90 - 17.264s
+1: Epoch 81/90 - 16.503s
+1: 
+6: Epoch 81/90 - 16.503s
+2: Epoch 81/90 - 16.503s
+4: Epoch 81/90 - 16.503s
+7: Epoch 81/90 - 16.503s
+3: Epoch 81/90 - 16.503s
+5: Epoch 81/90 - 16.503s
+0: Epoch 81/90 - 16.503s
+0: 
+1: Epoch 82/90 - 16.294s
+1: 
+2: Epoch 82/90 - 16.294s
+6: Epoch 82/90 - 16.294s
+4: Epoch 82/90 - 16.294s
+3: Epoch 82/90 - 16.294s
+7: Epoch 82/90 - 16.294s
+5: Epoch 82/90 - 16.294s
+0: Epoch 82/90 - 16.294s
+0: 
+1: Epoch 83/90 - 16.637s
+1: 
+2: Epoch 83/90 - 16.637s
+6: Epoch 83/90 - 16.637s
+4: Epoch 83/90 - 16.637s
+7: Epoch 83/90 - 16.637s
+5: Epoch 83/90 - 16.637s
+3: Epoch 83/90 - 16.637s
+0: Epoch 83/90 - 16.637s
+0: 
+1: Epoch 84/90 - 16.117s
+6: Epoch 84/90 - 16.117s
+2: Epoch 84/90 - 16.117s
+4: Epoch 84/90 - 16.117s
+7: Epoch 84/90 - 16.117s
+3: Epoch 84/90 - 16.117s
+5: Epoch 84/90 - 16.117s
+0: Epoch 84/90 - 16.117s
+0: 
+1: Epoch 85/90 - 16.981s
+2: Epoch 85/90 - 16.981s
+6: Epoch 85/90 - 16.981s
+4: Epoch 85/90 - 16.981s
+3: Epoch 85/90 - 16.981s
+7: Epoch 85/90 - 16.981s
+5: Epoch 85/90 - 16.981s
+0: Epoch 85/90 - 16.987s
+0: 
+1: Epoch 86/90 - 16.792s
+2: Epoch 86/90 - 16.792s
+6: Epoch 86/90 - 16.792s
+1: 
+4: Epoch 86/90 - 16.792s
+3: Epoch 86/90 - 16.792s
+7: Epoch 86/90 - 16.792s
+5: Epoch 86/90 - 16.792s
+0: Epoch 86/90 - 16.786s
+0: 
+1: Epoch 87/90 - 16.956s
+1: 
+4: Epoch 87/90 - 16.956s
+2: Epoch 87/90 - 16.956s
+6: Epoch 87/90 - 16.956s
+5: Epoch 87/90 - 16.956s
+7: Epoch 87/90 - 16.956s
+3: Epoch 87/90 - 16.956s
+0: Epoch 87/90 - 16.956s
+0: 
+1: Epoch 88/90 - 17.032s
+2: Epoch 88/90 - 17.032s
+6: Epoch 88/90 - 17.032s
+4: Epoch 88/90 - 17.032s
+3: Epoch 88/90 - 17.032s
+7: Epoch 88/90 - 17.032s
+5: Epoch 88/90 - 17.032s
+0: Epoch 88/90 - 17.032s
+0: 
+1: Epoch 89/90 - 16.946s
+1: 
+2: Epoch 89/90 - 16.946s
+2: Steps per epoch: 13
+2: Validation steps per epoch: 20
+6: Epoch 89/90 - 16.946s
+6: Steps per epoch: 13
+6: Validation steps per epoch: 20
+4: Epoch 89/90 - 16.946s
+4: Steps per epoch: 13
+4: Validation steps per epoch: 20
+1: Steps per epoch: 13
+1: Validation steps per epoch: 20
+3: Epoch 89/90 - 16.946s
+3: Steps per epoch: 13
+3: Validation steps per epoch: 20
+7: Epoch 89/90 - 16.946s
+7: Steps per epoch: 13
+7: Validation steps per epoch: 20
+5: Epoch 89/90 - 16.946s
+5: Steps per epoch: 13
+5: Validation steps per epoch: 20
+6: Average time per epoch: 16.955 s
+2: Average time per epoch: 16.955 s
+7: Average time per epoch: 16.955 s
+3: Average time per epoch: 16.955 s
+1: Average time per epoch: 16.955 s
+0: Epoch 89/90 - 16.946s
+0: Steps per epoch: 13
+0: Validation steps per epoch: 20
+1: 
+4: Average time per epoch: 16.955 s
+0: Average time per epoch: 16.955 s
+0: 
+5: Average time per epoch: 16.955 s
+7: --- 1531.4459471702576 seconds ---
+3: --- 1538.7321684360504 seconds ---
+2: --- 1538.724833726883 seconds ---
+4: --- 1531.4465560913086 seconds ---
+0: --- 1538.41845369339 seconds ---
+0: 
+6: --- 1531.4466335773468 seconds ---
+1: --- 1538.410129070282 seconds ---
+1: 
+5: --- 1531.4496796131134 seconds ---
+ELAPSED: 1541 seconds
+End at Sun Feb  7 14:41:14 EET 2021

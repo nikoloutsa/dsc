@@ -101,7 +101,7 @@ def main():
                     validation_data=test_dataset,
                     validation_steps=validation_steps,
                     workers=1,
-                    verbose=1,
+                    verbose=2,
                     callbacks=callbacks
                     )
     # Print some best-found metrics

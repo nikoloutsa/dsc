@@ -1,0 +1,9 @@
+Start at Mon Feb  8 14:01:17 EET 2021
+CUDA_VISIBLE_DEVICES: 0,1
+Running on hosts: gpu[26-41]
+Running on 16 nodes.
+Running 2 tasks per node
+Job id is 1090982
+NUM_NODES: 16
+ELAPSED: 18 seconds
+End at Mon Feb  8 14:01:35 EET 2021

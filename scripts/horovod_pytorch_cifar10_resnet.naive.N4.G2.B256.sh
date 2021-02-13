@@ -1,11 +1,11 @@
 #!/bin/bash -l
 
 #SBATCH --job-name=horovod_pytorch_cifar10_resnet 
-#SBATCH --output=logs/horovod_pytorch_cifar10_resnet.warmup_scaling.N1.G2.B128.%j.out 
-#SBATCH --error=logs/horovod_pytorch_cifar10_resnet.warmup_scaling.N1.G2.B128.%j.err 
-#SBATCH --ntasks=2
+#SBATCH --output=logs/horovod_pytorch_cifar10_resnet.N4.G2.B256.%j.out 
+#SBATCH --error=logs/horovod_pytorch_cifar10_resnet.N4.G2.B256.%j.err 
+#SBATCH --ntasks=8
 #SBATCH --gres=gpu:2
-#SBATCH --nodes=1 
+#SBATCH --nodes=4 
 #SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=56000 # Memory per job in MB
@@ -35,7 +35,7 @@ echo "Running $SLURM_NTASKS_PER_NODE tasks per node"
 echo "Job id is $SLURM_JOBID"
 
 #pytorch 1 GPU baseline
-srun -l python -u train.horovod.pytorch.cifar10.py --config=configs/pytorch_cifar10_resnet.B128.E90.yaml --warmup-epochs=5
+srun -l python -u train.horovod.pytorch.cifar10.naive.py --config=configs/pytorch_cifar10_resnet.B256.E90.yaml 
 
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"

@@ -35,7 +35,7 @@ echo "Job id is $SLURM_JOBID"
 INDEX=0
 for node in ${NODES[@]}
 do
-    TF_CONFIG='{"cluster": {"worker": ['$WORKERS']}, "task": {"type": "worker", "index": '$INDEX'} }'
+    export TF_CONFIG='{"cluster": {"worker": ['$WORKERS']}, "task": {"type": "worker", "index": '$INDEX'} }'
     echo "srun $node $TF_CONFIG"
     srun -w $node -n 1 -l --export=ALL,TF_CONFIG python train.tensorflow.distributed.py --config=configs/tensorflow_cifar10_resnet.B512.yaml & 
     INDEX=$(($INDEX+1))
