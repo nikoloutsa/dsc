@@ -1,8 +1,8 @@
 #!/bin/bash -l
 
-#SBATCH --job-name=horovod_pytorch_cifar10_resnet 
-#SBATCH --output=logs/horovod_pytorch_cifar10_resnet.N8.G2.B128.%j.out 
-#SBATCH --error=logs/horovod_pytorch_cifar10_resnet.N8.G2.B128.%j.err 
+#SBATCH --job-name=horovod_pytorch_cifar10_resnet.naive 
+#SBATCH --output=logs/horovod_pytorch_cifar10_resnet.naive.N8.G2.B128.%j.out 
+#SBATCH --error=logs/horovod_pytorch_cifar10_resnet.naive.N8.G2.B128.%j.err 
 #SBATCH --ntasks=16
 #SBATCH --gres=gpu:2
 #SBATCH --nodes=8 

@@ -1,0 +1,836 @@
+srun: Warning: can't run 1 processes on 4 nodes, setting nnodes to 1
+srun: Warning: can't run 1 processes on 4 nodes, setting nnodes to 1
+srun: Warning: can't run 1 processes on 4 nodes, setting nnodes to 1
+srun: Warning: can't run 1 processes on 4 nodes, setting nnodes to 1
+0: 2021-02-16 21:46:09.807313: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:09.904515: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:09.910572: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:09.917789: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:29.260709: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+0: 2021-02-16 21:46:29.262522: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+0: 2021-02-16 21:46:29.263168: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+0: 2021-02-16 21:46:29.263297: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+0: 2021-02-16 21:46:29.320256: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:29.321619: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:29.321645: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:29.325817: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:29.327167: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 0: 2021-02-16 21:46:29.327193: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2021-02-16 21:46:29.327344: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:29.328660: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:29.328687: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:29.343652: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:29.344986: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:29.345014: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:29.583161: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:29.583237: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:29.583696: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:29.583788: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:29.710736: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:29.711030: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:29.711592: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:29.714342: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:29.938766: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:29.939688: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:29.939963: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:29.940042: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:30.437558: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:30.440420: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:30.444916: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:30.446668: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:30.449503: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 2021-02-16 21:46:30.500397: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 0: 2021-02-16 21:46:30.500425: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+2021-02-16 21:46:30.500409: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 2021-02-16 21:46:30.740751: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:30.740711: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:30.745901: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 0: 2021-02-16 21:46:30.746068: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+2021-02-16 21:46:30.746174: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:30.746848: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA
+0: To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+0: 2021-02-16 21:46:30.748661: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:30.750523: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA
+0: To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+0: 2021-02-16 21:46:30.751232: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:30.756699: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA
+0: To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+0: 2021-02-16 21:46:30.758424: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:30.759489: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2599875000 Hz
+0: 2021-02-16 21:46:30.762697: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x4863140 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+0: 2021-02-16 21:46:30.762718: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+0: 2021-02-16 21:46:30.764247: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA
+0: To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+0: 2021-02-16 21:46:30.764549: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2599795000 Hz
+0: 2021-02-16 21:46:30.767968: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x56fd290 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+0: 2021-02-16 21:46:30.767995: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+0: 2021-02-16 21:46:30.775310: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2599905000 Hz
+0: 2021-02-16 21:46:30.778321: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5601400 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+0: 2021-02-16 21:46:30.778343: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+0: 2021-02-16 21:46:30.780462: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2599910000 Hz
+0: 2021-02-16 21:46:30.784113: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x57c82d0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+0: 2021-02-16 21:46:30.784146: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+0: 2021-02-16 21:46:30.958931: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x48cf2c0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+0: 2021-02-16 21:46:30.958973: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla K40m, Compute Capability 3.5
+0: 2021-02-16 21:46:30.958986: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla K40m, Compute Capability 3.5
+0: 2021-02-16 21:46:30.961815: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:30.963735: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x566d590 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+0: 2021-02-16 21:46:30.963774: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla K40m, Compute Capability 3.5
+0: 2021-02-16 21:46:30.963787: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla K40m, Compute Capability 3.5
+0: 2021-02-16 21:46:30.964073: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:30.964125: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:30.964165: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:30.964191: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:30.964229: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:30.964256: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:30.964283: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 2021-02-16 21:46:30.964310: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:30.965154: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5769320 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+0: 2021-02-16 21:46:30.965199: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla K40m, Compute Capability 3.5
+0: 2021-02-16 21:46:30.965212: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla K40m, Compute Capability 3.5
+0: 2021-02-16 21:46:30.966664: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:30.968106: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:30.968985: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:30.969035: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:30.969072: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:30.969096: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:30.969120: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:30.969143: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:30.969169: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 2021-02-16 21:46:30.969193: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:30.970383: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:30.970437: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:30.970479: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:30.970507: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:30.970532: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:30.970557: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:30.970581: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 2021-02-16 21:46:30.970610: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:30.972826: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5834370 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+0: 2021-02-16 21:46:30.972866: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla K40m, Compute Capability 3.5
+0: 2021-02-16 21:46:30.972879: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla K40m, Compute Capability 3.5
+0: 2021-02-16 21:46:30.973371: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:30.973444: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:30.975693: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:30.976960: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:30.976992: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:30.977965: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:30.978014: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:30.978052: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:30.978078: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:30.978103: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:30.978128: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:30.978152: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 2021-02-16 21:46:30.978178: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:30.978430: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:30.978464: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:30.983203: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:30.983236: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:31.938414: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+0: 2021-02-16 21:46:31.938446: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 1 
+0: 2021-02-16 21:46:31.938457: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N N 
+0: 2021-02-16 21:46:31.938462: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 1:   N N 
+0: 2021-02-16 21:46:31.941141: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+0: 2021-02-16 21:46:31.941178: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 1 
+0: 2021-02-16 21:46:31.941189: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N N 
+0: 2021-02-16 21:46:31.941194: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 1:   N N 
+0: 2021-02-16 21:46:31.942302: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10622 MB memory) -> physical GPU (device: 0, name: Tesla K40m, pci bus id: 0000:04:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:31.943354: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+0: 2021-02-16 21:46:31.943391: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 1 
+0: 2021-02-16 21:46:31.943402: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N N 
+0: 2021-02-16 21:46:31.943407: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 1:   N N 
+0: 2021-02-16 21:46:31.944178: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10622 MB memory) -> physical GPU (device: 1, name: Tesla K40m, pci bus id: 0000:82:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:31.945118: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10622 MB memory) -> physical GPU (device: 0, name: Tesla K40m, pci bus id: 0000:04:00.0, compute capability: 3.5)
+0: 0: 2021-02-16 21:46:31.947061: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10622 MB memory) -> physical GPU (device: 1, name: Tesla K40m, pci bus id: 0000:82:00.0, compute capability: 3.5)
+2021-02-16 21:46:31.947207: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+0: 2021-02-16 21:46:31.947239: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 1 
+0: 2021-02-16 21:46:31.947250: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N N 
+0: 2021-02-16 21:46:31.947256: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 1:   N N 
+0: 2021-02-16 21:46:31.947458: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10622 MB memory) -> physical GPU (device: 0, name: Tesla K40m, pci bus id: 0000:04:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:31.949357: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10622 MB memory) -> physical GPU (device: 1, name: Tesla K40m, pci bus id: 0000:82:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:31.950734: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:31.951084: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10622 MB memory) -> physical GPU (device: 0, name: Tesla K40m, pci bus id: 0000:04:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:31.951919: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:31.951952: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:31.951976: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:31.951990: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:31.952002: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:31.952015: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:31.952027: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 2021-02-16 21:46:31.952040: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:31.952994: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10622 MB memory) -> physical GPU (device: 1, name: Tesla K40m, pci bus id: 0000:82:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:31.953399: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:31.954593: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:31.954630: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:31.954657: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:31.954676: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:31.954690: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:31.954703: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:31.954716: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 2021-02-16 21:46:31.954730: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:31.956704: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:31.956757: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+0: 2021-02-16 21:46:31.956767: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 1 
+0: 2021-02-16 21:46:31.956773: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N N 
+0: 2021-02-16 21:46:31.956778: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 1:   N N 
+0: 2021-02-16 21:46:31.959563: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:31.959622: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+0: 2021-02-16 21:46:31.959631: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 1 
+0: 2021-02-16 21:46:31.959638: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N N 
+0: 2021-02-16 21:46:31.959643: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 1:   N N 
+0: 2021-02-16 21:46:31.960593: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:worker/replica:0/task:1/device:GPU:0 with 10622 MB memory) -> physical GPU (device: 0, name: Tesla K40m, pci bus id: 0000:04:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:31.961921: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:worker/replica:0/task:1/device:GPU:1 with 10622 MB memory) -> physical GPU (device: 1, name: Tesla K40m, pci bus id: 0000:82:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:31.963503: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:worker/replica:0/task:2/device:GPU:0 with 10622 MB memory) -> physical GPU (device: 0, name: Tesla K40m, pci bus id: 0000:04:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:31.964768: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:worker/replica:0/task:2/device:GPU:1 with 10622 MB memory) -> physical GPU (device: 1, name: Tesla K40m, pci bus id: 0000:82:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:32.026522: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:32.027219: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:32.027686: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:32.027723: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:32.027750: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:32.027764: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:32.027777: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:32.027790: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:32.027803: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 2021-02-16 21:46:32.027817: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:32.028709: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:32.028742: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:32.028767: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:32.028794: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:32.028809: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:32.028822: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:32.028834: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 2021-02-16 21:46:32.028848: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:32.032454: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:32.032506: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+0: 2021-02-16 21:46:32.032515: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 1 
+0: 2021-02-16 21:46:32.032521: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N N 
+0: 2021-02-16 21:46:32.032526: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 1:   N N 
+0: 2021-02-16 21:46:32.033497: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:32.033553: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+0: 2021-02-16 21:46:32.033561: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 1 
+0: 2021-02-16 21:46:32.033567: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N N 
+0: 2021-02-16 21:46:32.033571: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 1:   N N 
+0: 2021-02-16 21:46:32.036172: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:worker/replica:0/task:3/device:GPU:0 with 10622 MB memory) -> physical GPU (device: 0, name: Tesla K40m, pci bus id: 0000:04:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:32.037172: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:worker/replica:0/task:0/device:GPU:0 with 10622 MB memory) -> physical GPU (device: 0, name: Tesla K40m, pci bus id: 0000:04:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:32.037425: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:worker/replica:0/task:3/device:GPU:1 with 10622 MB memory) -> physical GPU (device: 1, name: Tesla K40m, pci bus id: 0000:82:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:32.038374: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:worker/replica:0/task:0/device:GPU:1 with 10622 MB memory) -> physical GPU (device: 1, name: Tesla K40m, pci bus id: 0000:82:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:32.066462: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:301] Initialize GrpcChannelCache for job worker -> {0 -> gpu14-ib:5555, 1 -> gpu15-ib:5555, 2 -> gpu16-ib:5555, 3 -> gpu17-ib:5555}
+0: 2021-02-16 21:46:32.067266: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:301] Initialize GrpcChannelCache for job worker -> {0 -> gpu14-ib:5555, 1 -> gpu15-ib:5555, 2 -> gpu16-ib:5555, 3 -> gpu17-ib:5555}
+0: 2021-02-16 21:46:32.067905: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:301] Initialize GrpcChannelCache for job worker -> {0 -> gpu14-ib:5555, 1 -> gpu15-ib:5555, 2 -> gpu16-ib:5555, 3 -> gpu17-ib:5555}
+0: 2021-02-16 21:46:32.069689: I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:405] Started server with target: grpc://gpu16-ib:5555
+0: 2021-02-16 21:46:32.069620: I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:405] Started server with target: grpc://gpu15-ib:5555
+0: 2021-02-16 21:46:32.071878: I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:405] Started server with target: grpc://gpu17-ib:5555
+0: 2021-02-16 21:46:32.083113: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:301] Initialize GrpcChannelCache for job worker -> {0 -> gpu14-ib:5555, 1 -> gpu15-ib:5555, 2 -> gpu16-ib:5555, 3 -> gpu17-ib:5555}
+0: 2021-02-16 21:46:32.084907: I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:405] Started server with target: grpc://gpu14-ib:5555
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 1, environment = None, rpc_layer = 'grpc'
+0: WARNING:tensorflow:`eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+0: WARNING:tensorflow:`eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+0: INFO:tensorflow:Using MirroredStrategy with devices ('/job:worker/task:1/device:GPU:0', '/job:worker/task:1/device:GPU:1')
+0: INFO:tensorflow:MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 1, num_workers = 4, local_devices = ('/job:worker/task:1/device:GPU:0', '/job:worker/task:1/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: INFO:tensorflow:Using MirroredStrategy with devices ('/job:worker/task:1/device:GPU:0', '/job:worker/task:1/device:GPU:1')
+0: INFO:tensorflow:MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 1, num_workers = 4, local_devices = ('/job:worker/task:1/device:GPU:0', '/job:worker/task:1/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: 0: INFO:tensorflow:Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 2, environment = None, rpc_layer = 'grpc'
+INFO:tensorflow:Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 0, environment = None, rpc_layer = 'grpc'
+0: INFO:tensorflow:Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 3, environment = None, rpc_layer = 'grpc'
+0: WARNING:tensorflow:`eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+0: WARNING:tensorflow:`eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+0: WARNING:tensorflow:`eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+0: WARNING:tensorflow:`eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+0: WARNING:tensorflow:`eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+0: WARNING:tensorflow:`eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+0: INFO:tensorflow:Using MirroredStrategy with devices ('/job:worker/task:2/device:GPU:0', '/job:worker/task:2/device:GPU:1')
+0: INFO:tensorflow:Using MirroredStrategy with devices ('/job:worker/task:3/device:GPU:0', '/job:worker/task:3/device:GPU:1')
+0: INFO:tensorflow:Using MirroredStrategy with devices ('/job:worker/task:0/device:GPU:0', '/job:worker/task:0/device:GPU:1')
+0: INFO:tensorflow:MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 3, num_workers = 4, local_devices = ('/job:worker/task:3/device:GPU:0', '/job:worker/task:3/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: INFO:tensorflow:MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 2, num_workers = 4, local_devices = ('/job:worker/task:2/device:GPU:0', '/job:worker/task:2/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: INFO:tensorflow:Using MirroredStrategy with devices ('/job:worker/task:3/device:GPU:0', '/job:worker/task:3/device:GPU:1')
+0: INFO:tensorflow:MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 0, num_workers = 4, local_devices = ('/job:worker/task:0/device:GPU:0', '/job:worker/task:0/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: INFO:tensorflow:Using MirroredStrategy with devices ('/job:worker/task:2/device:GPU:0', '/job:worker/task:2/device:GPU:1')
+0: INFO:tensorflow:Using MirroredStrategy with devices ('/job:worker/task:0/device:GPU:0', '/job:worker/task:0/device:GPU:1')
+0: INFO:tensorflow:MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 3, num_workers = 4, local_devices = ('/job:worker/task:3/device:GPU:0', '/job:worker/task:3/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: INFO:tensorflow:MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 2, num_workers = 4, local_devices = ('/job:worker/task:2/device:GPU:0', '/job:worker/task:2/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: INFO:tensorflow:MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 0, num_workers = 4, local_devices = ('/job:worker/task:0/device:GPU:0', '/job:worker/task:0/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: 2021-02-16 21:47:51.742153: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:521] In AUTO-mode, and switching to DATA-based sharding, instead of FILE-based sharding as we cannot find appropriate reader dataset op(s) to shard. Error: Did not find a shardable source, walked to a node which is not a dataset: name: "FlatMapDataset/_2"
+0: op: "FlatMapDataset"
+0: input: "TensorDataset/_1"
+0: attr {
+0:   key: "Targuments"
+0:   value {
+0:     list {
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "f"
+0:   value {
+0:     func {
+0:       name: "__inference_Dataset_flat_map_flat_map_fn_12607"
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_shapes"
+0:   value {
+0:     list {
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_types"
+0:   value {
+0:     list {
+0:       type: DT_FLOAT
+0:       type: DT_FLOAT
+0:     }
+0:  
+0:  }
+0: }
+0: . Consider either turning off auto-sharding or switching the auto_shard_policy to DATA to shard this dataset. You can do this by creating a new `tf.data.Options()` object then setting `options.experimental_distribute.auto_shard_policy = AutoShardPolicy.DATA` before applying the options object to the dataset via `dataset.with_options(options)`.
+0: 2021-02-16 21:47:52.045375: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:521] In AUTO-mode, and switching to DATA-based sharding, instead of FILE-based sharding as we cannot find appropriate reader dataset op(s) to shard. Error: Did not find a shardable source, walked to a node which is not a dataset: name: "FlatMapDataset/_2"
+0: op: "FlatMapDataset"
+0: input: "TensorDataset/_1"
+0: attr {
+0:   key: "Targuments"
+0:   value {
+0:     list {
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "f"
+0:   value {
+0:     func {
+0:       name: "__inference_Dataset_flat_map_flat_map_fn_12607"
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_shapes"
+0:   value {
+0:     list {
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_types"
+0:   value {
+0:     list {
+0:       type: DT_FLOAT
+0:       type: DT_FLOAT
+0:     }
+0:  
+0:  }
+0: }
+0: . Consider either turning off auto-sharding or switching the auto_shard_policy to DATA to shard this dataset. You can do this by creating a new `tf.data.Options()` object then setting `options.experimental_distribute.auto_shard_policy = AutoShardPolicy.DATA` before applying the options object to the dataset via `dataset.with_options(options)`.
+0: 2021-02-16 21:47:52.092799: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:521] In AUTO-mode, and switching to DATA-based sharding, instead of FILE-based sharding as we cannot find appropriate reader dataset op(s) to shard. Error: Did not find a shardable source, walked to a node which is not a dataset: name: "FlatMapDataset/_2"
+0: op: "FlatMapDataset"
+0: input: "TensorDataset/_1"
+0: attr {
+0:   key: "Targuments"
+0:   value {
+0:     list {
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "f"
+0:   value {
+0:     func {
+0:       name: "__inference_Dataset_flat_map_flat_map_fn_12607"
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_shapes"
+0:   value {
+0:     list {
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_types"
+0:   value {
+0:     list {
+0:       type: DT_FLOAT
+0:       type: DT_FLOAT
+0:     }
+0:  
+0:  }
+0: }
+0: . Consider either turning off auto-sharding or switching the auto_shard_policy to DATA to shard this dataset. You can do this by creating a new `tf.data.Options()` object then setting `options.experimental_distribute.auto_shard_policy = AutoShardPolicy.DATA` before applying the options object to the dataset via `dataset.with_options(options)`.
+0: 2021-02-16 21:47:52.161763: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:521] In AUTO-mode, and switching to DATA-based sharding, instead of FILE-based sharding as we cannot find appropriate reader dataset op(s) to shard. Error: Did not find a shardable source, walked to a node which is not a dataset: name: "FlatMapDataset/_2"
+0: op: "FlatMapDataset"
+0: input: "TensorDataset/_1"
+0: attr {
+0:   key: "Targuments"
+0:   value {
+0:     list {
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "f"
+0:   value {
+0:     func {
+0:       name: "__inference_Dataset_flat_map_flat_map_fn_12936"
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_shapes"
+0:   value {
+0:     list {
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_types"
+0:   value {
+0:     list {
+0:       type: DT_FLOAT
+0:       type: DT_FLOAT
+0:     }
+0:  
+0:  }
+0: }
+0: . Consider either turning off auto-sharding or switching the auto_shard_policy to DATA to shard this dataset. You can do this by creating a new `tf.data.Options()` object then setting `options.experimental_distribute.auto_shard_policy = AutoShardPolicy.DATA` before applying the options object to the dataset via `dataset.with_options(options)`.
+0: WARNING:tensorflow:From /apps/applications/tensorflow/2.3.0/gpu/lib/python3.8/site-packages/tensorflow/python/data/ops/multi_device_iterator_ops.py:601: get_next_as_optional (from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+0: Instructions for updating:
+0: 0: WARNING:tensorflow:From /apps/applications/tensorflow/2.3.0/gpu/lib/python3.8/site-packages/tensorflow/python/data/ops/multi_device_iterator_ops.py:601: get_next_as_optional (from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+0: Use `tf.data.Iterator.get_next_as_optional()` instead.
+Instructions for updating:
+0: Use `tf.data.Iterator.get_next_as_optional()` instead.
+0: WARNING:tensorflow:From /apps/applications/tensorflow/2.3.0/gpu/lib/python3.8/site-packages/tensorflow/python/data/ops/multi_device_iterator_ops.py:601: get_next_as_optional (from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+0: Instructions for updating:
+0: WARNING:tensorflow:From /apps/applications/tensorflow/2.3.0/gpu/lib/python3.8/site-packages/tensorflow/python/data/ops/multi_device_iterator_ops.py:601: get_next_as_optional (from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+0: 0: Use `tf.data.Iterator.get_next_as_optional()` instead.
+Instructions for updating:
+0: Use `tf.data.Iterator.get_next_as_optional()` instead.
+0: INFO:tensorflow:Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:48:25.592628: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:48:26.601214: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:48:26.898696: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:48:26.968618: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 0: 0: 2021-02-16 21:48:40.730859: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2021-02-16 21:48:40.730858: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2021-02-16 21:48:40.730822: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:48:40.739488: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 22:12:31.513658: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:521] In AUTO-mode, and switching to DATA-based sharding, instead of FILE-based sharding as we cannot find appropriate reader dataset op(s) to shard. Error: Did not find a shardable source, walked to a node which is not a dataset: name: "FlatMapDataset/_2"
+0: op: "FlatMapDataset"
+0: input: "TensorDataset/_1"
+0: attr {
+0:   key: "Targuments"
+0:   value {
+0:     list {
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "f"
+0:   value {
+0:     func {
+0:       name: "__inference_Dataset_flat_map_flat_map_fn_49380"
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_shapes"
+0:   value {
+0:     list {
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_types"
+0:   value {
+0:     list {
+0:       type: DT_FLOAT
+0:       type: DT_FLOAT
+0:     }
+0:  
+0:  }
+0: }
+0: . Consider either turning off auto-sharding or switching the auto_shard_policy to DATA to shard this dataset. You can do this by creating a new `tf.data.Options()` object then setting `options.experimental_distribute.auto_shard_policy = AutoShardPolicy.DATA` before applying the options object to the dataset via `dataset.with_options(options)`.
+0: 2021-02-16 22:12:31.516099: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:521] In AUTO-mode, and switching to DATA-based sharding, instead of FILE-based sharding as we cannot find appropriate reader dataset op(s) to shard. Error: Did not find a shardable source, walked to a node which is not a dataset: name: "FlatMapDataset/_2"
+0: op: "FlatMapDataset"
+0: input: "TensorDataset/_1"
+0: attr {
+0:   key: "Targuments"
+0:   value {
+0:     list {
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "f"
+0:   value {
+0:     func {
+0:       name: "__inference_Dataset_flat_map_flat_map_fn_48831"
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_shapes"
+0:   value {
+0:     list {
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_types"
+0:   value {
+0:     list {
+0:       type: DT_FLOAT
+0:       type: DT_FLOAT
+0:     }
+0:  
+0:  }
+0: }
+0: . Consider either turning off auto-sharding or switching the auto_shard_policy to DATA to shard this dataset. You can do this by creating a new `tf.data.Options()` object then setting `options.experimental_distribute.auto_shard_policy = AutoShardPolicy.DATA` before applying the options object to the dataset via `dataset.with_options(options)`.
+0: 2021-02-16 22:12:31.522845: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:521] In AUTO-mode, and switching to DATA-based sharding, instead of FILE-based sharding as we cannot find appropriate reader dataset op(s) to shard. Error: Did not find a shardable source, walked to a node which is not a dataset: name: "FlatMapDataset/_2"
+0: op: "FlatMapDataset"
+0: input: "TensorDataset/_1"
+0: attr {
+0:   key: "Targuments"
+0:   value {
+0:     list {
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "f"
+0:   value {
+0:     func {
+0:       name: "__inference_Dataset_flat_map_flat_map_fn_48831"
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_shapes"
+0:   value {
+0:     list {
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_types"
+0:   value {
+0:     list {
+0:       type: DT_FLOAT
+0:       type: DT_FLOAT
+0:     }
+0:  
+0:  }
+0: }
+0: . Consider either turning off auto-sharding or switching the auto_shard_policy to DATA to shard this dataset. You can do this by creating a new `tf.data.Options()` object then setting `options.experimental_distribute.auto_shard_policy = AutoShardPolicy.DATA` before applying the options object to the dataset via `dataset.with_options(options)`.
+0: 2021-02-16 22:12:31.548522: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:521] In AUTO-mode, and switching to DATA-based sharding, instead of FILE-based sharding as we cannot find appropriate reader dataset op(s) to shard. Error: Did not find a shardable source, walked to a node which is not a dataset: name: "FlatMapDataset/_2"
+0: op: "FlatMapDataset"
+0: input: "TensorDataset/_1"
+0: attr {
+0:   key: "Targuments"
+0:   value {
+0:     list {
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "f"
+0:   value {
+0:     func {
+0:       name: "__inference_Dataset_flat_map_flat_map_fn_48831"
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_shapes"
+0:   value {
+0:     list {
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:       shape {
+0:         dim {
+0:           size: -1
+0:         }
+0:         dim {
+0:           size: -1
+0:         }
+0:       }
+0:     }
+0:   }
+0: }
+0: attr {
+0:   key: "output_types"
+0:   value {
+0:     list {
+0:       type: DT_FLOAT
+0:       type: DT_FLOAT
+0:     }
+0:  
+0:  }
+0: }
+0: . Consider either turning off auto-sharding or switching the auto_shard_policy to DATA to shard this dataset. You can do this by creating a new `tf.data.Options()` object then setting `options.experimental_distribute.auto_shard_policy = AutoShardPolicy.DATA` before applying the options object to the dataset via `dataset.with_options(options)`.
+0: 2021-02-16 22:31:29.044153: W tensorflow/core/common_runtime/eager/context.cc:566] Unable to destroy server_ object, so releasing instead. Servers don't support clean shutdown.
+0: 2021-02-16 22:31:29.081219: W tensorflow/core/common_runtime/eager/context.cc:566] Unable to destroy server_ object, so releasing instead. Servers don't support clean shutdown.
+0: 2021-02-16 22:31:29.142553: W tensorflow/core/common_runtime/eager/context.cc:566] Unable to destroy server_ object, so releasing instead. Servers don't support clean shutdown.
+0: 2021-02-16 22:31:29.166402: W tensorflow/core/common_runtime/eager/context.cc:566] Unable to destroy server_ object, so releasing instead. Servers don't support clean shutdown.

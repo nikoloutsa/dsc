@@ -7,7 +7,7 @@
 #SBATCH --gres=gpu:2
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=1
+#SBATCH --cpus-per-task=2
 #SBATCH --mem=56000 # Memory per job in MB
 #SBATCH -t 12:00:00 # Run time (hh:mm:ss) - (max 48h)
 #SBATCH --partition=gpu # Run on the GPU nodes queue

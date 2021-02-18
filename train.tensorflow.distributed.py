@@ -42,9 +42,15 @@ def main():
     os.makedirs(output_dir, exist_ok=True)
 
     tf_config = json.loads(os.environ['TF_CONFIG'])
+    print(tf_config)
     num_workers = len(tf_config['cluster']['worker'])
 
+    #verbose = 1 if tf_config['cluster']['task']['index'] == 0 else 0
+    verbose = 1
+
+
     args.batch_size = train_config['batch_size'] * num_workers
+    #args.batch_size = train_config['batch_size']
     print("multiworker batch_size:",args.batch_size)
 
     # logging
@@ -54,6 +60,7 @@ def main():
     # Load Data
     train_dataset, test_dataset = get_datasets(batch_size=args.batch_size,
                                         **config['data'])
+    print('Steps per epoch: {}'.format(len(train_dataset)))
 
     # Configure Optimizer
     lr = config['optimizer']['lr']
@@ -94,6 +101,9 @@ def main():
     # Train the model
     steps_per_epoch = len(train_dataset) 
     validation_steps = len(test_dataset) 
+    #steps_per_epoch = 32 / strategy.num_replicas_in_sync
+    steps_per_epoch = 128
+    validation_steps = 128 
 
     hist = model.fit(train_dataset,
                     epochs=train_config['n_epochs'],
@@ -101,12 +111,12 @@ def main():
                     validation_data=test_dataset,
                     validation_steps=validation_steps,
                     workers=1,
-                    verbose=2,
+                    verbose=verbose,
                     callbacks=callbacks
                     )
     # Print some best-found metrics
     print('Steps per epoch: {}'.format(steps_per_epoch))
-    print('Validation steps per epoch: {}'.format(len(test_dataset)))
+    print('Validation steps per epoch: {}'.format(validation_steps))
     if 'val_accuracy' in hist.history.keys():
         print('Best validation accuracy: {:.3f}'.format(
             max(hist.history['val_accuracy'])))

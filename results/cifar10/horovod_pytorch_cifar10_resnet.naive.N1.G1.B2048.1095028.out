@@ -1,0 +1,107 @@
+WORKERS: "gpu06-ib:5555"
+Start at Sun Feb 14 03:51:47 EET 2021
+CUDA_VISIBLE_DEVICES: 1
+Running on hosts: gpu06
+Running on 1 nodes.
+Running 1 tasks per node
+Job id is 1095028
+0: Number of devices per node: 1
+0: rank 0
+0: => creating model 'resnet50'
+0: Epoch 0/90 - 85.794s
+0: Epoch 1/90 - 38.631s
+0: Epoch 2/90 - 38.538s
+0: Epoch 3/90 - 38.643s
+0: Epoch 4/90 - 38.686s
+0: Epoch 5/90 - 38.753s
+0: Epoch 6/90 - 38.760s
+0: Epoch 7/90 - 38.724s
+0: Epoch 8/90 - 38.738s
+0: Epoch 9/90 - 38.767s
+0: Epoch 10/90 - 38.686s
+0: Epoch 11/90 - 38.773s
+0: Epoch 12/90 - 38.783s
+0: Epoch 13/90 - 38.779s
+0: Epoch 14/90 - 38.775s
+0: Epoch 15/90 - 38.742s
+0: Epoch 16/90 - 38.757s
+0: Epoch 17/90 - 38.762s
+0: Epoch 18/90 - 38.749s
+0: Epoch 19/90 - 38.792s
+0: Epoch 20/90 - 38.785s
+0: Epoch 21/90 - 38.778s
+0: Epoch 22/90 - 38.755s
+0: Epoch 23/90 - 38.762s
+0: Epoch 24/90 - 38.770s
+0: Epoch 25/90 - 38.663s
+0: Epoch 26/90 - 38.678s
+0: Epoch 27/90 - 38.802s
+0: Epoch 28/90 - 38.778s
+0: Epoch 29/90 - 38.753s
+0: Epoch 30/90 - 38.759s
+0: Epoch 31/90 - 38.747s
+0: Epoch 32/90 - 38.792s
+0: Epoch 33/90 - 38.765s
+0: Epoch 34/90 - 38.779s
+0: Epoch 35/90 - 38.798s
+0: Epoch 36/90 - 38.767s
+0: Epoch 37/90 - 38.780s
+0: Epoch 38/90 - 38.765s
+0: Epoch 39/90 - 38.701s
+0: Epoch 40/90 - 38.760s
+0: Epoch 41/90 - 38.762s
+0: Epoch 42/90 - 38.748s
+0: Epoch 43/90 - 38.780s
+0: Epoch 44/90 - 38.772s
+0: Epoch 45/90 - 38.753s
+0: Epoch 46/90 - 38.761s
+0: Epoch 47/90 - 38.766s
+0: Epoch 48/90 - 38.774s
+0: Epoch 49/90 - 38.744s
+0: Epoch 50/90 - 38.791s
+0: Epoch 51/90 - 38.763s
+0: Epoch 52/90 - 38.777s
+0: Epoch 53/90 - 38.770s
+0: Epoch 54/90 - 38.774s
+0: Epoch 55/90 - 38.751s
+0: Epoch 56/90 - 38.778s
+0: Epoch 57/90 - 38.828s
+0: Epoch 58/90 - 38.783s
+0: Epoch 59/90 - 38.776s
+0: Epoch 60/90 - 38.781s
+0: Epoch 61/90 - 38.743s
+0: Epoch 62/90 - 38.773s
+0: Epoch 63/90 - 38.762s
+0: Epoch 64/90 - 38.773s
+0: Epoch 65/90 - 38.784s
+0: Epoch 66/90 - 38.748s
+0: Epoch 67/90 - 38.766s
+0: Epoch 68/90 - 38.767s
+0: Epoch 69/90 - 38.768s
+0: Epoch 70/90 - 38.763s
+0: Epoch 71/90 - 38.753s
+0: Epoch 72/90 - 38.800s
+0: Epoch 73/90 - 38.766s
+0: Epoch 74/90 - 38.750s
+0: Epoch 75/90 - 38.747s
+0: Epoch 76/90 - 38.750s
+0: Epoch 77/90 - 38.750s
+0: Epoch 78/90 - 38.749s
+0: Epoch 79/90 - 38.767s
+0: Epoch 80/90 - 38.782s
+0: Epoch 81/90 - 38.766s
+0: Epoch 82/90 - 38.749s
+0: Epoch 83/90 - 38.748s
+0: Epoch 84/90 - 38.758s
+0: Epoch 85/90 - 38.750s
+0: Epoch 86/90 - 38.748s
+0: Epoch 87/90 - 38.777s
+0: Epoch 88/90 - 38.759s
+0: Epoch 89/90 - 38.745s
+0: Steps per epoch: 25
+0: Validation steps per epoch: 5
+0: 
+0: Average time per epoch: 39.278 s
+0: --- 3538.3257467746735 seconds ---
+ELAPSED: 3541 seconds
+End at Sun Feb 14 04:50:48 EET 2021

@@ -1,0 +1,660 @@
+Start at Tue Feb 16 21:46:07 EET 2021
+CUDA_VISIBLE_DEVICES: 0,1
+Running on hosts: gpu[14-17]
+Running on 4 nodes.
+Running 1 tasks per node
+Job id is 1096233
+srun gpu14 {"cluster": {"worker": ["gpu14-ib:5555","gpu15-ib:5555","gpu16-ib:5555","gpu17-ib:5555"]}, "task": {"type": "worker", "index": 0} }
+srun gpu15 {"cluster": {"worker": ["gpu14-ib:5555","gpu15-ib:5555","gpu16-ib:5555","gpu17-ib:5555"]}, "task": {"type": "worker", "index": 1} }
+srun gpu16 {"cluster": {"worker": ["gpu14-ib:5555","gpu15-ib:5555","gpu16-ib:5555","gpu17-ib:5555"]}, "task": {"type": "worker", "index": 2} }
+srun gpu17 {"cluster": {"worker": ["gpu14-ib:5555","gpu15-ib:5555","gpu16-ib:5555","gpu17-ib:5555"]}, "task": {"type": "worker", "index": 3} }
+0: {'cluster': {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, 'task': {'type': 'worker', 'index': 0}}
+0: multiworker batch_size: 256
+0: Found 1281167 images belonging to 1000 classes.
+0: Found 50000 images belonging to 1000 classes.
+0: Steps per epoch: 5005
+0: Number of devices: 8
+0: 2021-02-16 21:47:29,798 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: {'cluster': {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, 'task': {'type': 'worker', 'index': 3}}
+0: multiworker batch_size: 256
+0: Found 1281167 images belonging to 1000 classes.
+0: Found 50000 images belonging to 1000 classes.
+0: Steps per epoch: 5005
+0: Number of devices: 8
+0: 2021-02-16 21:47:29,798 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: {'cluster': {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, 'task': {'type': 'worker', 'index': 1}}
+0: multiworker batch_size: 256
+0: Found 1281167 images belonging to 1000 classes.
+0: Found 50000 images belonging to 1000 classes.
+0: Steps per epoch: 5005
+0: Number of devices: 8
+0: 2021-02-16 21:47:29,804 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: {'cluster': {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, 'task': {'type': 'worker', 'index': 2}}
+0: multiworker batch_size: 256
+0: Found 1281167 images belonging to 1000 classes.
+0: Found 50000 images belonging to 1000 classes.
+0: Steps per epoch: 5005
+0: Number of devices: 8
+0: 2021-02-16 21:47:29,804 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,808 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,814 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,819 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,818 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,823 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,829 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,835 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,835 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,837 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,838 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,854 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,856 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,865 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,868 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,874 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,877 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,882 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,883 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,892 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,896 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,976 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,977 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 0: 2021-02-16 21:47:29,978 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+2021-02-16 21:47:29,985 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:29,978 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 0: 2021-02-16 21:47:29,996 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+2021-02-16 21:47:29,990 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 0: 2021-02-16 21:47:29,989 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+2021-02-16 21:47:29,993 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:30,007 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:30,006 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:30,010 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:30,012 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:30,018 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:30,018 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:30,020 INFO Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:47:38,080 INFO Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 1, environment = None, rpc_layer = 'grpc'
+0: 2021-02-16 21:47:38,082 WARNING `eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+0: 2021-02-16 21:47:38,083 WARNING `eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+0: 2021-02-16 21:47:38,085 INFO Using MirroredStrategy with devices ('/job:worker/task:1/device:GPU:0', '/job:worker/task:1/device:GPU:1')
+0: 2021-02-16 21:47:38,085 INFO MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 1, num_workers = 4, local_devices = ('/job:worker/task:1/device:GPU:0', '/job:worker/task:1/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: 2021-02-16 21:47:38,088 INFO Using MirroredStrategy with devices ('/job:worker/task:1/device:GPU:0', '/job:worker/task:1/device:GPU:1')
+0: 2021-02-16 21:47:38,088 INFO MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 1, num_workers = 4, local_devices = ('/job:worker/task:1/device:GPU:0', '/job:worker/task:1/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: 2021-02-16 21:47:38,100 INFO Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 2, environment = None, rpc_layer = 'grpc'
+0: 2021-02-16 21:47:38,100 INFO Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 3, environment = None, rpc_layer = 'grpc'
+0: 2021-02-16 21:47:38,100 INFO Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 0, environment = None, rpc_layer = 'grpc'
+0: 2021-02-16 21:47:38,102 WARNING `eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+0: 2021-02-16 21:47:38,104 WARNING `eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+0: 2021-02-16 21:47:38,106 WARNING `eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+0: 2021-02-16 21:47:38,108 WARNING `eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+0: 2021-02-16 21:47:38,109 WARNING `eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+0: 2021-02-16 21:47:38,110 WARNING `eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+0: 2021-02-16 21:47:38,115 INFO Using MirroredStrategy with devices ('/job:worker/task:2/device:GPU:0', '/job:worker/task:2/device:GPU:1')
+0: 2021-02-16 21:47:38,116 INFO Using MirroredStrategy with devices ('/job:worker/task:3/device:GPU:0', '/job:worker/task:3/device:GPU:1')
+0: 2021-02-16 21:47:38,117 INFO Using MirroredStrategy with devices ('/job:worker/task:0/device:GPU:0', '/job:worker/task:0/device:GPU:1')
+0: 2021-02-16 21:47:38,118 INFO MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 3, num_workers = 4, local_devices = ('/job:worker/task:3/device:GPU:0', '/job:worker/task:3/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: 2021-02-16 21:47:38,119 INFO MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 2, num_workers = 4, local_devices = ('/job:worker/task:2/device:GPU:0', '/job:worker/task:2/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: 2021-02-16 21:47:38,123 INFO Using MirroredStrategy with devices ('/job:worker/task:3/device:GPU:0', '/job:worker/task:3/device:GPU:1')
+0: 2021-02-16 21:47:38,123 INFO MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 0, num_workers = 4, local_devices = ('/job:worker/task:0/device:GPU:0', '/job:worker/task:0/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: 2021-02-16 21:47:38,123 INFO Using MirroredStrategy with devices ('/job:worker/task:2/device:GPU:0', '/job:worker/task:2/device:GPU:1')
+0: 2021-02-16 21:47:38,125 INFO Using MirroredStrategy with devices ('/job:worker/task:0/device:GPU:0', '/job:worker/task:0/device:GPU:1')
+0: 2021-02-16 21:47:38,126 INFO MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 3, num_workers = 4, local_devices = ('/job:worker/task:3/device:GPU:0', '/job:worker/task:3/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: 2021-02-16 21:47:38,128 INFO MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 2, num_workers = 4, local_devices = ('/job:worker/task:2/device:GPU:0', '/job:worker/task:2/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: 2021-02-16 21:47:38,132 INFO MultiWorkerMirroredStrategy with cluster_spec = {'worker': ['gpu14-ib:5555', 'gpu15-ib:5555', 'gpu16-ib:5555', 'gpu17-ib:5555']}, task_type = 'worker', task_id = 0, num_workers = 4, local_devices = ('/job:worker/task:0/device:GPU:0', '/job:worker/task:0/device:GPU:1'), communication = CollectiveCommunication.AUTO
+0: 2021-02-16 21:47:52,418 WARNING From /apps/applications/tensorflow/2.3.0/gpu/lib/python3.8/site-packages/tensorflow/python/data/ops/multi_device_iterator_ops.py:601: get_next_as_optional (from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+0: 0: 2021-02-16 21:47:52,418 WARNING From /apps/applications/tensorflow/2.3.0/gpu/lib/python3.8/site-packages/tensorflow/python/data/ops/multi_device_iterator_ops.py:601: get_next_as_optional (from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+0: 0: Instructions for updating:
+Use `tf.data.Iterator.get_next_as_optional()` instead.
+0: Use `tf.data.Iterator.get_next_as_optional()` instead.
+0: 2021-02-16 21:47:52,419 WARNING From /apps/applications/tensorflow/2.3.0/gpu/lib/python3.8/site-packages/tensorflow/python/data/ops/multi_device_iterator_ops.py:601: get_next_as_optional (from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+0: 0: Instructions for updating:
+2021-02-16 21:47:52,419 WARNING From /apps/applications/tensorflow/2.3.0/gpu/lib/python3.8/site-packages/tensorflow/python/data/ops/multi_device_iterator_ops.py:601: get_next_as_optional (from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+0: 0: Use `tf.data.Iterator.get_next_as_optional()` instead.
+Instructions for updating:
+0: Use `tf.data.Iterator.get_next_as_optional()` instead.
+0: 2021-02-16 21:48:01,400 INFO Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:48:01,479 INFO Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:48:01,516 INFO Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:48:01,729 INFO Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:48:14,628 INFO Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:48:15,602 INFO Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:48:15,633 INFO Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:48:15,778 INFO Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 8, communication_hint = AUTO, num_packs = 1
+0:   1/128 [..............................] - ETA: 0s - loss: 7.5654 - accuracy: 0.0000e+00
+0:   1/128 [..............................] - ETA: 0s - loss: 7.5654 - accuracy: 0.0000e+00
+0:   1/128 [..............................] - ETA: 0s - loss: 7.5654 - accuracy: 0.0000e+00
+0:   1/128 [..............................] - ETA: 0s - loss: 7.5654 - accuracy: 0.0000e+00
+0:   2/128 [..............................] - ETA: 10:21 - loss: 7.5284 - accuracy: 0.0000e+00
+0:   2/128 [..............................] - ETA: 10:24 - loss: 7.5284 - accuracy: 0.0000e+00
+0:   2/128 [..............................] - ETA: 10:24 - loss: 7.5284 - accuracy: 0.0000e+00
+0:   2/128 [..............................] - ETA: 10:24 - loss: 7.5284 - accuracy: 0.0000e+00
+0:   3/128 [..............................] - ETA: 15:28 - loss: 7.5594 - accuracy: 0.0000e+00
+0:   3/128 [..............................] - ETA: 15:28 - loss: 7.5594 - accuracy: 0.0000e+00
+0:   3/128 [..............................] - ETA: 15:32 - loss: 7.5594 - accuracy: 0.0000e+00
+0:   3/128 [..............................] - ETA: 15:34 - loss: 7.5594 - accuracy: 0.0000e+00
+0:   4/128 [..............................] - ETA: 19:03 - loss: 7.5157 - accuracy: 0.0000e+00
+0:   4/128 [..............................] - ETA: 19:02 - loss: 7.5157 - accuracy: 0.0000e+00
+0:   4/128 [..............................] - ETA: 19:03 - loss: 7.5157 - accuracy: 0.0000e+00
+0:   4/128 [..............................] - ETA: 19:02 - loss: 7.5157 - accuracy: 0.0000e+00
+0:   5/128 [>.............................] - ETA: 20:28 - loss: 7.4976 - accuracy: 0.0000e+00
+0:   5/128 [>.............................] - ETA: 20:28 - loss: 7.4976 - accuracy: 0.0000e+00
+0:   5/128 [>.............................] - ETA: 20:27 - loss: 7.4976 - accuracy: 0.0000e+00
+0:   5/128 [>.............................] - ETA: 20:27 - loss: 7.4976 - accuracy: 0.0000e+00
+0:   6/128 [>.............................] - ETA: 21:30 - loss: 7.4844 - accuracy: 6.5104e-04
+0:   6/128 [>.............................] - ETA: 21:30 - loss: 7.4844 - accuracy: 6.5104e-04
+0:   6/128 [>.............................] - ETA: 21:29 - loss: 7.4844 - accuracy: 6.5104e-04
+0:   6/128 [>.............................] - ETA: 21:31 - loss: 7.4844 - accuracy: 6.5104e-04
+0:   7/128 [>.............................] - ETA: 21:37 - loss: 7.4482 - accuracy: 0.0011    
+0:   7/128 [>.............................] - ETA: 21:37 - loss: 7.4482 - accuracy: 0.0011    
+0:   7/128 [>.............................] - ETA: 21:38 - loss: 7.4482 - accuracy: 0.0011    
+0:   7/128 [>.............................] - ETA: 21:38 - loss: 7.4482 - accuracy: 0.0011    
+0:   8/128 [>.............................] - ETA: 22:04 - loss: 7.4206 - accuracy: 9.7656e-04
+0:   8/128 [>.............................] - ETA: 22:03 - loss: 7.4206 - accuracy: 9.7656e-04
+0:   8/128 [>.............................] - ETA: 22:04 - loss: 7.4206 - accuracy: 9.7656e-04
+0:   8/128 [>.............................] - ETA: 22:04 - loss: 7.4206 - accuracy: 9.7656e-04
+0:   9/128 [=>............................] - ETA: 22:12 - loss: 7.3902 - accuracy: 8.6806e-04
+0:   9/128 [=>............................] - ETA: 22:12 - loss: 7.3902 - accuracy: 8.6806e-04
+0:   9/128 [=>............................] - ETA: 22:13 - loss: 7.3902 - accuracy: 8.6806e-04
+0:   9/128 [=>............................] - ETA: 22:12 - loss: 7.3902 - accuracy: 8.6806e-04
+0:  10/128 [=>............................] - ETA: 22:14 - loss: 7.3832 - accuracy: 7.8125e-04
+0:  10/128 [=>............................] - ETA: 22:14 - loss: 7.3832 - accuracy: 7.8125e-04
+0:  10/128 [=>............................] - ETA: 22:15 - loss: 7.3832 - accuracy: 7.8125e-04
+0:  10/128 [=>............................] - ETA: 22:14 - loss: 7.3832 - accuracy: 7.8125e-04
+0:  11/128 [=>............................] - ETA: 22:25 - loss: 7.3636 - accuracy: 0.0014    
+0:  11/128 [=>............................] - ETA: 22:24 - loss: 7.3636 - accuracy: 0.0014    
+0:  11/128 [=>............................] - ETA: 22:25 - loss: 7.3636 - accuracy: 0.0014    
+0:  11/128 [=>............................] - ETA: 22:25 - loss: 7.3636 - accuracy: 0.0014    
+0:  12/128 [=>............................] - ETA: 22:16 - loss: 7.3459 - accuracy: 0.0013
+0:  12/128 [=>............................] - ETA: 22:16 - loss: 7.3459 - accuracy: 0.0013
+0:  12/128 [=>............................] - ETA: 22:16 - loss: 7.3459 - accuracy: 0.0013
+0:  12/128 [=>............................] - ETA: 22:16 - loss: 7.3459 - accuracy: 0.0013
+0:  13/128 [==>...........................] - ETA: 22:17 - loss: 7.3333 - accuracy: 0.0012
+0:  13/128 [==>...........................] - ETA: 22:17 - loss: 7.3333 - accuracy: 0.0012
+0:  13/128 [==>...........................] - ETA: 22:16 - loss: 7.3333 - accuracy: 0.0012
+0:  13/128 [==>...........................] - ETA: 22:17 - loss: 7.3333 - accuracy: 0.0012
+0:  14/128 [==>...........................] - ETA: 22:09 - loss: 7.3223 - accuracy: 0.0011
+0:  14/128 [==>...........................] - ETA: 22:09 - loss: 7.3223 - accuracy: 0.0011
+0:  14/128 [==>...........................] - ETA: 22:09 - loss: 7.3223 - accuracy: 0.0011
+0:  14/128 [==>...........................] - ETA: 22:09 - loss: 7.3223 - accuracy: 0.0011
+0:  15/128 [==>...........................] - ETA: 21:59 - loss: 7.3132 - accuracy: 0.0010
+0:  15/128 [==>...........................] - ETA: 21:59 - loss: 7.3132 - accuracy: 0.0010
+0:  15/128 [==>...........................] - ETA: 21:59 - loss: 7.3132 - accuracy: 0.0010
+0:  15/128 [==>...........................] - ETA: 21:59 - loss: 7.3132 - accuracy: 0.0010
+0:  16/128 [==>...........................] - ETA: 21:57 - loss: 7.3066 - accuracy: 9.7656e-04
+0:  16/128 [==>...........................] - ETA: 21:57 - loss: 7.3066 - accuracy: 9.7656e-04
+0:  16/128 [==>...........................] - ETA: 21:58 - loss: 7.3066 - accuracy: 9.7656e-04
+0:  16/128 [==>...........................] - ETA: 21:58 - loss: 7.3066 - accuracy: 9.7656e-04
+0:  17/128 [==>...........................] - ETA: 21:46 - loss: 7.2985 - accuracy: 9.1912e-04
+0:  17/128 [==>...........................] - ETA: 21:46 - loss: 7.2985 - accuracy: 9.1912e-04
+0:  17/128 [==>...........................] - ETA: 21:46 - loss: 7.2985 - accuracy: 9.1912e-04
+0:  17/128 [==>...........................] - ETA: 21:46 - loss: 7.2985 - accuracy: 9.1912e-04
+0:  18/128 [===>..........................] - ETA: 21:40 - loss: 7.2940 - accuracy: 0.0011    
+0:  18/128 [===>..........................] - ETA: 21:40 - loss: 7.2940 - accuracy: 0.0011    
+0:  18/128 [===>..........................] - ETA: 21:41 - loss: 7.2940 - accuracy: 0.0011    
+0:  18/128 [===>..........................] - ETA: 21:41 - loss: 7.2940 - accuracy: 0.0011    
+0:  19/128 [===>..........................] - ETA: 21:29 - loss: 7.2866 - accuracy: 0.0010
+0:  19/128 [===>..........................] - ETA: 21:30 - loss: 7.2866 - accuracy: 0.0010
+0:  19/128 [===>..........................] - ETA: 21:29 - loss: 7.2866 - accuracy: 0.0010
+0:  19/128 [===>..........................] - ETA: 21:29 - loss: 7.2866 - accuracy: 0.0010
+0:  20/128 [===>..........................] - ETA: 21:27 - loss: 7.2750 - accuracy: 0.0014
+0:  20/128 [===>..........................] - ETA: 21:27 - loss: 7.2750 - accuracy: 0.0014
+0:  20/128 [===>..........................] - ETA: 21:27 - loss: 7.2750 - accuracy: 0.0014
+0:  20/128 [===>..........................] - ETA: 21:27 - loss: 7.2750 - accuracy: 0.0014
+0:  21/128 [===>..........................] - ETA: 21:15 - loss: 7.2687 - accuracy: 0.0013
+0:  21/128 [===>..........................] - ETA: 21:15 - loss: 7.2687 - accuracy: 0.0013
+0:  21/128 [===>..........................] - ETA: 21:15 - loss: 7.2687 - accuracy: 0.0013
+0:  21/128 [===>..........................] - ETA: 21:15 - loss: 7.2687 - accuracy: 0.0013
+0:  22/128 [====>.........................] - ETA: 21:01 - loss: 7.2603 - accuracy: 0.0012
+0:  22/128 [====>.........................] - ETA: 21:01 - loss: 7.2603 - accuracy: 0.0012
+0:  22/128 [====>.........................] - ETA: 21:01 - loss: 7.2603 - accuracy: 0.0012
+0:  22/128 [====>.........................] - ETA: 21:01 - loss: 7.2603 - accuracy: 0.0012
+0:  23/128 [====>.........................] - ETA: 20:55 - loss: 7.2566 - accuracy: 0.0012
+0:  23/128 [====>.........................] - ETA: 20:55 - loss: 7.2566 - accuracy: 0.0012
+0:  23/128 [====>.........................] - ETA: 20:55 - loss: 7.2566 - accuracy: 0.0012
+0:  23/128 [====>.........................] - ETA: 20:55 - loss: 7.2566 - accuracy: 0.0012
+0:  24/128 [====>.........................] - ETA: 20:40 - loss: 7.2518 - accuracy: 0.0015
+0:  24/128 [====>.........................] - ETA: 20:40 - loss: 7.2518 - accuracy: 0.0015
+0:  24/128 [====>.........................] - ETA: 20:40 - loss: 7.2518 - accuracy: 0.0015
+0:  24/128 [====>.........................] - ETA: 20:40 - loss: 7.2518 - accuracy: 0.0015
+0:  25/128 [====>.........................] - ETA: 20:30 - loss: 7.2458 - accuracy: 0.0014
+0:  25/128 [====>.........................] - ETA: 20:29 - loss: 7.2458 - accuracy: 0.0014
+0:  25/128 [====>.........................] - ETA: 20:30 - loss: 7.2458 - accuracy: 0.0014
+0:  25/128 [====>.........................] - ETA: 20:29 - loss: 7.2458 - accuracy: 0.0014
+0:  26/128 [=====>........................] - ETA: 20:16 - loss: 7.2425 - accuracy: 0.0014
+0:  26/128 [=====>........................] - ETA: 20:16 - loss: 7.2425 - accuracy: 0.0014
+0:  26/128 [=====>........................] - ETA: 20:16 - loss: 7.2425 - accuracy: 0.0014
+0:  26/128 [=====>........................] - ETA: 20:16 - loss: 7.2425 - accuracy: 0.0014
+0:  27/128 [=====>........................] - ETA: 20:01 - loss: 7.2393 - accuracy: 0.0013
+0:  27/128 [=====>........................] - ETA: 20:01 - loss: 7.2393 - accuracy: 0.0013
+0:  27/128 [=====>........................] - ETA: 20:00 - loss: 7.2393 - accuracy: 0.0013
+0:  27/128 [=====>........................] - ETA: 20:01 - loss: 7.2393 - accuracy: 0.0013
+0:  28/128 [=====>........................] - ETA: 19:53 - loss: 7.2377 - accuracy: 0.0013
+0:  28/128 [=====>........................] - ETA: 19:53 - loss: 7.2377 - accuracy: 0.0013
+0:  28/128 [=====>........................] - ETA: 19:53 - loss: 7.2377 - accuracy: 0.0013
+0:  28/128 [=====>........................] - ETA: 19:53 - loss: 7.2377 - accuracy: 0.0013
+0:  29/128 [=====>........................] - ETA: 19:42 - loss: 7.2372 - accuracy: 0.0015
+0:  29/128 [=====>........................] - ETA: 19:42 - loss: 7.2372 - accuracy: 0.0015
+0:  29/128 [=====>........................] - ETA: 19:42 - loss: 7.2372 - accuracy: 0.0015
+0:  29/128 [=====>........................] - ETA: 19:42 - loss: 7.2372 - accuracy: 0.0015
+0:  30/128 [======>.......................] - ETA: 19:30 - loss: 7.2307 - accuracy: 0.0014
+0:  30/128 [======>.......................] - ETA: 19:30 - loss: 7.2307 - accuracy: 0.0014
+0:  30/128 [======>.......................] - ETA: 19:30 - loss: 7.2307 - accuracy: 0.0014
+0:  30/128 [======>.......................] - ETA: 19:30 - loss: 7.2307 - accuracy: 0.0014
+0:  31/128 [======>.......................] - ETA: 19:19 - loss: 7.2268 - accuracy: 0.0014
+0:  31/128 [======>.......................] - ETA: 19:19 - loss: 7.2268 - accuracy: 0.0014
+0:  31/128 [======>.......................] - ETA: 19:19 - loss: 7.2268 - accuracy: 0.0014
+0:  31/128 [======>.......................] - ETA: 19:19 - loss: 7.2268 - accuracy: 0.0014
+0:  32/128 [======>.......................] - ETA: 19:05 - loss: 7.2235 - accuracy: 0.0013
+0:  32/128 [======>.......................] - ETA: 19:05 - loss: 7.2235 - accuracy: 0.0013
+0:  32/128 [======>.......................] - ETA: 19:06 - loss: 7.2235 - accuracy: 0.0013
+0:  32/128 [======>.......................] - ETA: 19:06 - loss: 7.2235 - accuracy: 0.0013
+0:  33/128 [======>.......................] - ETA: 18:52 - loss: 7.2172 - accuracy: 0.0013
+0:  33/128 [======>.......................] - ETA: 18:52 - loss: 7.2172 - accuracy: 0.0013
+0:  33/128 [======>.......................] - ETA: 18:52 - loss: 7.2172 - accuracy: 0.0013
+0:  33/128 [======>.......................] - ETA: 18:52 - loss: 7.2172 - accuracy: 0.0013
+0:  34/128 [======>.......................] - ETA: 18:40 - loss: 7.2172 - accuracy: 0.0013
+0:  34/128 [======>.......................] - ETA: 18:40 - loss: 7.2172 - accuracy: 0.0013
+0:  34/128 [======>.......................] - ETA: 18:40 - loss: 7.2172 - accuracy: 0.0013
+0:  34/128 [======>.......................] - ETA: 18:40 - loss: 7.2172 - accuracy: 0.0013
+0:  35/128 [=======>......................] - ETA: 18:28 - loss: 7.2161 - accuracy: 0.0013
+0:  35/128 [=======>......................] - ETA: 18:28 - loss: 7.2161 - accuracy: 0.0013
+0:  35/128 [=======>......................] - ETA: 18:28 - loss: 7.2161 - accuracy: 0.0013
+0:  35/128 [=======>......................] - ETA: 18:28 - loss: 7.2161 - accuracy: 0.0013
+0:  36/128 [=======>......................] - ETA: 18:15 - loss: 7.2142 - accuracy: 0.0014
+0:  36/128 [=======>......................] - ETA: 18:15 - loss: 7.2142 - accuracy: 0.0014
+0:  36/128 [=======>......................] - ETA: 18:15 - loss: 7.2142 - accuracy: 0.0014
+0:  36/128 [=======>......................] - ETA: 18:15 - loss: 7.2142 - accuracy: 0.0014
+0:  37/128 [=======>......................] - ETA: 18:03 - loss: 7.2132 - accuracy: 0.0014
+0:  37/128 [=======>......................] - ETA: 18:03 - loss: 7.2132 - accuracy: 0.0014
+0:  37/128 [=======>......................] - ETA: 18:03 - loss: 7.2132 - accuracy: 0.0014
+0:  37/128 [=======>......................] - ETA: 18:03 - loss: 7.2132 - accuracy: 0.0014
+0:  38/128 [=======>......................] - ETA: 17:50 - loss: 7.2074 - accuracy: 0.0014
+0:  38/128 [=======>......................] - ETA: 17:50 - loss: 7.2074 - accuracy: 0.0014
+0:  38/128 [=======>......................] - ETA: 17:50 - loss: 7.2074 - accuracy: 0.0014
+0:  38/128 [=======>......................] - ETA: 17:50 - loss: 7.2074 - accuracy: 0.0014
+0:  39/128 [========>.....................] - ETA: 17:37 - loss: 7.2043 - accuracy: 0.0014
+0:  39/128 [========>.....................] - ETA: 17:37 - loss: 7.2043 - accuracy: 0.0014
+0:  39/128 [========>.....................] - ETA: 17:37 - loss: 7.2043 - accuracy: 0.0014
+0:  39/128 [========>.....................] - ETA: 17:37 - loss: 7.2043 - accuracy: 0.0014
+0:  40/128 [========>.....................] - ETA: 17:26 - loss: 7.2033 - accuracy: 0.0014
+0:  40/128 [========>.....................] - ETA: 17:26 - loss: 7.2033 - accuracy: 0.0014
+0:  40/128 [========>.....................] - ETA: 17:25 - loss: 7.2033 - accuracy: 0.0014
+0:  40/128 [========>.....................] - ETA: 17:26 - loss: 7.2033 - accuracy: 0.0014
+0:  41/128 [========>.....................] - ETA: 17:11 - loss: 7.1998 - accuracy: 0.0014
+0:  41/128 [========>.....................] - ETA: 17:11 - loss: 7.1998 - accuracy: 0.0014
+0:  41/128 [========>.....................] - ETA: 17:11 - loss: 7.1998 - accuracy: 0.0014
+0:  41/128 [========>.....................] - ETA: 17:11 - loss: 7.1998 - accuracy: 0.0014
+0:  42/128 [========>.....................] - ETA: 16:58 - loss: 7.1984 - accuracy: 0.0014
+0:  42/128 [========>.....................] - ETA: 16:59 - loss: 7.1984 - accuracy: 0.0014
+0:  42/128 [========>.....................] - ETA: 16:59 - loss: 7.1984 - accuracy: 0.0014
+0:  42/128 [========>.....................] - ETA: 16:59 - loss: 7.1984 - accuracy: 0.0014
+0:  43/128 [=========>....................] - ETA: 16:46 - loss: 7.1962 - accuracy: 0.0015
+0:  43/128 [=========>....................] - ETA: 16:46 - loss: 7.1962 - accuracy: 0.0015
+0:  43/128 [=========>....................] - ETA: 16:46 - loss: 7.1962 - accuracy: 0.0015
+0:  43/128 [=========>....................] - ETA: 16:46 - loss: 7.1962 - accuracy: 0.0015
+0:  44/128 [=========>....................] - ETA: 16:33 - loss: 7.1932 - accuracy: 0.0014
+0:  44/128 [=========>....................] - ETA: 16:33 - loss: 7.1932 - accuracy: 0.0014
+0:  44/128 [=========>....................] - ETA: 16:33 - loss: 7.1932 - accuracy: 0.0014
+0:  44/128 [=========>....................] - ETA: 16:33 - loss: 7.1932 - accuracy: 0.0014
+0:  45/128 [=========>....................] - ETA: 16:20 - loss: 7.1890 - accuracy: 0.0016
+0:  45/128 [=========>....................] - ETA: 16:20 - loss: 7.1890 - accuracy: 0.0016
+0:  45/128 [=========>....................] - ETA: 16:20 - loss: 7.1890 - accuracy: 0.0016
+0:  45/128 [=========>....................] - ETA: 16:20 - loss: 7.1890 - accuracy: 0.0016
+0:  46/128 [=========>....................] - ETA: 16:07 - loss: 7.1886 - accuracy: 0.0018
+0:  46/128 [=========>....................] - ETA: 16:07 - loss: 7.1886 - accuracy: 0.0018
+0:  46/128 [=========>....................] - ETA: 16:07 - loss: 7.1886 - accuracy: 0.0018
+0:  46/128 [=========>....................] - ETA: 16:07 - loss: 7.1886 - accuracy: 0.0018
+0:  47/128 [==========>...................] - ETA: 15:56 - loss: 7.1875 - accuracy: 0.0018
+0:  47/128 [==========>...................] - ETA: 15:56 - loss: 7.1875 - accuracy: 0.0018
+0:  47/128 [==========>...................] - ETA: 15:55 - loss: 7.1875 - accuracy: 0.0018
+0:  47/128 [==========>...................] - ETA: 15:55 - loss: 7.1875 - accuracy: 0.0018
+0:  48/128 [==========>...................] - ETA: 15:44 - loss: 7.1858 - accuracy: 0.0019
+0:  48/128 [==========>...................] - ETA: 15:44 - loss: 7.1858 - accuracy: 0.0019
+0:  48/128 [==========>...................] - ETA: 15:44 - loss: 7.1858 - accuracy: 0.0019
+0:  48/128 [==========>...................] - ETA: 15:44 - loss: 7.1858 - accuracy: 0.0019
+0:  49/128 [==========>...................] - ETA: 15:30 - loss: 7.1833 - accuracy: 0.0019
+0:  49/128 [==========>...................] - ETA: 15:30 - loss: 7.1833 - accuracy: 0.0019
+0:  49/128 [==========>...................] - ETA: 15:30 - loss: 7.1833 - accuracy: 0.0019
+0:  49/128 [==========>...................] - ETA: 15:30 - loss: 7.1833 - accuracy: 0.0019
+0:  50/128 [==========>...................] - ETA: 15:18 - loss: 7.1813 - accuracy: 0.0020
+0:  50/128 [==========>...................] - ETA: 15:18 - loss: 7.1813 - accuracy: 0.0020
+0:  50/128 [==========>...................] - ETA: 15:18 - loss: 7.1813 - accuracy: 0.0020
+0:  50/128 [==========>...................] - ETA: 15:18 - loss: 7.1813 - accuracy: 0.0020
+0:  51/128 [==========>...................] - ETA: 15:06 - loss: 7.1797 - accuracy: 0.0020
+0:  51/128 [==========>...................] - ETA: 15:06 - loss: 7.1797 - accuracy: 0.0020
+0:  51/128 [==========>...................] - ETA: 15:06 - loss: 7.1797 - accuracy: 0.0020
+0:  51/128 [==========>...................] - ETA: 15:06 - loss: 7.1797 - accuracy: 0.0020
+0:  52/128 [===========>..................] - ETA: 14:53 - loss: 7.1784 - accuracy: 0.0020
+0:  52/128 [===========>..................] - ETA: 14:53 - loss: 7.1784 - accuracy: 0.0020
+0:  52/128 [===========>..................] - ETA: 14:53 - loss: 7.1784 - accuracy: 0.0020
+0:  52/128 [===========>..................] - ETA: 14:53 - loss: 7.1784 - accuracy: 0.0020
+0:  53/128 [===========>..................] - ETA: 14:41 - loss: 7.1772 - accuracy: 0.0020
+0:  53/128 [===========>..................] - ETA: 14:41 - loss: 7.1772 - accuracy: 0.0020
+0:  53/128 [===========>..................] - ETA: 14:41 - loss: 7.1772 - accuracy: 0.0020
+0:  53/128 [===========>..................] - ETA: 14:41 - loss: 7.1772 - accuracy: 0.0020
+0:  54/128 [===========>..................] - ETA: 14:28 - loss: 7.1759 - accuracy: 0.0020
+0:  54/128 [===========>..................] - ETA: 14:28 - loss: 7.1759 - accuracy: 0.0020
+0:  54/128 [===========>..................] - ETA: 14:28 - loss: 7.1759 - accuracy: 0.0020
+0:  54/128 [===========>..................] - ETA: 14:28 - loss: 7.1759 - accuracy: 0.0020
+0:  55/128 [===========>..................] - ETA: 14:16 - loss: 7.1751 - accuracy: 0.0019
+0:  55/128 [===========>..................] - ETA: 14:15 - loss: 7.1751 - accuracy: 0.0019
+0:  55/128 [===========>..................] - ETA: 14:15 - loss: 7.1751 - accuracy: 0.0019
+0:  55/128 [===========>..................] - ETA: 14:16 - loss: 7.1751 - accuracy: 0.0019
+0:  56/128 [============>.................] - ETA: 14:03 - loss: 7.1742 - accuracy: 0.0019
+0:  56/128 [============>.................] - ETA: 14:03 - loss: 7.1742 - accuracy: 0.0019
+0:  56/128 [============>.................] - ETA: 14:03 - loss: 7.1742 - accuracy: 0.0019
+0:  56/128 [============>.................] - ETA: 14:03 - loss: 7.1742 - accuracy: 0.0019
+0:  57/128 [============>.................] - ETA: 13:50 - loss: 7.1738 - accuracy: 0.0019
+0:  57/128 [============>.................] - ETA: 13:50 - loss: 7.1738 - accuracy: 0.0019
+0:  57/128 [============>.................] - ETA: 13:50 - loss: 7.1738 - accuracy: 0.0019
+0:  57/128 [============>.................] - ETA: 13:50 - loss: 7.1738 - accuracy: 0.0019
+0:  58/128 [============>.................] - ETA: 13:38 - loss: 7.1722 - accuracy: 0.0018
+0:  58/128 [============>.................] - ETA: 13:38 - loss: 7.1722 - accuracy: 0.0018
+0:  58/128 [============>.................] - ETA: 13:38 - loss: 7.1722 - accuracy: 0.0018
+0:  58/128 [============>.................] - ETA: 13:38 - loss: 7.1722 - accuracy: 0.0018
+0:  59/128 [============>.................] - ETA: 13:25 - loss: 7.1706 - accuracy: 0.0018
+0:  59/128 [============>.................] - ETA: 13:25 - loss: 7.1706 - accuracy: 0.0018
+0:  59/128 [============>.................] - ETA: 13:25 - loss: 7.1706 - accuracy: 0.0018
+0:  59/128 [============>.................] - ETA: 13:25 - loss: 7.1706 - accuracy: 0.0018
+0:  60/128 [=============>................] - ETA: 13:13 - loss: 7.1692 - accuracy: 0.0018
+0:  60/128 [=============>................] - ETA: 13:13 - loss: 7.1692 - accuracy: 0.0018
+0:  60/128 [=============>................] - ETA: 13:13 - loss: 7.1692 - accuracy: 0.0018
+0:  60/128 [=============>................] - ETA: 13:13 - loss: 7.1692 - accuracy: 0.0018
+0:  61/128 [=============>................] - ETA: 13:01 - loss: 7.1681 - accuracy: 0.0017
+0:  61/128 [=============>................] - ETA: 13:01 - loss: 7.1681 - accuracy: 0.0017
+0:  61/128 [=============>................] - ETA: 13:01 - loss: 7.1681 - accuracy: 0.0017
+0:  61/128 [=============>................] - ETA: 13:01 - loss: 7.1681 - accuracy: 0.0017
+0:  62/128 [=============>................] - ETA: 12:48 - loss: 7.1670 - accuracy: 0.0017
+0:  62/128 [=============>................] - ETA: 12:48 - loss: 7.1670 - accuracy: 0.0017
+0:  62/128 [=============>................] - ETA: 12:48 - loss: 7.1670 - accuracy: 0.0017
+0:  62/128 [=============>................] - ETA: 12:48 - loss: 7.1670 - accuracy: 0.0017
+0:  63/128 [=============>................] - ETA: 12:36 - loss: 7.1648 - accuracy: 0.0017
+0:  63/128 [=============>................] - ETA: 12:36 - loss: 7.1648 - accuracy: 0.0017
+0:  63/128 [=============>................] - ETA: 12:36 - loss: 7.1648 - accuracy: 0.0017
+0:  63/128 [=============>................] - ETA: 12:36 - loss: 7.1648 - accuracy: 0.0017
+0:  64/128 [==============>...............] - ETA: 12:24 - loss: 7.1626 - accuracy: 0.0017
+0:  64/128 [==============>...............] - ETA: 12:24 - loss: 7.1626 - accuracy: 0.0017
+0:  64/128 [==============>...............] - ETA: 12:24 - loss: 7.1626 - accuracy: 0.0017
+0:  64/128 [==============>...............] - ETA: 12:24 - loss: 7.1626 - accuracy: 0.0017
+0:  65/128 [==============>...............] - ETA: 12:12 - loss: 7.1613 - accuracy: 0.0017
+0:  65/128 [==============>...............] - ETA: 12:12 - loss: 7.1613 - accuracy: 0.0017
+0:  65/128 [==============>...............] - ETA: 12:12 - loss: 7.1613 - accuracy: 0.0017
+0:  65/128 [==============>...............] - ETA: 12:12 - loss: 7.1613 - accuracy: 0.0017
+0:  66/128 [==============>...............] - ETA: 11:59 - loss: 7.1602 - accuracy: 0.0017
+0:  66/128 [==============>...............] - ETA: 11:59 - loss: 7.1602 - accuracy: 0.0017
+0:  66/128 [==============>...............] - ETA: 11:59 - loss: 7.1602 - accuracy: 0.0017
+0:  66/128 [==============>...............] - ETA: 11:59 - loss: 7.1602 - accuracy: 0.0017
+0:  67/128 [==============>...............] - ETA: 11:46 - loss: 7.1588 - accuracy: 0.0016
+0:  67/128 [==============>...............] - ETA: 11:46 - loss: 7.1588 - accuracy: 0.0016
+0:  67/128 [==============>...............] - ETA: 11:46 - loss: 7.1588 - accuracy: 0.0016
+0:  67/128 [==============>...............] - ETA: 11:46 - loss: 7.1588 - accuracy: 0.0016
+0:  68/128 [==============>...............] - ETA: 11:34 - loss: 7.1559 - accuracy: 0.0016
+0:  68/128 [==============>...............] - ETA: 11:34 - loss: 7.1559 - accuracy: 0.0016
+0:  68/128 [==============>...............] - ETA: 11:34 - loss: 7.1559 - accuracy: 0.0016
+0:  68/128 [==============>...............] - ETA: 11:34 - loss: 7.1559 - accuracy: 0.0016
+0:  69/128 [===============>..............] - ETA: 11:21 - loss: 7.1542 - accuracy: 0.0016
+0:  69/128 [===============>..............] - ETA: 11:21 - loss: 7.1542 - accuracy: 0.0016
+0:  69/128 [===============>..............] - ETA: 11:21 - loss: 7.1542 - accuracy: 0.0016
+0:  69/128 [===============>..............] - ETA: 11:21 - loss: 7.1542 - accuracy: 0.0016
+0:  70/128 [===============>..............] - ETA: 11:09 - loss: 7.1536 - accuracy: 0.0016
+0:  70/128 [===============>..............] - ETA: 11:09 - loss: 7.1536 - accuracy: 0.0016
+0:  70/128 [===============>..............] - ETA: 11:09 - loss: 7.1536 - accuracy: 0.0016
+0:  70/128 [===============>..............] - ETA: 11:09 - loss: 7.1536 - accuracy: 0.0016
+0:  71/128 [===============>..............] - ETA: 10:57 - loss: 7.1531 - accuracy: 0.0016
+0:  71/128 [===============>..............] - ETA: 10:57 - loss: 7.1531 - accuracy: 0.0016
+0:  71/128 [===============>..............] - ETA: 10:57 - loss: 7.1531 - accuracy: 0.0016
+0:  71/128 [===============>..............] - ETA: 10:57 - loss: 7.1531 - accuracy: 0.0016
+0:  72/128 [===============>..............] - ETA: 10:45 - loss: 7.1521 - accuracy: 0.0016
+0:  72/128 [===============>..............] - ETA: 10:45 - loss: 7.1521 - accuracy: 0.0016
+0:  72/128 [===============>..............] - ETA: 10:45 - loss: 7.1521 - accuracy: 0.0016
+0:  72/128 [===============>..............] - ETA: 10:45 - loss: 7.1521 - accuracy: 0.0016
+0:  73/128 [================>.............] - ETA: 10:33 - loss: 7.1510 - accuracy: 0.0016
+0:  73/128 [================>.............] - ETA: 10:33 - loss: 7.1510 - accuracy: 0.0016
+0:  73/128 [================>.............] - ETA: 10:33 - loss: 7.1510 - accuracy: 0.0016
+0:  73/128 [================>.............] - ETA: 10:33 - loss: 7.1510 - accuracy: 0.0016
+0:  74/128 [================>.............] - ETA: 10:21 - loss: 7.1502 - accuracy: 0.0015
+0:  74/128 [================>.............] - ETA: 10:21 - loss: 7.1502 - accuracy: 0.0015
+0:  74/128 [================>.............] - ETA: 10:21 - loss: 7.1502 - accuracy: 0.0015
+0:  74/128 [================>.............] - ETA: 10:21 - loss: 7.1502 - accuracy: 0.0015
+0:  75/128 [================>.............] - ETA: 10:09 - loss: 7.1488 - accuracy: 0.0016
+0:  75/128 [================>.............] - ETA: 10:09 - loss: 7.1488 - accuracy: 0.0016
+0:  75/128 [================>.............] - ETA: 10:09 - loss: 7.1488 - accuracy: 0.0016
+0:  75/128 [================>.............] - ETA: 10:09 - loss: 7.1488 - accuracy: 0.0016
+0:  76/128 [================>.............] - ETA: 9:57 - loss: 7.1466 - accuracy: 0.0015 
+0:  76/128 [================>.............] - ETA: 9:57 - loss: 7.1466 - accuracy: 0.0015 
+0:  76/128 [================>.............] - ETA: 9:57 - loss: 7.1466 - accuracy: 0.0015 
+0:  76/128 [================>.............] - ETA: 9:57 - loss: 7.1466 - accuracy: 0.0015 
+0:  77/128 [=================>............] - ETA: 9:45 - loss: 7.1444 - accuracy: 0.0016
+0:  77/128 [=================>............] - ETA: 9:45 - loss: 7.1444 - accuracy: 0.0016
+0:  77/128 [=================>............] - ETA: 9:45 - loss: 7.1444 - accuracy: 0.0016
+0:  77/128 [=================>............] - ETA: 9:45 - loss: 7.1444 - accuracy: 0.0016
+0:  78/128 [=================>............] - ETA: 9:33 - loss: 7.1430 - accuracy: 0.0016
+0:  78/128 [=================>............] - ETA: 9:33 - loss: 7.1430 - accuracy: 0.0016
+0:  78/128 [=================>............] - ETA: 9:33 - loss: 7.1430 - accuracy: 0.0016
+0:  78/128 [=================>............] - ETA: 9:33 - loss: 7.1430 - accuracy: 0.0016
+0:  79/128 [=================>............] - ETA: 9:21 - loss: 7.1431 - accuracy: 0.0016
+0:  79/128 [=================>............] - ETA: 9:21 - loss: 7.1431 - accuracy: 0.0016
+0:  79/128 [=================>............] - ETA: 9:21 - loss: 7.1431 - accuracy: 0.0016
+0:  79/128 [=================>............] - ETA: 9:21 - loss: 7.1431 - accuracy: 0.0016
+0:  80/128 [=================>............] - ETA: 9:09 - loss: 7.1426 - accuracy: 0.0016
+0:  80/128 [=================>............] - ETA: 9:09 - loss: 7.1426 - accuracy: 0.0016
+0:  80/128 [=================>............] - ETA: 9:09 - loss: 7.1426 - accuracy: 0.0016
+0:  80/128 [=================>............] - ETA: 9:09 - loss: 7.1426 - accuracy: 0.0016
+0:  81/128 [=================>............] - ETA: 8:57 - loss: 7.1401 - accuracy: 0.0016
+0:  81/128 [=================>............] - ETA: 8:57 - loss: 7.1401 - accuracy: 0.0016
+0:  81/128 [=================>............] - ETA: 8:57 - loss: 7.1401 - accuracy: 0.0016
+0:  81/128 [=================>............] - ETA: 8:57 - loss: 7.1401 - accuracy: 0.0016
+0:  82/128 [==================>...........] - ETA: 8:45 - loss: 7.1392 - accuracy: 0.0017
+0:  82/128 [==================>...........] - ETA: 8:45 - loss: 7.1392 - accuracy: 0.0017
+0:  82/128 [==================>...........] - ETA: 8:45 - loss: 7.1392 - accuracy: 0.0017
+0:  82/128 [==================>...........] - ETA: 8:45 - loss: 7.1392 - accuracy: 0.0017
+0:  83/128 [==================>...........] - ETA: 8:33 - loss: 7.1390 - accuracy: 0.0016
+0:  83/128 [==================>...........] - ETA: 8:33 - loss: 7.1390 - accuracy: 0.0016
+0:  83/128 [==================>...........] - ETA: 8:33 - loss: 7.1390 - accuracy: 0.0016
+0:  83/128 [==================>...........] - ETA: 8:33 - loss: 7.1390 - accuracy: 0.0016
+0:  84/128 [==================>...........] - ETA: 8:21 - loss: 7.1382 - accuracy: 0.0017
+0:  84/128 [==================>...........] - ETA: 8:21 - loss: 7.1382 - accuracy: 0.0017
+0:  84/128 [==================>...........] - ETA: 8:21 - loss: 7.1382 - accuracy: 0.0017
+0:  84/128 [==================>...........] - ETA: 8:21 - loss: 7.1382 - accuracy: 0.0017
+0:  85/128 [==================>...........] - ETA: 8:09 - loss: 7.1379 - accuracy: 0.0017
+0:  85/128 [==================>...........] - ETA: 8:09 - loss: 7.1379 - accuracy: 0.0017
+0:  85/128 [==================>...........] - ETA: 8:09 - loss: 7.1379 - accuracy: 0.0017
+0:  85/128 [==================>...........] - ETA: 8:09 - loss: 7.1379 - accuracy: 0.0017
+0:  86/128 [===================>..........] - ETA: 7:57 - loss: 7.1371 - accuracy: 0.0018
+0:  86/128 [===================>..........] - ETA: 7:57 - loss: 7.1371 - accuracy: 0.0018
+0:  86/128 [===================>..........] - ETA: 7:57 - loss: 7.1371 - accuracy: 0.0018
+0:  86/128 [===================>..........] - ETA: 7:57 - loss: 7.1371 - accuracy: 0.0018
+0:  87/128 [===================>..........] - ETA: 7:46 - loss: 7.1353 - accuracy: 0.0019
+0:  87/128 [===================>..........] - ETA: 7:46 - loss: 7.1353 - accuracy: 0.0019
+0:  87/128 [===================>..........] - ETA: 7:46 - loss: 7.1353 - accuracy: 0.0019
+0:  87/128 [===================>..........] - ETA: 7:46 - loss: 7.1353 - accuracy: 0.0019
+0:  88/128 [===================>..........] - ETA: 7:34 - loss: 7.1340 - accuracy: 0.0019
+0:  88/128 [===================>..........] - ETA: 7:34 - loss: 7.1340 - accuracy: 0.0019
+0:  88/128 [===================>..........] - ETA: 7:34 - loss: 7.1340 - accuracy: 0.0019
+0:  88/128 [===================>..........] - ETA: 7:34 - loss: 7.1340 - accuracy: 0.0019
+0:  89/128 [===================>..........] - ETA: 7:22 - loss: 7.1317 - accuracy: 0.0020
+0:  89/128 [===================>..........] - ETA: 7:22 - loss: 7.1317 - accuracy: 0.0020
+0:  89/128 [===================>..........] - ETA: 7:22 - loss: 7.1317 - accuracy: 0.0020
+0:  89/128 [===================>..........] - ETA: 7:22 - loss: 7.1317 - accuracy: 0.0020
+0:  90/128 [====================>.........] - ETA: 7:11 - loss: 7.1306 - accuracy: 0.0020
+0:  90/128 [====================>.........] - ETA: 7:11 - loss: 7.1306 - accuracy: 0.0020
+0:  90/128 [====================>.........] - ETA: 7:11 - loss: 7.1306 - accuracy: 0.0020
+0:  90/128 [====================>.........] - ETA: 7:11 - loss: 7.1306 - accuracy: 0.0020
+0:  91/128 [====================>.........] - ETA: 6:59 - loss: 7.1293 - accuracy: 0.0020
+0:  91/128 [====================>.........] - ETA: 6:59 - loss: 7.1293 - accuracy: 0.0020
+0:  91/128 [====================>.........] - ETA: 6:59 - loss: 7.1293 - accuracy: 0.0020
+0:  91/128 [====================>.........] - ETA: 6:59 - loss: 7.1293 - accuracy: 0.0020
+0:  92/128 [====================>.........] - ETA: 6:47 - loss: 7.1283 - accuracy: 0.0020
+0:  92/128 [====================>.........] - ETA: 6:47 - loss: 7.1283 - accuracy: 0.0020
+0:  92/128 [====================>.........] - ETA: 6:47 - loss: 7.1283 - accuracy: 0.0020
+0:  92/128 [====================>.........] - ETA: 6:47 - loss: 7.1283 - accuracy: 0.0020
+0:  93/128 [====================>.........] - ETA: 6:36 - loss: 7.1271 - accuracy: 0.0019
+0:  93/128 [====================>.........] - ETA: 6:36 - loss: 7.1271 - accuracy: 0.0019
+0:  93/128 [====================>.........] - ETA: 6:36 - loss: 7.1271 - accuracy: 0.0019
+0:  93/128 [====================>.........] - ETA: 6:36 - loss: 7.1271 - accuracy: 0.0019
+0:  94/128 [=====================>........] - ETA: 6:24 - loss: 7.1268 - accuracy: 0.0020
+0:  94/128 [=====================>........] - ETA: 6:24 - loss: 7.1268 - accuracy: 0.0020
+0:  94/128 [=====================>........] - ETA: 6:24 - loss: 7.1268 - accuracy: 0.0020
+0:  94/128 [=====================>........] - ETA: 6:24 - loss: 7.1268 - accuracy: 0.0020
+0:  95/128 [=====================>........] - ETA: 6:13 - loss: 7.1257 - accuracy: 0.0020
+0:  95/128 [=====================>........] - ETA: 6:13 - loss: 7.1257 - accuracy: 0.0020
+0:  95/128 [=====================>........] - ETA: 6:13 - loss: 7.1257 - accuracy: 0.0020
+0:  95/128 [=====================>........] - ETA: 6:13 - loss: 7.1257 - accuracy: 0.0020
+0:  96/128 [=====================>........] - ETA: 6:01 - loss: 7.1249 - accuracy: 0.0020
+0:  96/128 [=====================>........] - ETA: 6:01 - loss: 7.1249 - accuracy: 0.0020
+0:  96/128 [=====================>........] - ETA: 6:01 - loss: 7.1249 - accuracy: 0.0020
+0:  96/128 [=====================>........] - ETA: 6:01 - loss: 7.1249 - accuracy: 0.0020
+0:  97/128 [=====================>........] - ETA: 5:49 - loss: 7.1243 - accuracy: 0.0020
+0:  97/128 [=====================>........] - ETA: 5:49 - loss: 7.1243 - accuracy: 0.0020
+0:  97/128 [=====================>........] - ETA: 5:49 - loss: 7.1243 - accuracy: 0.0020
+0:  97/128 [=====================>........] - ETA: 5:49 - loss: 7.1243 - accuracy: 0.0020
+0:  98/128 [=====================>........] - ETA: 5:38 - loss: 7.1242 - accuracy: 0.0020
+0:  98/128 [=====================>........] - ETA: 5:38 - loss: 7.1242 - accuracy: 0.0020
+0:  98/128 [=====================>........] - ETA: 5:38 - loss: 7.1242 - accuracy: 0.0020
+0:  98/128 [=====================>........] - ETA: 5:38 - loss: 7.1242 - accuracy: 0.0020
+0:  99/128 [======================>.......] - ETA: 5:26 - loss: 7.1228 - accuracy: 0.0020
+0:  99/128 [======================>.......] - ETA: 5:26 - loss: 7.1228 - accuracy: 0.0020
+0:  99/128 [======================>.......] - ETA: 5:26 - loss: 7.1228 - accuracy: 0.0020
+0:  99/128 [======================>.......] - ETA: 5:26 - loss: 7.1228 - accuracy: 0.0020
+0: 100/128 [======================>.......] - ETA: 5:15 - loss: 7.1214 - accuracy: 0.0020
+0: 100/128 [======================>.......] - ETA: 5:15 - loss: 7.1214 - accuracy: 0.0020
+0: 100/128 [======================>.......] - ETA: 5:15 - loss: 7.1214 - accuracy: 0.0020
+0: 100/128 [======================>.......] - ETA: 5:15 - loss: 7.1214 - accuracy: 0.0020
+0: 101/128 [======================>.......] - ETA: 5:03 - loss: 7.1206 - accuracy: 0.0020
+0: 101/128 [======================>.......] - ETA: 5:03 - loss: 7.1206 - accuracy: 0.0020
+0: 101/128 [======================>.......] - ETA: 5:03 - loss: 7.1206 - accuracy: 0.0020
+0: 101/128 [======================>.......] - ETA: 5:03 - loss: 7.1206 - accuracy: 0.0020
+0: 102/128 [======================>.......] - ETA: 4:52 - loss: 7.1197 - accuracy: 0.0020
+0: 102/128 [======================>.......] - ETA: 4:52 - loss: 7.1197 - accuracy: 0.0020
+0: 102/128 [======================>.......] - ETA: 4:52 - loss: 7.1197 - accuracy: 0.0020
+0: 102/128 [======================>.......] - ETA: 4:52 - loss: 7.1197 - accuracy: 0.0020
+0: 103/128 [=======================>......] - ETA: 4:40 - loss: 7.1191 - accuracy: 0.0020
+0: 103/128 [=======================>......] - ETA: 4:40 - loss: 7.1191 - accuracy: 0.0020
+0: 103/128 [=======================>......] - ETA: 4:40 - loss: 7.1191 - accuracy: 0.0020
+0: 103/128 [=======================>......] - ETA: 4:40 - loss: 7.1191 - accuracy: 0.0020
+0: 104/128 [=======================>......] - ETA: 4:29 - loss: 7.1190 - accuracy: 0.0020
+0: 104/128 [=======================>......] - ETA: 4:29 - loss: 7.1190 - accuracy: 0.0020
+0: 104/128 [=======================>......] - ETA: 4:29 - loss: 7.1190 - accuracy: 0.0020
+0: 104/128 [=======================>......] - ETA: 4:29 - loss: 7.1190 - accuracy: 0.0020
+0: 105/128 [=======================>......] - ETA: 4:17 - loss: 7.1181 - accuracy: 0.0020
+0: 105/128 [=======================>......] - ETA: 4:17 - loss: 7.1181 - accuracy: 0.0020
+0: 105/128 [=======================>......] - ETA: 4:17 - loss: 7.1181 - accuracy: 0.0020
+0: 105/128 [=======================>......] - ETA: 4:17 - loss: 7.1181 - accuracy: 0.0020
+0: 106/128 [=======================>......] - ETA: 4:06 - loss: 7.1168 - accuracy: 0.0020
+0: 106/128 [=======================>......] - ETA: 4:06 - loss: 7.1168 - accuracy: 0.0020
+0: 106/128 [=======================>......] - ETA: 4:06 - loss: 7.1168 - accuracy: 0.0020
+0: 106/128 [=======================>......] - ETA: 4:06 - loss: 7.1168 - accuracy: 0.0020
+0: 107/128 [========================>.....] - ETA: 3:55 - loss: 7.1156 - accuracy: 0.0019
+0: 107/128 [========================>.....] - ETA: 3:55 - loss: 7.1156 - accuracy: 0.0019
+0: 107/128 [========================>.....] - ETA: 3:55 - loss: 7.1156 - accuracy: 0.0019
+0: 107/128 [========================>.....] - ETA: 3:55 - loss: 7.1156 - accuracy: 0.0019
+0: 108/128 [========================>.....] - ETA: 3:43 - loss: 7.1143 - accuracy: 0.0020
+0: 108/128 [========================>.....] - ETA: 3:43 - loss: 7.1143 - accuracy: 0.0020
+0: 108/128 [========================>.....] - ETA: 3:43 - loss: 7.1143 - accuracy: 0.0020
+0: 108/128 [========================>.....] - ETA: 3:43 - loss: 7.1143 - accuracy: 0.0020
+0: 109/128 [========================>.....] - ETA: 3:32 - loss: 7.1139 - accuracy: 0.0020
+0: 109/128 [========================>.....] - ETA: 3:32 - loss: 7.1139 - accuracy: 0.0020
+0: 109/128 [========================>.....] - ETA: 3:32 - loss: 7.1139 - accuracy: 0.0020
+0: 109/128 [========================>.....] - ETA: 3:32 - loss: 7.1139 - accuracy: 0.0020
+0: 110/128 [========================>.....] - ETA: 3:20 - loss: 7.1137 - accuracy: 0.0020
+0: 110/128 [========================>.....] - ETA: 3:20 - loss: 7.1137 - accuracy: 0.0020
+0: 110/128 [========================>.....] - ETA: 3:20 - loss: 7.1137 - accuracy: 0.0020
+0: 110/128 [========================>.....] - ETA: 3:20 - loss: 7.1137 - accuracy: 0.0020
+0: 111/128 [=========================>....] - ETA: 3:09 - loss: 7.1126 - accuracy: 0.0021
+0: 111/128 [=========================>....] - ETA: 3:09 - loss: 7.1126 - accuracy: 0.0021
+0: 111/128 [=========================>....] - ETA: 3:09 - loss: 7.1126 - accuracy: 0.0021
+0: 111/128 [=========================>....] - ETA: 3:09 - loss: 7.1126 - accuracy: 0.0021
+0: 112/128 [=========================>....] - ETA: 2:58 - loss: 7.1125 - accuracy: 0.0021
+0: 112/128 [=========================>....] - ETA: 2:58 - loss: 7.1125 - accuracy: 0.0021
+0: 112/128 [=========================>....] - ETA: 2:58 - loss: 7.1125 - accuracy: 0.0021
+0: 112/128 [=========================>....] - ETA: 2:58 - loss: 7.1125 - accuracy: 0.0021
+0: 113/128 [=========================>....] - ETA: 2:47 - loss: 7.1108 - accuracy: 0.0021
+0: 113/128 [=========================>....] - ETA: 2:47 - loss: 7.1108 - accuracy: 0.0021
+0: 113/128 [=========================>....] - ETA: 2:47 - loss: 7.1108 - accuracy: 0.0021
+0: 113/128 [=========================>....] - ETA: 2:47 - loss: 7.1108 - accuracy: 0.0021
+0: 114/128 [=========================>....] - ETA: 2:35 - loss: 7.1096 - accuracy: 0.0022
+0: 114/128 [=========================>....] - ETA: 2:35 - loss: 7.1096 - accuracy: 0.0022
+0: 114/128 [=========================>....] - ETA: 2:35 - loss: 7.1096 - accuracy: 0.0022
+0: 114/128 [=========================>....] - ETA: 2:35 - loss: 7.1096 - accuracy: 0.0022
+0: 115/128 [=========================>....] - ETA: 2:24 - loss: 7.1094 - accuracy: 0.0021
+0: 115/128 [=========================>....] - ETA: 2:24 - loss: 7.1094 - accuracy: 0.0021
+0: 115/128 [=========================>....] - ETA: 2:24 - loss: 7.1094 - accuracy: 0.0021
+0: 115/128 [=========================>....] - ETA: 2:24 - loss: 7.1094 - accuracy: 0.0021
+0: 116/128 [==========================>...] - ETA: 2:13 - loss: 7.1080 - accuracy: 0.0022
+0: 116/128 [==========================>...] - ETA: 2:13 - loss: 7.1080 - accuracy: 0.0022
+0: 116/128 [==========================>...] - ETA: 2:13 - loss: 7.1080 - accuracy: 0.0022
+0: 116/128 [==========================>...] - ETA: 2:13 - loss: 7.1080 - accuracy: 0.0022
+0: 117/128 [==========================>...] - ETA: 2:02 - loss: 7.1070 - accuracy: 0.0022
+0: 117/128 [==========================>...] - ETA: 2:02 - loss: 7.1070 - accuracy: 0.0022
+0: 117/128 [==========================>...] - ETA: 2:02 - loss: 7.1070 - accuracy: 0.0022
+0: 117/128 [==========================>...] - ETA: 2:02 - loss: 7.1070 - accuracy: 0.0022
+0: 118/128 [==========================>...] - ETA: 1:51 - loss: 7.1062 - accuracy: 0.0022
+0: 118/128 [==========================>...] - ETA: 1:51 - loss: 7.1062 - accuracy: 0.0022
+0: 118/128 [==========================>...] - ETA: 1:51 - loss: 7.1062 - accuracy: 0.0022
+0: 118/128 [==========================>...] - ETA: 1:51 - loss: 7.1062 - accuracy: 0.0022
+0: 119/128 [==========================>...] - ETA: 1:40 - loss: 7.1055 - accuracy: 0.0022
+0: 119/128 [==========================>...] - ETA: 1:40 - loss: 7.1055 - accuracy: 0.0022
+0: 119/128 [==========================>...] - ETA: 1:40 - loss: 7.1055 - accuracy: 0.0022
+0: 119/128 [==========================>...] - ETA: 1:40 - loss: 7.1055 - accuracy: 0.0022
+0: 120/128 [===========================>..] - ETA: 1:28 - loss: 7.1045 - accuracy: 0.0022
+0: 120/128 [===========================>..] - ETA: 1:28 - loss: 7.1045 - accuracy: 0.0022
+0: 120/128 [===========================>..] - ETA: 1:28 - loss: 7.1045 - accuracy: 0.0022
+0: 120/128 [===========================>..] - ETA: 1:28 - loss: 7.1045 - accuracy: 0.0022
+0: 121/128 [===========================>..] - ETA: 1:17 - loss: 7.1046 - accuracy: 0.0022
+0: 121/128 [===========================>..] - ETA: 1:17 - loss: 7.1046 - accuracy: 0.0022
+0: 121/128 [===========================>..] - ETA: 1:17 - loss: 7.1046 - accuracy: 0.0022
+0: 121/128 [===========================>..] - ETA: 1:17 - loss: 7.1046 - accuracy: 0.0022
+0: 122/128 [===========================>..] - ETA: 1:06 - loss: 7.1040 - accuracy: 0.0022
+0: 122/128 [===========================>..] - ETA: 1:06 - loss: 7.1040 - accuracy: 0.0022
+0: 122/128 [===========================>..] - ETA: 1:06 - loss: 7.1040 - accuracy: 0.0022
+0: 122/128 [===========================>..] - ETA: 1:06 - loss: 7.1040 - accuracy: 0.0022
+0: 123/128 [===========================>..] - ETA: 55s - loss: 7.1030 - accuracy: 0.0022 
+0: 123/128 [===========================>..] - ETA: 55s - loss: 7.1030 - accuracy: 0.0022 
+0: 123/128 [===========================>..] - ETA: 55s - loss: 7.1030 - accuracy: 0.0022 
+0: 123/128 [===========================>..] - ETA: 55s - loss: 7.1030 - accuracy: 0.0022 
+0: 124/128 [============================>.] - ETA: 44s - loss: 7.1021 - accuracy: 0.0022
+0: 124/128 [============================>.] - ETA: 44s - loss: 7.1021 - accuracy: 0.0022
+0: 124/128 [============================>.] - ETA: 44s - loss: 7.1021 - accuracy: 0.0022
+0: 124/128 [============================>.] - ETA: 44s - loss: 7.1021 - accuracy: 0.0022
+0: 125/128 [============================>.] - ETA: 33s - loss: 7.1012 - accuracy: 0.0022
+0: 125/128 [============================>.] - ETA: 33s - loss: 7.1012 - accuracy: 0.0022
+0: 125/128 [============================>.] - ETA: 33s - loss: 7.1012 - accuracy: 0.0022
+0: 125/128 [============================>.] - ETA: 33s - loss: 7.1012 - accuracy: 0.0022
+0: 126/128 [============================>.] - ETA: 22s - loss: 7.1006 - accuracy: 0.0022
+0: 126/128 [============================>.] - ETA: 22s - loss: 7.1006 - accuracy: 0.0022
+0: 126/128 [============================>.] - ETA: 22s - loss: 7.1006 - accuracy: 0.0022
+0: 126/128 [============================>.] - ETA: 22s - loss: 7.1006 - accuracy: 0.0022
+0: 127/128 [============================>.] - ETA: 11s - loss: 7.0997 - accuracy: 0.0022
+0: 127/128 [============================>.] - ETA: 11s - loss: 7.0997 - accuracy: 0.0022
+0: 127/128 [============================>.] - ETA: 11s - loss: 7.0997 - accuracy: 0.0022
+0: 127/128 [============================>.] - ETA: 11s - loss: 7.0997 - accuracy: 0.0022
+0: 128/128 [==============================] - ETA: 0s - loss: 7.0986 - accuracy: 0.0022 
+0: 128/128 [==============================] - ETA: 0s - loss: 7.0986 - accuracy: 0.0022 
+0: 128/128 [==============================] - ETA: 0s - loss: 7.0986 - accuracy: 0.0022 
+0: 128/128 [==============================] - ETA: 0s - loss: 7.0986 - accuracy: 0.0022 
+0: 128/128 [==============================] - 2561s 20s/step - loss: 7.0986 - accuracy: 0.0022 - val_loss: 7.8765 - val_accuracy: 0.0012
+0: 128/128 [==============================] - 2561s 20s/step - loss: 7.0986 - accuracy: 0.0022 - val_loss: 7.8765 - val_accuracy: 0.0012
+0: Steps per epoch: 128
+0: Validation steps per epoch: 128
+0: Best validation accuracy: 0.001
+0: Average time per epoch: 2614.667 s
+0: --- 2694.9677670001984 seconds ---
+0: Steps per epoch: 128
+0: Validation steps per epoch: 128
+0: Best validation accuracy: 0.001
+0: Average time per epoch: 2614.775 s
+0: --- 2694.9917826652527 seconds ---
+0: 128/128 [==============================] - 2561s 20s/step - loss: 7.0986 - accuracy: 0.0022 - val_loss: 7.8765 - val_accuracy: 0.0012
+0: Steps per epoch: 128
+0: Validation steps per epoch: 128
+0: Best validation accuracy: 0.001
+0: Average time per epoch: 2615.146 s
+0: --- 2695.039139509201 seconds ---
+0: 128/128 [==============================] - 2561s 20s/step - loss: 7.0986 - accuracy: 0.0022 - val_loss: 7.8765 - val_accuracy: 0.0012
+0: Steps per epoch: 128
+0: Validation steps per epoch: 128
+0: Best validation accuracy: 0.001
+0: Average time per epoch: 2614.924 s
+0: --- 2695.1736245155334 seconds ---
+ELAPSED: 2724 seconds
+End at Tue Feb 16 22:31:31 EET 2021

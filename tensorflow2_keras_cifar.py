@@ -83,7 +83,7 @@ hist = model.fit(train_dataset,
                 validation_data=test_dataset,
                 validation_steps=1,
                 workers=0,
-                verbose=1,
+                verbose=verbose,
                 callbacks=callbacks
                 )
 # Print some best-found metrics

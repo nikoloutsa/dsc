@@ -44,13 +44,15 @@ def main():
 
     # Load Data
     if args.mirrored:
-        args.batch_size = int(train_config['batch_size'] / 2 ) # 2 gpus per node
+        #args.batch_size = int(train_config['batch_size'] / 2 ) # 2 gpus per node
+        args.batch_size = train_config['batch_size'] * 2
         print("mirrored batch_size=",args.batch_size)
     else:
         args.batch_size = train_config['batch_size']
         print("batch_size=",args.batch_size)
     train_dataset, test_dataset = get_datasets(batch_size=args.batch_size,
                                         **config['data'])
+
 
     # Configure Optimizer
     lr = config['optimizer']['lr']
@@ -100,21 +102,21 @@ def main():
     callbacks.append(lr_schedule_callback)
    
     # Train the model
-    steps_per_epoch = len(train_dataset) 
-    validation_steps = len(test_dataset) 
+    steps_per_epoch = 1000*len(train_dataset) 
+    validation_steps = 1000*len(test_dataset)
 
     hist = model.fit(train_dataset,
                     epochs=train_config['n_epochs'],
-                    #steps_per_epoch=steps_per_epoch,
+                    steps_per_epoch=steps_per_epoch,
                     validation_data=test_dataset,
-                    #validation_steps=validation_steps,
+                    validation_steps=validation_steps,
                     workers=1,
                     verbose=2,
                     callbacks=callbacks
                     )
     # Print some best-found metrics
     print('Steps per epoch: {}'.format(steps_per_epoch))
-    print('Validation steps per epoch: {}'.format(len(test_dataset)))
+    print('Validation steps per epoch: {}'.format(validation_steps))
     if 'val_accuracy' in hist.history.keys():
         print('Best validation accuracy: {:.3f}'.format(
             max(hist.history['val_accuracy'])))

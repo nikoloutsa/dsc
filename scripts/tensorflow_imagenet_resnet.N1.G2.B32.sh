@@ -5,9 +5,9 @@
 #SBATCH --error=logs/tensorflow_imagenet_resnet.N1.G2.B32.%j.err 
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:2
-#SBATCH --nodes=1 
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=1
+#SBATCH --cpus-per-task=2
 #SBATCH --mem=56000 # Memory per job in MB
 #SBATCH -t 12:00:00 # Run time (hh:mm:ss) - (max 48h)
 #SBATCH --partition=gpu # Run on the GPU nodes queue
@@ -32,11 +32,22 @@ echo "Running on $SLURM_NNODES nodes."
 echo "Running $SLURM_NTASKS_PER_NODE tasks per node"
 echo "Job id is $SLURM_JOBID"
 
-srun -l python train.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B32.yaml --mirrored
+INDEX=0
+for node in ${NODES[@]}
+do
+    export TF_CONFIG='{"cluster": {"worker": ['$WORKERS']}, "task": {"type": "worker", "index": '$INDEX'} }'
+    echo "srun $node $TF_CONFIG"
+    srun -w $node -n 1 -l --export=ALL,TF_CONFIG python train.tensorflow.distributed.py --config=configs/tensorflow_imagenet_resnet.B32.yaml & 
+    INDEX=$(($INDEX+1))
+done
+
+wait
 
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"
  
 echo "End at `date`"
+
+
 
 

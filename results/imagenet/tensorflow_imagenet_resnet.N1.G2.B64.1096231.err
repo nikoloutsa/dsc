@@ -1,0 +1,85 @@
+0: 2021-02-16 21:46:05.334947: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:29.260315: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+0: 2021-02-16 21:46:29.333765: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:29.335120: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:29.335148: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:29.583868: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:29.711424: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:29.939422: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:30.443402: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:30.499093: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 2021-02-16 21:46:30.741520: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:30.746957: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:30.747530: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA
+0: To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+0: 2021-02-16 21:46:30.760092: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2600215000 Hz
+0: 2021-02-16 21:46:30.762960: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x58af290 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+0: 2021-02-16 21:46:30.762980: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+0: 2021-02-16 21:46:30.959943: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x591b320 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+0: 2021-02-16 21:46:30.959986: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Tesla K40m, Compute Capability 3.5
+0: 2021-02-16 21:46:30.960001: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): Tesla K40m, Compute Capability 3.5
+0: 2021-02-16 21:46:30.962924: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:30.965311: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:30.965365: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:30.965415: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:30.965465: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:30.965492: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:30.965525: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:30.965551: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 2021-02-16 21:46:30.965590: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:30.974753: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:30.974824: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:31.945385: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+0: 2021-02-16 21:46:31.945420: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 1 
+0: 2021-02-16 21:46:31.945432: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N N 
+0: 2021-02-16 21:46:31.945436: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 1:   N N 
+0: 2021-02-16 21:46:31.949405: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10622 MB memory) -> physical GPU (device: 0, name: Tesla K40m, pci bus id: 0000:04:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:31.951330: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10622 MB memory) -> physical GPU (device: 1, name: Tesla K40m, pci bus id: 0000:82:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:32.024367: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+0: pciBusID: 0000:04:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:32.026645: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 1 with properties: 
+0: pciBusID: 0000:82:00.0 name: Tesla K40m computeCapability: 3.5
+0: coreClock: 0.8755GHz coreCount: 15 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 268.58GiB/s
+0: 2021-02-16 21:46:32.026699: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+0: 2021-02-16 21:46:32.026741: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:46:32.026769: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+0: 2021-02-16 21:46:32.026794: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+0: 2021-02-16 21:46:32.026818: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+0: 2021-02-16 21:46:32.026842: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+0: 2021-02-16 21:46:32.026867: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 21:46:32.032645: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0, 1
+0: 2021-02-16 21:46:32.032696: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+0: 2021-02-16 21:46:32.032705: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 1 
+0: 2021-02-16 21:46:32.032710: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N N 
+0: 2021-02-16 21:46:32.032715: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 1:   N N 
+0: 2021-02-16 21:46:32.036279: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:worker/replica:0/task:0/device:GPU:0 with 10622 MB memory) -> physical GPU (device: 0, name: Tesla K40m, pci bus id: 0000:04:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:32.037455: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:worker/replica:0/task:0/device:GPU:1 with 10622 MB memory) -> physical GPU (device: 1, name: Tesla K40m, pci bus id: 0000:82:00.0, compute capability: 3.5)
+0: 2021-02-16 21:46:32.073774: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:301] Initialize GrpcChannelCache for job worker -> {0 -> gpu06-ib:5555}
+0: 2021-02-16 21:46:32.076173: I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:405] Started server with target: grpc://gpu06-ib:5555
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 2, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 2, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 2, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 2, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 2, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 2, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 2, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 2, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 2, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 1 all-reduces, num_devices = 2, group_size = 2, communication_hint = AUTO, num_packs = 1
+0: WARNING:tensorflow:From /apps/applications/tensorflow/2.3.0/gpu/lib/python3.8/site-packages/tensorflow/python/data/ops/multi_device_iterator_ops.py:601: get_next_as_optional (from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+0: Instructions for updating:
+0: Use `tf.data.Iterator.get_next_as_optional()` instead.
+0: INFO:tensorflow:Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 2, communication_hint = AUTO, num_packs = 1
+0: INFO:tensorflow:Collective batch_all_reduce: 214 all-reduces, num_devices = 2, group_size = 2, communication_hint = AUTO, num_packs = 1
+0: 2021-02-16 21:48:09.701379: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+0: 2021-02-16 21:48:13.449917: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+0: 2021-02-16 22:01:37.788747: W tensorflow/core/common_runtime/eager/context.cc:566] Unable to destroy server_ object, so releasing instead. Servers don't support clean shutdown.

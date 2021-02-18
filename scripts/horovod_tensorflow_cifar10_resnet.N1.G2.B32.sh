@@ -19,11 +19,6 @@ module load gnu/8 cuda/10.1.168 intel/18 java/12.0.2 intelmpi/2018 tensorflow/2.
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
-NODES=($( scontrol show hostname $SLURM_NODELIST | uniq ))
-export NUM_NODES=${#NODES[@]}
-WORKERS=$(printf '"%s-ib:5555",' "${NODES[@]}" | sed 's/,$//')
-
-
 echo "Start at `date`"
 START_TIME=$(date +%s)
 echo "CUDA_VISIBLE_DEVICES: $CUDA_VISIBLE_DEVICES"
@@ -32,12 +27,15 @@ echo "Running on $SLURM_NNODES nodes."
 echo "Running $SLURM_NTASKS_PER_NODE tasks per node"
 echo "Job id is $SLURM_JOBID"
 
-srun -l python tensorflow2_keras_cifar.py
+NODES=($( scontrol show hostname $SLURM_NODELIST | uniq ))
+export NUM_NODES=${#NODES[@]}
+
+echo "NUM_NODES: $NUM_NODES"
+
+srun -l python train.horovod.tensorflow.py --config=configs/tensorflow_cifar10_resnet.B32.yaml
+#srun -l python tensorflow2_keras_cifar.py
+
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"
  
 echo "End at `date`"
-
-
-
-
