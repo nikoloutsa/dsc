@@ -1,23 +1,22 @@
 #!/bin/bash -l
 
 #SBATCH --job-name=horovod_tensorflow_imagenet_resnet 
-#SBATCH --output=logs/horovod_tensorflow_imagenet_resnet.tf1.N8.G2.B64.%j.out 
-#SBATCH --error=logs/horovod_tensorflow_imagenet_resnet.tf1.N8.G2.B64.%j.err 
+#SBATCH --output=logs/horovod_tensorflow_imagenet_resnet.N16.G2.B64.%j.out 
+#SBATCH --error=logs/horovod_tensorflow_imagenet_resnet.N16.G2.B64.%j.err 
 #SBATCH --ntasks=16
 #SBATCH --gres=gpu:2
-#SBATCH --nodes=8
+#SBATCH --nodes=16
 #SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=56000 # Memory per job in MB
-#SBATCH -t 16:00:00 # Run time (hh:mm:ss) - (max 48h)
+#SBATCH -t 12:00:00 # Run time (hh:mm:ss) - (max 48h)
 #SBATCH --partition=gpu # Run on the GPU nodes queue
 #SBATCH -A pa201202 # Accounting project
 #SBATCH --export=ALL,HOROVOD_CYCLE_TIME=1,NCCL_DEBUG=INFO,HOROVOD_MPI_THREADS_DISALBE=1
 
 # Load any necessary modules
 module purge
-#module load gnu/8 cuda/10.1.168 intel/18 java/12.0.2 intelmpi/2018 tensorflow/2.3.0
-module load gnu/6.4.0 intel java/1.8.0 cuda/9.2.148 tensorflow/1.12.0gpu
+module load gnu/8 cuda/10.1.168 intel/18 java/12.0.2 intelmpi/2018 tensorflow/2.3.0
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
@@ -34,7 +33,10 @@ export NUM_NODES=${#NODES[@]}
 
 echo "NUM_NODES: $NUM_NODES"
 
-srun -l python -u train.horovod.tensorflow.tf1.py --config=configs/tensorflow_imagenet_resnet.B64.yaml
+WORKERS=$(printf '%s-ib:'${SLURM_NTASKS_PER_NODE}',' "${NODES[@]}" | sed 's/,$//')
+
+horovodrun --gloo -np $SLURM_NTASKS -H $WORKERS --network-interface ib0 --start-timeout 120 --gloo-timeout-seconds 120 python train.horovod.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B64.yaml
+#srun -l python train.horovod.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B64.yaml
 
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"

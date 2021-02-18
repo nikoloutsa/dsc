@@ -1,8 +1,8 @@
 #!/bin/bash -l
 
 #SBATCH --job-name=horovod_tensorflow_imagenet_resnet 
-#SBATCH --output=logs/horovod_tensorflow_imagenet_resnet.N2.G2.B64.%j.out 
-#SBATCH --error=logs/horovod_tensorflow_imagenet_resnet.N2.G2.B64.%j.err 
+#SBATCH --output=logs/horovod_tensorflow_imagenet_resnet.N1.G2.B64.%j.out 
+#SBATCH --error=logs/horovod_tensorflow_imagenet_resnet.N1.G2.B64.%j.err 
 #SBATCH --ntasks=4
 #SBATCH --gres=gpu:2
 #SBATCH --nodes=2
@@ -12,7 +12,6 @@
 #SBATCH -t 12:00:00 # Run time (hh:mm:ss) - (max 48h)
 #SBATCH --partition=gpu # Run on the GPU nodes queue
 #SBATCH -A pa201202 # Accounting project
-#SBATCH --export=ALL,HOROVOD_CYCLE_TIME=1,NCCL_DEBUG=INFO,HOROVOD_MPI_THREADS_DISALBE=1
 
 # Load any necessary modules
 module purge
@@ -32,8 +31,11 @@ NODES=($( scontrol show hostname $SLURM_NODELIST | uniq ))
 export NUM_NODES=${#NODES[@]}
 
 echo "NUM_NODES: $NUM_NODES"
+WORKERS=$(printf '%s-ib:'${SLURM_NTASKS_PER_NODE}',' "${NODES[@]}" | sed 's/,$//')
 
-srun -l python train.horovod.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B64.yaml
+echo "horovodrun --gloo -np $SLURM_NTASKS -H $WORKERS --network-interface=ib0 --start-timeout 120 --gloo-timeout-seconds 120 python train.horovod.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B64.yaml"
+horovodrun --gloo -np $SLURM_NTASKS -H $WORKERS --network-interface ib0 --start-timeout 120 --gloo-timeout-seconds 120 python train.horovod.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B64.yaml
+#srun -l python train.horovod.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B64.yaml
 
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"

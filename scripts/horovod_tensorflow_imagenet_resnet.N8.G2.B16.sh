@@ -1,11 +1,11 @@
 #!/bin/bash -l
 
 #SBATCH --job-name=horovod_tensorflow_imagenet_resnet 
-#SBATCH --output=logs/horovod_tensorflow_imagenet_resnet.N1.G2.B64.%j.out 
-#SBATCH --error=logs/horovod_tensorflow_imagenet_resnet.N1.G2.B64.%j.err 
-#SBATCH --ntasks=2
+#SBATCH --output=logs/horovod_tensorflow_imagenet_resnet.N8.G2.B16.%j.out 
+#SBATCH --error=logs/horovod_tensorflow_imagenet_resnet.N8.G2.B16.%j.err 
+#SBATCH --ntasks=16
 #SBATCH --gres=gpu:2
-#SBATCH --nodes=1
+#SBATCH --nodes=8
 #SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=56000 # Memory per job in MB
@@ -31,12 +31,12 @@ NODES=($( scontrol show hostname $SLURM_NODELIST | uniq ))
 export NUM_NODES=${#NODES[@]}
 
 echo "NUM_NODES: $NUM_NODES"
+#WORKERS=$(printf '%s-ib:'${SLURM_NTASKS_PER_NODE}',' "${NODES[@]}" | sed 's/,$//')
 WORKERS=$(printf '%s-ib:'${SLURM_NTASKS_PER_NODE}',' "${NODES[@]}" | sed 's/,$//')
 
-echo "horovodrun --gloo -np $SLURM_NTASKS -H $WORKERS --network-interface=ib0 --start-timeout 120 --gloo-timeout-seconds 120 python train.horovod.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B64.yaml"
-horovodrun --gloo -np $SLURM_NTASKS -H $WORKERS --start-timeout 120 --gloo-timeout-seconds 120 python train.horovod.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B64.yaml
-#horovodrun --gloo -np $SLURM_NTASKS -H $WORKERS --network-interface=ib0 --start-timeout 120 --gloo-timeout-seconds 120 python train.horovod.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B64.yaml
-#srun -l python train.horovod.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B64.yaml
+echo "horovodrun --gloo -np $SLURM_NTASKS -H $WORKERS --network-interface=ib0 --start-timeout 120 --gloo-timeout-seconds 120 python train.horovod.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B16.yaml"
+horovodrun --gloo -np $SLURM_NTASKS -H $WORKERS --network-interface ib0 --start-timeout 120 --gloo-timeout-seconds 120 python train.horovod.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B16.yaml
+#srun -l python train.horovod.tensorflow.py --config=configs/tensorflow_imagenet_resnet.B16.yaml
 
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"

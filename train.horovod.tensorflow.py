@@ -88,10 +88,12 @@ def main():
     verbose = 1 if hvd.rank() == 0 else 0
 
     # Train the model
-    steps_per_epoch = len(train_dataset) 
-    validation_steps = len(test_dataset) 
-    steps_per_epoch = 1024
-    validation_steps = 1024
+    steps_per_epoch=len(train_dataset) // hvd.size()
+    validation_steps=len(test_dataset) // hvd.size()
+    #validation_steps=3 * len(test_iter) // hvd.size()
+    #steps_per_epoch = 32
+    #validation_steps = 32
+    print("Steps per epoch:",steps_per_epoch)
 
     hist = model.fit(train_dataset,
                     epochs=train_config['n_epochs'],

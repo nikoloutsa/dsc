@@ -3,7 +3,7 @@
 #SBATCH --job-name=tensorflow_cifar10_resnet 
 #SBATCH --output=logs/tensorflow_cifar10_resnet.N2.G2.B32.%j.out 
 #SBATCH --error=logs/tensorflow_cifar10_resnet.N2.G2.B32.%j.err 
-#SBATCH --ntasks=2
+#SBATCH --ntasks=4
 #SBATCH --gres=gpu:2
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1

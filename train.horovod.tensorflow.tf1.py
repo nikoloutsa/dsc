@@ -72,7 +72,7 @@ resume_from_epoch = 0
 resume_from_epoch = hvd.broadcast(resume_from_epoch, 0, name='resume_from_epoch')
 
 # Horovod: print logs on the first worker.
-verbose = 2 if hvd.rank() == 0 else 0
+verbose = 1 if hvd.rank() == 0 else 0
 
 # Training data iterator.
 train_gen = image.ImageDataGenerator(
@@ -168,15 +168,17 @@ if hvd.rank() == 0:
 # example will be evaluated.
 #steps_per_epoch=len(train_iter) // hvd.size()
 #validation_steps=3 * len(test_iter) // hvd.size())
-steps_per_epoch=len(train_iter)
-validation_steps=len(test_iter)
+
+steps_per_epoch=32
+validation_steps=32
+print("Steps per epoch:",steps_per_epoch)
 
 hist = model.fit_generator(train_iter,
                     steps_per_epoch=steps_per_epoch,
                     callbacks=callbacks,
                     epochs=args.epochs,
                     verbose=verbose,
-                    workers=10,
+                    workers=1,
                     initial_epoch=resume_from_epoch,
                     validation_data=test_iter,
                     validation_steps=validation_steps)
