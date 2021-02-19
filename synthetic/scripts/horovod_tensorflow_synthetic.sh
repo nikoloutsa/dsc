@@ -1,0 +1,56 @@
+#!/bin/bash -l
+
+#SBATCH --job-name=horovod_tensorflow_synthetic_benchmark 
+#SBATCH --output=horovod_tensorflow_synthetic_benchmark.%j.out 
+#SBATCH --error=horovod_tensorflow_synthetic_benchmark.%j.err 
+#SBATCH --ntasks=4
+#SBATCH --gres=gpu:2
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=2
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=56000 # Memory per job in MB
+#SBATCH -t 04:00:00 # Run time (hh:mm:ss) - (max 48h)
+#SBATCH --partition=gpu # Run on the GPU nodes queue
+#SBATCH -A pa201202 # Accounting project
+##SBATCH --export=ALL,HOROVOD_CYCLE_TIME=1,NCCL_DEBUG=INFO,HOROVOD_MPI_THREADS_DISALBE=1
+
+# Load any necessary modules
+module purge
+module load gnu/8 cuda/10.1.168 intel/18 java/12.0.2 intelmpi/2018 tensorflow/2.3.0
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+echo "Start at `date`"
+START_TIME=$(date +%s)
+echo "CUDA_VISIBLE_DEVICES: $CUDA_VISIBLE_DEVICES"
+echo "Running on hosts: $SLURM_NODELIST"
+echo "Running on $SLURM_NNODES nodes."
+echo "Running $SLURM_NTASKS_PER_NODE tasks per node"
+echo "Job id is $SLURM_JOBID"
+
+
+NODES=($( scontrol show hostname $SLURM_NODELIST | uniq ))
+NUM_NODES=${#NODES[@]}
+WORKERS=$(printf '%s-ib:'${SLURM_NTASKS_PER_NODE}',' "${NODES[@]}" | sed 's/,$//')
+HOST_LIST=$(printf '%s-ib,' "${NODES[@]}" | sed 's/,$//')
+HOST_LIST=$(printf "'%s-ib'," "${NODES[@]}" | sed 's/,$//')
+
+echo "NUM_NODES: $NUM_NODES"
+echo "WORKERS: $WORKERS"
+echo "$HOST_LIST"
+#scontrol show hostname $SLURM_NODELIST > hosts.txt
+#sed -i 's/$/-ib:2/' hosts.txt
+
+#horovodrun --gloo -np $SLURM_NTASKS -H $WORKERS --network-interface=ib0 --start-timeout 120 --gloo-timeout-seconds 120 python -u train.horovod.tensorflow.synthetic.py
+echo "mpirun -l -np $SLURM_NTASKS -hosts $HOST_LIST -ppn 2 -iface ib0 python -u tensorflow2_synthetic_benchmark.py"
+mpirun -l -np $SLURM_NTASKS -hosts $HOST_LIST -ppn 2 -iface ib0 python -u train.horovod.tensorflow.synthetic.py
+
+#horovodrun --mpi -np $SLURM_NTASKS -H $WORKERS --network-interface=ib0 --start-timeout 120 --gloo-timeout-seconds 120 python -u tensorflow2_synthetic_benchmark.py
+#horovodrun --gloo -np $SLURM_NTASKS -H $WORKERS --network-interface=ib0 --start-timeout 120 --gloo-timeout-seconds 120 python -u tensorflow2_synthetic_benchmark.py
+
+#srun -l python -u tensorflow2_synthetic_benchmark.py
+
+END_TIME=$(date +%s)
+echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"
+ 
+echo "End at `date`"
