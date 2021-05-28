@@ -9,7 +9,7 @@
 #SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=56000 # Memory per job in MB
-#SBATCH -t 04:00:00 # Run time (hh:mm:ss) - (max 48h)
+#SBATCH -t 01:00:00 # Run time (hh:mm:ss) - (max 48h)
 #SBATCH --partition=gpu # Run on the GPU nodes queue
 #SBATCH -A pa201202 # Accounting project
 ##SBATCH --export=ALL,HOROVOD_CYCLE_TIME=1,NCCL_DEBUG=INFO,HOROVOD_MPI_THREADS_DISALBE=1
@@ -32,8 +32,7 @@ NODES=($( scontrol show hostname $SLURM_NODELIST | uniq ))
 NUM_NODES=${#NODES[@]}
 WORKERS=$(printf '%s-ib:'${SLURM_NTASKS_PER_NODE}',' "${NODES[@]}" | sed 's/,$//')
 
-#horovodrun --mpi -np $SLURM_NTASKS -H $WORKERS --network-interface ib0 --start-timeout 120  \
-srun -l    python -u train.horovod.pytorch.synthetic.py --batch-size 32 --num-batches-per-iter ${1:-16} --num-iters 3
+srun -l python -u train.horovod.pytorch.synthetic.py --batch-size 32 --num-batches-per-iter ${1:-128} --num-iters 3
 
 
 END_TIME=$(date +%s)

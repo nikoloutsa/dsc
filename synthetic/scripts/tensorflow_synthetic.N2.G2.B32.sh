@@ -9,7 +9,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=28000 # Memory per job in MB
-#SBATCH -t 04:00:00 # Run time (hh:mm:ss) - (max 48h)
+#SBATCH -t 01:00:00 # Run time (hh:mm:ss) - (max 48h)
 #SBATCH --partition=gpu # Run on the GPU nodes queue
 #SBATCH -A pa201202 # Accounting project
 ##SBATCH --export=ALL,HOROVOD_CYCLE_TIME=1,NCCL_DEBUG=INFO,HOROVOD_MPI_THREADS_DISALBE=1
@@ -38,7 +38,7 @@ for node in ${NODES[@]}
 do
     export TF_CONFIG='{"cluster": {"worker": ['$WORKERS']}, "task": {"type": "worker", "index": '$INDEX'} }'
     echo "srun $node $TF_CONFIG"
-    srun -w $node -n 1 -l --export=ALL,TF_CONFIG python train.tensorflow.synthetic.py --batch-size 32 --num-batches-per-iter ${1:-16} --num-iters 3 &
+    srun -w $node -n 1 -l --export=ALL,TF_CONFIG python train.tensorflow.synthetic.py --batch-size 32 --num-batches-per-iter ${1:-128} --num-iters 3 &
     INDEX=$(($INDEX+1))
 done
 

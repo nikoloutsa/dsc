@@ -1,12 +1,12 @@
 #!/bin/bash -l
 
-#SBATCH --job-name=horovod_pytorch_synthetic_benchmark 
-#SBATCH --output=logs/horovod_pytorch_synthetic_benchmark.gloo.N4.G2.B32.%j.out 
-#SBATCH --error=logs/horovod_pytorch_synthetic_benchmark.gloo.N4.G2.B32.%j.err 
-#SBATCH --ntasks=8
+#SBATCH --job-name=tensorflow_synthetic_benchmark 
+#SBATCH --output=logs/tensorflow_synthetic_benchmark.N16.G2.B32.%j.out 
+#SBATCH --error=logs/tensorflow_synthetic_benchmark.N16.G2.B32.%j.err 
+#SBATCH --ntasks=16
 #SBATCH --gres=gpu:2
-#SBATCH --nodes=4
-#SBATCH --ntasks-per-node=2
+#SBATCH --nodes=16
+#SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=56000 # Memory per job in MB
 #SBATCH -t 01:00:00 # Run time (hh:mm:ss) - (max 48h)
@@ -16,7 +16,7 @@
 
 # Load any necessary modules
 module purge
-module load gnu/8 intelmpi/2018 cuda/10.1.168 pytorch/1.7.0
+module load gnu/8 cuda/10.1.168 intel/18 java/12.0.2 intelmpi/2018 tensorflow/2.3.0
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
@@ -28,13 +28,21 @@ echo "Running on $SLURM_NNODES nodes."
 echo "Running $SLURM_NTASKS_PER_NODE tasks per node"
 echo "Job id is $SLURM_JOBID"
 
+
 NODES=($( scontrol show hostname $SLURM_NODELIST | uniq ))
-NUM_NODES=${#NODES[@]}
-WORKERS=$(printf '%s-ib:'${SLURM_NTASKS_PER_NODE}',' "${NODES[@]}" | sed 's/,$//')
+export NUM_NODES=${#NODES[@]}
+WORKERS=$(printf '"%s-ib:5555",' "${NODES[@]}" | sed 's/,$//')
 
-horovodrun --gloo -np $SLURM_NTASKS -H $WORKERS --network-interface ib0 --start-timeout 120 --gloo-timeout-seconds 120 \
-    python -u train.horovod.pytorch.synthetic.py --batch-size 32 --num-batches-per-iter ${1:-128} --num-iters 3
+INDEX=0
+for node in ${NODES[@]}
+do
+    export TF_CONFIG='{"cluster": {"worker": ['$WORKERS']}, "task": {"type": "worker", "index": '$INDEX'} }'
+    echo "srun $node $TF_CONFIG"
+    srun -w $node -n 1 -l --export=ALL,TF_CONFIG python train.tensorflow.synthetic.py --batch-size 32 --num-batches-per-iter ${1:-128} --num-iters 3 &
+    INDEX=$(($INDEX+1))
+done
 
+wait
 
 END_TIME=$(date +%s)
 echo "ELAPSED: $(($END_TIME - $START_TIME)) seconds"

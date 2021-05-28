@@ -64,13 +64,15 @@ callbacks = []
 class TimingCallback(tf.keras.callbacks.Callback):
     def on_train_begin(self, logs=None):
         self.img_secs = []
+        self.time_secs = []
 
     def on_train_end(self, logs=None):
         img_sec_mean = np.mean(self.img_secs)
         img_sec_conf = 1.96 * np.std(self.img_secs)
-        print('Img/sec per %s: %.1f +-%.1f' % (device, img_sec_mean, img_sec_conf))
-        print('Total img/sec on %d %s(s): %.1f +-%.1f' %
-             (world_size, device, world_size * img_sec_mean, world_size * img_sec_conf))
+        if verbose:
+            print('Img/sec per %s: %.1f +-%.1f' % (device, img_sec_mean, img_sec_conf))
+            print('Total img/sec on %d %s(s): %.1f +-%.1f' %
+                 (world_size, device, world_size * img_sec_mean, world_size * img_sec_conf))
 
     def on_epoch_begin(self, epoch, logs=None):
         self.starttime = timer()
@@ -78,10 +80,13 @@ class TimingCallback(tf.keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs=None):
         time = timer() - self.starttime
         img_sec = args.batch_size * args.num_batches_per_iter / time
-        print('Iter #%d: %.1f img/sec per %s' % (epoch, img_sec, device))
+        time_sec = time
+        if verbose:
+            print('Iter #%d: %.1f img/sec per %s' % (epoch, img_sec, device))
         # skip warm up epoch
         if epoch > 0:
             self.img_secs.append(img_sec)
+            self.time_secs.append(time_sec)
 
 timing = TimingCallback()
 callbacks.append(timing)
@@ -98,7 +103,7 @@ model.fit(
 
 if verbose:
     print('Steps per epoch: {}'.format(args.num_batches_per_iter))
-    print('Average time per epoch: {:.3f} s'.format(np.mean(timing.img_secs)))
-    print('Total time: {:.3f} s'.format(world_size * np.mean(timing.img_secs)))
+    print('Average time per epoch: {:.3f} s'.format(np.mean(timing.time_secs)))
+    print('Total time: {:.3f} s'.format(world_size * np.mean(timing.time_secs)))
 
 

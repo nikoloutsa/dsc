@@ -1,0 +1,17 @@
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.gloo.N1.G1.B32.1135843.out
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.gloo.N8.G2.B32.1135848.out
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.gloo.N4.G2.B32.1135847.out
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.gloo.N16.G2.B32.1135849.out
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.gloo.N2.G2.B32.1135846.out
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.gloo.N1.G2.B32.1135845.out
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.gloo.N1.G1.B32.1135844.out
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.gloo.N8.G2.B32.1135854.out
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.gloo.N4.G2.B32.1135853.out
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.gloo.N2.G2.B32.1135852.out
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.gloo.N1.G1.B32.1135850.out
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.gloo.N16.G2.B32.1135855.out
+./parse_out.sh logs/tensorflow_synthetic_benchmark.N4.G2.B32.1135857.out
+./parse_out.sh logs/tensorflow_synthetic_benchmark.N1.G2.B32.1135856.out
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.gloo.N1.G2.B32.1135851.out
+./parse_out.sh logs/horovod_pytorch_synthetic_benchmark.mpi.N1.G2.B32.1135858.out
+

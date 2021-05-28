@@ -1,15 +1,15 @@
 #!/bin/bash -l
 
 #SBATCH --job-name=horovod_pytorch_synthetic_benchmark 
-#SBATCH --output=logs/horovod_pytorch_synthetic_benchmark.mpi.N1.G1.B32.%j.out 
-#SBATCH --error=logs/horovod_pytorch_synthetic_benchmark.mpi.N1.G1.B32.%j.err 
+#SBATCH --output=logs/horovod_pytorch_synthetic_benchmark.mpi.N1.G2.B32.%j.out 
+#SBATCH --error=logs/horovod_pytorch_synthetic_benchmark.mpi.N1.G2.B32.%j.err 
 #SBATCH --ntasks=2
 #SBATCH --gres=gpu:2
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=28000 # Memory per job in MB
-#SBATCH -t 04:00:00 # Run time (hh:mm:ss) - (max 48h)
+#SBATCH -t 01:00:00 # Run time (hh:mm:ss) - (max 48h)
 #SBATCH --partition=gpu # Run on the GPU nodes queue
 #SBATCH -A pa201202 # Accounting project
 ##SBATCH --export=ALL,HOROVOD_CYCLE_TIME=1,NCCL_DEBUG=INFO,HOROVOD_MPI_THREADS_DISALBE=1
@@ -33,7 +33,7 @@ NUM_NODES=${#NODES[@]}
 WORKERS=$(printf '%s-ib:'${SLURM_NTASKS_PER_NODE}',' "${NODES[@]}" | sed 's/,$//')
 
 #horovodrun --mpi -np $SLURM_NTASKS -H $WORKERS --start-timeout 120  \
-srun -l python -u train.horovod.pytorch.synthetic.py --batch-size 32 --num-batches-per-iter ${1:-16} --num-iters 3
+srun -l python -u train.horovod.pytorch.synthetic.py --batch-size 32 --num-batches-per-iter ${1:-128} --num-iters 3
 
 #--network-interface ib0
 END_TIME=$(date +%s)
