@@ -64,10 +64,11 @@ def train(epoch):
               desc='Train Epoch     #{}'.format(epoch + 1),
               disable=not verbose) as t:
         for batch_idx, (data, target) in enumerate(train_loader):
+            print("batch_idx",batch_idx)
             adjust_learning_rate(epoch, batch_idx)
 
             if args.cuda:
-                data, target = data.cuda(), target.cuda()
+                data, target = data.cuda(non_blocking=True), target.cuda(non_blocking=True)
             optimizer.zero_grad()
             # Split data into sub-batches of size batch_size
             for i in range(0, len(data), args.batch_size):
@@ -270,10 +271,6 @@ if __name__ == '__main__':
     # Horovod: broadcast parameters & optimizer state.
     hvd.broadcast_parameters(model.state_dict(), root_rank=0)
     hvd.broadcast_optimizer_state(optimizer, root_rank=0)
-
-    print("Training for: ",args.epochs)
-    for epoch in range(0, args.epochs):
-        print("E: ",epoch,flush=True)
 
     for epoch in range(0, args.epochs):
         print("Epoch: ",epoch)

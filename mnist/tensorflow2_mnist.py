@@ -14,11 +14,10 @@
 # ==============================================================================
 
 import tensorflow as tf
-import horovod.tensorflow.keras as hvd
+import horovod.tensorflow as hvd
 
 # Horovod: initialize Horovod.
 hvd.init()
-print("rank",hvd.rank()) 
 
 # Horovod: pin GPU to be used to process local rank (one GPU per process)
 gpus = tf.config.experimental.list_physical_devices('GPU')
@@ -28,7 +27,7 @@ if gpus:
     tf.config.experimental.set_visible_devices(gpus[hvd.local_rank()], 'GPU')
 
 (mnist_images, mnist_labels), _ = \
-    tf.keras.datasets.mnist.load_data(path='/users/staff/nikoloutsa/projects/dsc/data/mnist-%d.npz' % hvd.rank())
+    tf.keras.datasets.mnist.load_data(path='mnist-%d.npz' % hvd.rank())
 
 dataset = tf.data.Dataset.from_tensor_slices(
     (tf.cast(mnist_images[..., tf.newaxis] / 255.0, tf.float32),
@@ -46,49 +45,48 @@ mnist_model = tf.keras.Sequential([
     tf.keras.layers.Dropout(0.5),
     tf.keras.layers.Dense(10, activation='softmax')
 ])
+loss = tf.losses.SparseCategoricalCrossentropy()
 
 # Horovod: adjust learning rate based on number of GPUs.
-scaled_lr = 0.001 * hvd.size()
-opt = tf.optimizers.Adam(scaled_lr)
+opt = tf.optimizers.Adam(0.001 * hvd.size())
 
-# Horovod: add Horovod DistributedOptimizer.
-opt = hvd.DistributedOptimizer(opt)
+checkpoint_dir = './checkpoints'
+checkpoint = tf.train.Checkpoint(model=mnist_model, optimizer=opt)
 
-# Horovod: Specify `experimental_run_tf_function=False` to ensure TensorFlow
-# uses hvd.DistributedOptimizer() to compute gradients.
-mnist_model.compile(loss=tf.losses.SparseCategoricalCrossentropy(),
-                    optimizer=opt,
-                    metrics=['accuracy'],
-                    experimental_run_tf_function=False)
 
-print("model compiled")
+@tf.function
+def training_step(images, labels, first_batch):
+    with tf.GradientTape() as tape:
+        probs = mnist_model(images, training=True)
+        loss_value = loss(labels, probs)
 
-callbacks = [
+    # Horovod: add Horovod Distributed GradientTape.
+    tape = hvd.DistributedGradientTape(tape)
+
+    grads = tape.gradient(loss_value, mnist_model.trainable_variables)
+    opt.apply_gradients(zip(grads, mnist_model.trainable_variables))
+
     # Horovod: broadcast initial variable states from rank 0 to all other processes.
     # This is necessary to ensure consistent initialization of all workers when
     # training is started with random weights or restored from a checkpoint.
-    hvd.callbacks.BroadcastGlobalVariablesCallback(0),
-
-    # Horovod: average metrics among workers at the end of every epoch.
     #
-    # Note: This callback must be in the list before the ReduceLROnPlateau,
-    # TensorBoard or other metrics-based callbacks.
-    hvd.callbacks.MetricAverageCallback(),
+    # Note: broadcast should be done after the first gradient step to ensure optimizer
+    # initialization.
+    if first_batch:
+        hvd.broadcast_variables(mnist_model.variables, root_rank=0)
+        hvd.broadcast_variables(opt.variables(), root_rank=0)
 
-    # Horovod: using `lr = 1.0 * hvd.size()` from the very beginning leads to worse final
-    # accuracy. Scale the learning rate `lr = 1.0` ---> `lr = 1.0 * hvd.size()` during
-    # the first three epochs. See https://arxiv.org/abs/1706.02677 for details.
-    hvd.callbacks.LearningRateWarmupCallback(warmup_epochs=3, initial_lr=scaled_lr, verbose=1),
-]
+    return loss_value
 
-# Horovod: save checkpoints only on worker 0 to prevent other workers from corrupting them.
-if hvd.rank() == 0:
-    callbacks.append(tf.keras.callbacks.ModelCheckpoint('./checkpoint-{epoch}.h5'))
 
-# Horovod: write logs on worker 0.
-verbose = 1 if hvd.rank() == 0 else 0
-
-# Train the model.
 # Horovod: adjust number of steps based on number of GPUs.
-mnist_model.fit(dataset, steps_per_epoch=10 // hvd.size(), callbacks=callbacks, epochs=1, workers=0, verbose=1)
+for batch, (images, labels) in enumerate(dataset.take(10000 // hvd.size())):
+    loss_value = training_step(images, labels, batch == 0)
 
+    if batch % 10 == 0 and hvd.local_rank() == 0:
+        print('Step #%d\tLoss: %.6f' % (batch, loss_value))
+
+# Horovod: save checkpoints only on worker 0 to prevent other workers from
+# corrupting it.
+if hvd.rank() == 0:
+    checkpoint.save(checkpoint_dir)

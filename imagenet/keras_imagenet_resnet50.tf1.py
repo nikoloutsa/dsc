@@ -129,6 +129,8 @@ else:
                   optimizer=opt,
                   metrics=['accuracy', 'top_k_categorical_accuracy'])
 
+    print("model compile")
+
 callbacks = [
     # Horovod: broadcast initial variable states from rank 0 to all other processes.
     # This is necessary to ensure consistent initialization of all workers when
@@ -155,30 +157,27 @@ callbacks = [
 
 # Horovod: save checkpoints only on the first worker to prevent other workers from corrupting them.
 if hvd.rank() == 0:
-    pass
-    #callbacks.append(keras.callbacks.ModelCheckpoint(args.checkpoint_format))
-    #callbacks.append(keras.callbacks.TensorBoard(args.log_dir))
+    callbacks.append(keras.callbacks.ModelCheckpoint(args.checkpoint_format))
+    callbacks.append(keras.callbacks.TensorBoard(args.log_dir))
 
 # Train the model. The training will randomly sample 1 / N batches of training data and
 # 3 / N batches of validation data on every worker, where N is the number of workers.
 # Over-sampling of validation data helps to increase probability that every validation
 # example will be evaluated.
-steps_per_epoch=len(train_iter) // hvd.size()
-validation_steps=len(test_iter) // hvd.size()
-#validation_steps=3 * len(test_iter) // hvd.size())
-print("Steps per epoch: ",steps_per_epoch)
 model.fit_generator(train_iter,
-                    steps_per_epoch=steps_per_epoch,
+                    #steps_per_epoch=len(train_iter) // hvd.size(),
+                    steps_per_epoch=1,
                     callbacks=callbacks,
                     epochs=args.epochs,
                     verbose=verbose,
-                    workers=10,
+                    workers=0,
                     initial_epoch=resume_from_epoch,
                     validation_data=test_iter,
-                    validation_steps=validation_steps)
+                    validation_steps=1)
+                    #validation_steps=3 * len(test_iter) // hvd.size())
 
-### Evaluate the model on the full data set.
-##score = hvd.allreduce(model.evaluate_generator(test_iter, len(test_iter), workers=4))
-##if verbose:
-##    print('Test loss:', score[0])
-##    print('Test accuracy:', score[1])
+# Evaluate the model on the full data set.
+score = hvd.allreduce(model.evaluate_generator(test_iter, len(test_iter), workers=4))
+if verbose:
+    print('Test loss:', score[0])
+    print('Test accuracy:', score[1])

@@ -11,15 +11,28 @@
 # increase in the top-1 validation error compared to the single-crop top-1 validation error from
 # https://github.com/KaimingHe/deep-residual-networks.
 #
-from __future__ import print_function
-
 import argparse
-import keras
-from keras import backend as K
-from keras.preprocessing import image
 import tensorflow as tf
-import horovod.keras as hvd
+from tensorflow import keras
+import horovod.tensorflow.keras as hvd
+from tensorflow.keras.preprocessing import image
+from time import time
+
 import os
+import numpy as np
+
+
+class TimingCallback(keras.callbacks.Callback):
+    """A Keras Callback which records the time of each epoch"""
+    def __init__(self):
+        self.times = []
+
+    def on_epoch_begin(self, epoch, logs={}):
+        self.starttime = time()
+
+    def on_epoch_end(self, epoch, logs={}):
+        epoch_time = time() - self.starttime
+        self.times.append(epoch_time)
 
 parser = argparse.ArgumentParser(description='Keras ImageNet Example',
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -55,18 +68,21 @@ args = parser.parse_args()
 # Horovod: initialize Horovod.
 hvd.init()
 
+
 # Horovod: pin GPU to be used to process local rank (one GPU per process)
-config = tf.ConfigProto()
-config.gpu_options.allow_growth = True
-config.gpu_options.visible_device_list = str(hvd.local_rank())
-K.set_session(tf.Session(config=config))
+#gpus = tf.config.experimental.list_physical_devices('GPU')
+#gpus = tf.test.gpu_device_name()
+#for gpu in gpus:
+#    tf.config.experimental.set_memory_growth(gpu, True)
+#if gpus:
+#    tf.config.experimental.set_visible_devices(gpus[hvd.local_rank()], 'GPU')
 
 # If set > 0, will resume training from a given checkpoint.
 resume_from_epoch = 0
-#for try_epoch in range(args.epochs, 0, -1):
-#    if os.path.exists(args.checkpoint_format.format(epoch=try_epoch)):
-#        resume_from_epoch = try_epoch
-#        break
+for try_epoch in range(args.epochs, 0, -1):
+    if os.path.exists(args.checkpoint_format.format(epoch=try_epoch)):
+        resume_from_epoch = try_epoch
+        break
 
 # Horovod: broadcast resume_from_epoch from rank 0 (which will have
 # checkpoints) to other ranks.
@@ -91,10 +107,14 @@ test_iter = test_gen.flow_from_directory(args.val_dir,
                                          target_size=(224, 224))
 
 # Set up standard ResNet-50 model.
-model = keras.applications.resnet50.ResNet50(weights=None)
+model = keras.applications.ResNet50(weights=None)
+
 
 # Horovod: (optional) compression algorithm.
 compression = hvd.Compression.fp16 if args.fp16_allreduce else hvd.Compression.none
+
+# Horovod: adjust learning rate based on number of GPUs.
+initial_lr = args.base_lr * hvd.size()
 
 # Restore from a previous checkpoint, if initial_epoch is specified.
 # Horovod: restore on the first worker which will broadcast both model and optimizer weights
@@ -117,17 +137,15 @@ else:
             layer_config['config']['epsilon'] = 1e-5
 
     model = keras.models.Model.from_config(model_config)
-
-    # Horovod: adjust learning rate based on number of GPUs.
-    opt = keras.optimizers.SGD(lr=args.base_lr * hvd.size(),
-                               momentum=args.momentum)
+    opt = keras.optimizers.SGD(lr=initial_lr, momentum=args.momentum)
 
     # Horovod: add Horovod Distributed Optimizer.
     opt = hvd.DistributedOptimizer(opt, compression=compression)
 
     model.compile(loss=keras.losses.categorical_crossentropy,
                   optimizer=opt,
-                  metrics=['accuracy', 'top_k_categorical_accuracy'])
+                  metrics=['accuracy', 'top_k_categorical_accuracy'],
+                  experimental_run_tf_function=False)
 
 callbacks = [
     # Horovod: broadcast initial variable states from rank 0 to all other processes.
@@ -144,41 +162,64 @@ callbacks = [
     # Horovod: using `lr = 1.0 * hvd.size()` from the very beginning leads to worse final
     # accuracy. Scale the learning rate `lr = 1.0` ---> `lr = 1.0 * hvd.size()` during
     # the first five epochs. See https://arxiv.org/abs/1706.02677 for details.
-    hvd.callbacks.LearningRateWarmupCallback(warmup_epochs=args.warmup_epochs, verbose=verbose),
+    hvd.callbacks.LearningRateWarmupCallback(initial_lr=initial_lr,
+                                             warmup_epochs=args.warmup_epochs,
+                                             verbose=verbose),
 
     # Horovod: after the warmup reduce learning rate by 10 on the 30th, 60th and 80th epochs.
-    hvd.callbacks.LearningRateScheduleCallback(start_epoch=args.warmup_epochs, end_epoch=30, multiplier=1.),
-    hvd.callbacks.LearningRateScheduleCallback(start_epoch=30, end_epoch=60, multiplier=1e-1),
-    hvd.callbacks.LearningRateScheduleCallback(start_epoch=60, end_epoch=80, multiplier=1e-2),
-    hvd.callbacks.LearningRateScheduleCallback(start_epoch=80, multiplier=1e-3),
+    hvd.callbacks.LearningRateScheduleCallback(initial_lr=initial_lr,
+                                               multiplier=1.,
+                                               start_epoch=args.warmup_epochs,
+                                               end_epoch=30),
+    hvd.callbacks.LearningRateScheduleCallback(initial_lr=initial_lr, multiplier=1e-1, start_epoch=30, end_epoch=60),
+    hvd.callbacks.LearningRateScheduleCallback(initial_lr=initial_lr, multiplier=1e-2, start_epoch=60, end_epoch=80),
+    hvd.callbacks.LearningRateScheduleCallback(initial_lr=initial_lr, multiplier=1e-3, start_epoch=80),
 ]
 
 # Horovod: save checkpoints only on the first worker to prevent other workers from corrupting them.
 if hvd.rank() == 0:
-    pass
-    #callbacks.append(keras.callbacks.ModelCheckpoint(args.checkpoint_format))
-    #callbacks.append(keras.callbacks.TensorBoard(args.log_dir))
+    callbacks.append(keras.callbacks.ModelCheckpoint(args.checkpoint_format))
+    callbacks.append(keras.callbacks.TensorBoard(args.log_dir))
+
+# Timing
+timing_callback = TimingCallback()
+callbacks.append(timing_callback)
+
 
 # Train the model. The training will randomly sample 1 / N batches of training data and
 # 3 / N batches of validation data on every worker, where N is the number of workers.
 # Over-sampling of validation data helps to increase probability that every validation
 # example will be evaluated.
-steps_per_epoch=len(train_iter) // hvd.size()
-validation_steps=len(test_iter) // hvd.size()
+steps_per_epoch = len(train_iter) 
+validation_steps = len(test_iter) 
+steps_per_epoch = 100
+validation_steps = 10
+#steps_per_epoch=len(train_iter) // hvd.size(),
 #validation_steps=3 * len(test_iter) // hvd.size())
-print("Steps per epoch: ",steps_per_epoch)
-model.fit_generator(train_iter,
-                    steps_per_epoch=steps_per_epoch,
-                    callbacks=callbacks,
-                    epochs=args.epochs,
-                    verbose=verbose,
-                    workers=10,
-                    initial_epoch=resume_from_epoch,
-                    validation_data=test_iter,
-                    validation_steps=validation_steps)
+hist = model.fit(train_iter,
+          steps_per_epoch=steps_per_epoch,
+          callbacks=callbacks,
+          epochs=args.epochs,
+          verbose=verbose,
+          workers=4,
+          initial_epoch=resume_from_epoch,
+          validation_data=test_iter,
+          validation_steps=validation_steps)
 
-### Evaluate the model on the full data set.
-##score = hvd.allreduce(model.evaluate_generator(test_iter, len(test_iter), workers=4))
-##if verbose:
-##    print('Test loss:', score[0])
-##    print('Test accuracy:', score[1])
+# Print some best-found metrics
+print('Steps per epoch: {}'.format(steps_per_epoch))
+print('Validation steps per epoch: {}'.format(validation_steps))
+if 'val_accuracy' in hist.history.keys():
+    print('Best validation accuracy: {:.3f}'.format(
+        max(hist.history['val_accuracy'])))
+if 'val_top_k_categorical_accuracy' in hist.history.keys():
+    print('Best top-5 validation accuracy: {:.3f}'.format(
+        max(hist.history['val_top_k_categorical_accuracy'])))
+print('Average time per epoch: {:.3f} s'.format(
+    np.mean(timing_callback.times)))
+
+# Evaluate the model on the full data set.
+score = hvd.allreduce(model.evaluate_generator(test_iter, len(test_iter), workers=4))
+if verbose:
+    print('Test loss:', score[0])
+    print('Test accuracy:', score[1])

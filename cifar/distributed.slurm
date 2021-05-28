@@ -3,22 +3,20 @@
 #SBATCH --job-name=distributed # Job name
 #SBATCH --output=distributed.%j.out # Stdout (%j expands to jobId)
 #SBATCH --error=distributed.%j.err # Stderr (%j expands to jobId)
-#SBATCH --ntasks=1 # Total number of tasks
+#SBATCH --ntasks=2 # Total number of tasks
 #SBATCH --gres=gpu:2 # GPUs per node
-#SBATCH --nodes=1 # Total number of nodes requested
+#SBATCH --nodes=2 # Total number of nodes requested
 #SBATCH --ntasks-per-node=1 # Tasks per node
-#SBATCH --cpus-per-task=20 # Threads per task
-##SBATCH --mem=56000 # Memory per job in MB
+#SBATCH --cpus-per-task=1 # Threads per task
+#SBATCH --mem=28000 # Memory per job in MB
 #SBATCH -t 00:30:00 # Run time (hh:mm:ss) - (max 48h)
 #SBATCH --partition=gpu # Run on the GPU nodes queue
 #SBATCH -A pa201202 # Accounting project
 
 # Load any necessary modules
+module purge
+module load gnu/8 cuda/10.1.168 intel/18 java/12.0.2 intelmpi/2018 tensorflow/2.3.0
 
-module load gnu
-module load intel
-module load intelmpi
-module load cuda
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
@@ -33,7 +31,7 @@ echo "WORKERS: $WORKERS"
 INDEX=0
 for node in ${NODES[@]}
 do
-    TF_CONFIG='{"cluster": {"worker": ['$WORKERS']}, "task": {"type": "worker", "index": '$INDEX'} }'
+    export TF_CONFIG='{"cluster": {"worker": ['$WORKERS']}, "task": {"type": "worker", "index": '$INDEX'} }'
     echo "srun $node $TF_CONFIG"
     srun -w $node -n 1 --exclusive --export=ALL,TF_CONFIG python resnet_cifar10.py &
     INDEX=$(($INDEX+1))
